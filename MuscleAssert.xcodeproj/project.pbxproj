@@ -11,6 +11,11 @@
 		51830A30E39C9500D405FB20 /* libPods-Benchmark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AE1F967AD93D4F3A6E5E02 /* libPods-Benchmark.a */; };
 		73FCA17718DE837D009ED4AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73FCA17518DE837D009ED4AD /* InfoPlist.strings */; };
 		BE45C9DB1E1D282F004492AF /* MuscleAssertStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4F0DBF1E0FD5790046E03F /* MuscleAssertStringTests.m */; };
+		BE45C9DC1E1D482D004492AF /* MuscleAssertOptionalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE20681E19F402008FD31E /* MuscleAssertOptionalTests.m */; };
+		BE45C9DD1E1D50C7004492AF /* MuscleAssertCustomDebugStringConvertibleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE206A1E19F9CC008FD31E /* MuscleAssertCustomDebugStringConvertibleTests.m */; };
+		BE45C9DE1E1DF544004492AF /* MuscleAssertDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE206C1E1A65AE008FD31E /* MuscleAssertDictionaryTests.m */; };
+		BE45C9DF1E1E1A3D004492AF /* MuscleAssertArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45C9D91E1BCC1C004492AF /* MuscleAssertArrayTests.m */; };
+		BE45C9E21E1E3485004492AF /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45C9E11E1E3485004492AF /* TestModel.m */; };
 		BE8FD8A51E04D8B60008B265 /* MuscleAssertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8FD8A41E04D8B60008B265 /* MuscleAssertTests.m */; };
 		BE8FD8A81E04DBF50008B265 /* MuscleAssertBenchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FD8A71E04DBF50008B265 /* MuscleAssertBenchmarks.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +34,8 @@
 		96A8327000FCCEA910AA4798 /* Pods-Benchmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benchmark.release.xcconfig"; path = "Pods/Target Support Files/Pods-Benchmark/Pods-Benchmark.release.xcconfig"; sourceTree = "<group>"; };
 		B47990179E21B2DCAF99C4FC /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		BE45C9D91E1BCC1C004492AF /* MuscleAssertArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuscleAssertArrayTests.m; sourceTree = "<group>"; };
+		BE45C9E01E1E3485004492AF /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
+		BE45C9E11E1E3485004492AF /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		BE4F0DBF1E0FD5790046E03F /* MuscleAssertStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuscleAssertStringTests.m; sourceTree = "<group>"; };
 		BE5B7B0B1BBFB048005732C2 /* Benchmark.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Benchmark.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5B7B0F1BBFB048005732C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +110,8 @@
 				BEAE206A1E19F9CC008FD31E /* MuscleAssertCustomDebugStringConvertibleTests.m */,
 				BEAE206C1E1A65AE008FD31E /* MuscleAssertDictionaryTests.m */,
 				BE45C9D91E1BCC1C004492AF /* MuscleAssertArrayTests.m */,
+				BE45C9E01E1E3485004492AF /* TestModel.h */,
+				BE45C9E11E1E3485004492AF /* TestModel.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -335,7 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE45C9DC1E1D482D004492AF /* MuscleAssertOptionalTests.m in Sources */,
 				BE8FD8A51E04D8B60008B265 /* MuscleAssertTests.m in Sources */,
+				BE45C9DF1E1E1A3D004492AF /* MuscleAssertArrayTests.m in Sources */,
+				BE45C9DE1E1DF544004492AF /* MuscleAssertDictionaryTests.m in Sources */,
+				BE45C9DD1E1D50C7004492AF /* MuscleAssertCustomDebugStringConvertibleTests.m in Sources */,
+				BE45C9E21E1E3485004492AF /* TestModel.m in Sources */,
 				BE45C9DB1E1D282F004492AF /* MuscleAssertStringTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

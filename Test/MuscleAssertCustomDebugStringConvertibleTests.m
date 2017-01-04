@@ -6,36 +6,34 @@
 //
 //
 
-import Foundation
-import MuscleAssert
-import XCTest
+#import <XCTest/XCTest.h>
+#import "MuscleAssert/MuscleAssert.h"
+#import "TestModel.h"
 
-struct TestModel {
-    let string: String
+@interface MuscleAssertCustomDebugStringConvertibleTests : XCTestCase
+@property (nonatomic) MuscleAssert *assert;
+@end
+
+@implementation MuscleAssertCustomDebugStringConvertibleTests
+
+-(void)setUp {
+    [super setUp];
+    self.assert = [[MuscleAssert alloc] init];
 }
 
-extension TestModel: Equatable {
-    public static func ==(lhs: TestModel, rhs: TestModel) -> Bool{
-        return lhs.string == rhs.string
-    }
-}
-extension TestModel: CustomDebugStringConvertible {
-    var debugDescription: String {
-        return "TestModel(string: \(string))"
-    }
+- (void)testSameTestModel {
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"abc"] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    XCTAssertNil(diff);
 }
 
-class MuscleAssertCustomDebugStringConvertibleTests : XCTestCase {
-    func testEmpty() {
-        let diff = MuscleAssert.diff(expected: TestModel(string: ""), actual: TestModel(string: ""))
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "")
-    }
-    func testActualNone() {
-        let diff = MuscleAssert.diff(expected: TestModel(string: "abc"), actual: TestModel(string: ""))
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .0\nactual: TestModel(string: )\nexpected: TestModel(string: abc)\n")
-    }
+- (void)testDifferentType {
+    NSString *diff = [self.assert deepStricEqual:@"" expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: \nexpected: TestModel(string: abc)\n");
 }
 
+- (void)testActualEmpty {
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@""] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: TestModel(string: )\nexpected: TestModel(string: abc)\n");
+}
 
+@end

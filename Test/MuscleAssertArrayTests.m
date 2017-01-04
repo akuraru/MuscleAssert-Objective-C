@@ -6,46 +6,45 @@
 //
 //
 
-import Foundation
-import MuscleAssert
-import XCTest
 
-extension Array where Element : Equatable {
-    public static func ==(lhs: Array<Element>, rhs: Array<Element>) -> Bool {
-        for (l, r) in zip(lhs, rhs) {
-            if l != r {
-                return false
-            }
-        }
-        return true
-    }
+#import <XCTest/XCTest.h>
+#import "MuscleAssert/MuscleAssert.h"
+#import "TestModel.h"
+
+@interface MuscleAssertArrayTests : XCTestCase
+@property (nonatomic) MuscleAssert *assert;
+@end
+
+@implementation MuscleAssertArrayTests
+
+-(void)setUp {
+    [super setUp];
+    self.assert = [[MuscleAssert alloc] init];
 }
 
-extension Array: Equatable where {
+- (void)testNone {
+    NSString *diff = [self.assert deepStricEqual:@[] expected:@[] message:@""];
+    XCTAssertNil(diff);
 }
 
-class MuscleAssertArrayTests : XCTestCase {
-    func testNone() {
-        let format = MuscleAssert.deepStricEqual(actual: [] as [String], expected: [] as [String])
-        XCTAssertEqual(format, "")
-    }
-    func testKeyAndValue() {
-        let format = MuscleAssert.deepStricEqual(actual: ["value"], expected: ["value"])
-        XCTAssertEqual(format, "")
-    }
-    func testEmptyActual() {
-        let diff = MuscleAssert.diff(expected: ["value"], actual: [])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .0..<1\nactual: too sort\nexpected: [\"value\"]\n")
-    }
-    func testEmptyExpected() {
-        let diff = MuscleAssert.diff(expected: [], actual: ["value"])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .0..<1\nactual: [\"value\"]\nexpected: too sort\n")
-    }
-    func testDifferentValue() {
-        let diff = MuscleAssert.diff(expected: ["2016:12:09"], actual: ["value"])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .0\nactual: \"value\"\nexpected: \"2016:12:09\"\n")
-    }
+- (void)testKeyAndValue {
+    NSString *diff = [self.assert deepStricEqual:@[@"value"] expected:@[@"value"] message:@""];
+    XCTAssertNil(diff);
 }
+
+- (void)testEmptyActual {
+    NSString *diff = [self.assert deepStricEqual:@[] expected:@[@"value"] message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0..<1\nactual: too sort\nexpected: (\n    value\n)\n");
+}
+
+- (void)testEmptyExpected {
+    NSString *diff = [self.assert deepStricEqual:@[@"value"] expected:@[] message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0..<1\nactual: (\n    value\n)\nexpected: too sort\n");
+}
+
+- (void)testDifferentValue {
+    NSString *diff = [self.assert deepStricEqual:@[[[TestModel alloc] initWithString:@"value"]] expected:@[[[TestModel alloc] initWithString:@"2016:12:09"]] message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: TestModel(string: value)\nexpected: TestModel(string: 2016:12:09)\n");
+}
+
+@end

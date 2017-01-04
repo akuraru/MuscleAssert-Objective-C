@@ -6,29 +6,33 @@
 //
 //
 
-import Foundation
-import MuscleAssert
-import XCTest
+#import <XCTest/XCTest.h>
+#import "MuscleAssert/MuscleAssert.h"
 
-class MuscleAssertOptionalTests : XCTestCase {
-    func testNone() {
-        let diff = MuscleAssert.diff(expected: Optional<String>.none, actual: Optional<String>.none)
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "")
-    }
-    func testActualNone() {
-        let diff = MuscleAssert.diff(expected: "abc", actual: Optional<String>.none)
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .Optional\nactual: value is nooe\nexpected: \"abc\"\n")
-    }
-    func testEmptyExpected() {
-        let diff = MuscleAssert.diff(expected: .none, actual: "abc")
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .Optional\nactual: \"abc\"\nexpected: value is none\n")
-    }
-    func testSameSomeString() {
-        let diff = MuscleAssert.diff(expected: Optional<String>.some("abc"), actual: "abc")
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "")
-    }
+@interface MuscleAssertOptionalTests : XCTestCase
+@property (nonatomic) MuscleAssert *assert;
+@end
+
+@implementation MuscleAssertOptionalTests
+
+-(void)setUp {
+    [super setUp];
+    self.assert = [[MuscleAssert alloc] init];
 }
+
+- (void)testNone {
+    NSString *diff = [self.assert deepStricEqual:nil expected:nil message:@""];
+    XCTAssertNil(diff);
+}
+
+- (void)testActualNone {
+    NSString *diff = [self.assert deepStricEqual:nil expected:@"abc" message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .Optional\nactual: value is none\nexpected: abc\n");
+}
+
+- (void)testEmptyExpected {
+    NSString *diff = [self.assert deepStricEqual:@"abc" expected:nil message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .Optional\nactual: abc\nexpected: value is none\n");
+}
+
+@end

@@ -6,41 +6,50 @@
 //
 //
 
-import Foundation
-import MuscleAssert
-import XCTest
+#import <XCTest/XCTest.h>
+#import "MuscleAssert/MuscleAssert.h"
 
-class MuscleAssertDictionaryTests : XCTestCase {
-    func testNone() {
-        let diff = MuscleAssert.diff(expected: [:] as [String: String], actual: [:])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "")
-    }
-    func testKeyAndValue() {
-        let diff = MuscleAssert.diff(expected: ["key": "value"], actual: ["key": "value"])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "")
-    }
-    func testEmptyActual() {
-        let diff = MuscleAssert.diff(expected: ["key": "value"], actual: [:])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .key\nactual: value is none\nexpected: \"value\"\n")
-    }
-    func testEmptyExpected() {
-        let diff = MuscleAssert.diff(expected: [:], actual: ["key": "value"])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .key\nactual: \"value\"\nexpected: value is none\n")
-    }
-    func testDifferentValue() {
-        let diff = MuscleAssert.diff(expected: ["key": "2016:12:09"], actual: ["key": "value"])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .key\nactual: \"value\"\nexpected: \"2016:12:09\"\n")
-    }
-    func testDifferentKeyAndValue() {
-        let diff = MuscleAssert.diff(expected: ["date": "2016:12:09"], actual: ["key": "value"])
-        let format = MuscleAssert.format(message: nil, differences: diff)
-        XCTAssertEqual(format, "\npath: .date\nactual: value is none\nexpected: \"2016:12:09\"\n" +
-            "path: .key\nactual: \"value\"\nexpected: value is none\n")
-    }
+@interface MuscleAssertDictionaryTests : XCTestCase
+@property (nonatomic) MuscleAssert *assert;
+@end
+
+@implementation MuscleAssertDictionaryTests
+
+-(void)setUp {
+    [super setUp];
+    self.assert = [[MuscleAssert alloc] init];
 }
 
+- (void)testNone {
+    NSString *diff = [self.assert deepStricEqual:@{} expected:@{} message:@""];
+    XCTAssertNil(diff);
+}
+
+- (void)testKeyAndValue {
+    NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} expected:@{@"key": @"value"} message:@""];
+    XCTAssertNil(diff);
+}
+
+- (void)testEmptyActual {
+    NSString *diff = [self.assert deepStricEqual:@{} expected:@{@"key": @"value"} message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .key\nactual: value is none\nexpected: value\n");
+}
+
+- (void)testEmptyExpected {
+    NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} expected:@{} message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .key\nactual: value\nexpected: value is none\n");
+}
+
+- (void)testDifferentValue {
+    NSString *diff = [self.assert deepStricEqual:@{@"key": @"2016:12:09"} expected:@{@"key": @"value"} message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .key.0\nactual: 2016:12:09\nexpected: value\n");
+}
+
+- (void)testDifferentKeyAndValue {
+    NSString *diff = [self.assert deepStricEqual:@{@"date": @"2016:12:09"} expected:@{@"key": @"value"} message:@""];
+    XCTAssertEqualObjects(diff,  @"\n"
+                          "path: .key\nactual: value is none\nexpected: value\n"
+                          "path: .date\nactual: 2016:12:09\nexpected: value is none\n");
+}
+
+@end

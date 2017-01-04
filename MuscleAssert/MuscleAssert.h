@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MuscleAssert: NSObject
 
-- (NSString * _Nullable)deepStricEqual:(id)actual expected:(id)expected message:(NSString * _Nullable)message;
+- (NSString * _Nullable)deepStricEqual:(id _Nullable)actual expected:(id _Nullable)expected message:(NSString * _Nullable)message;
 
 @end
 
