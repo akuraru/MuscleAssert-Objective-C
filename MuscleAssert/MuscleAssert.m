@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MuscleAssert
 
-- (NSString * _Nullable)deepStricEqual:(id _Nullable)actual expected:(id _Nullable)expected message:(NSString * _Nullable)message {
+- (NSString *_Nullable)deepStricEqual:(id _Nullable)actual expected:(id _Nullable)expected message:(NSString *_Nullable)message {
     NSArray<MuscleAssertDifference *> *differences = [self diff:expected actual:actual path:nil];
     return [self format:message differences:differences];
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:expected actual:actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)diff:expected actual:actual path:(NSString *_Nullable)path {
     if (expected == nil && actual == nil) {
         return @[];
     } else if (expected == nil || actual == nil) {
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)sameTypeDiff:(id)expected actual:(id)actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)sameTypeDiff:(id)expected actual:(id)actual path:(NSString *_Nullable)path {
     if ([expected isEqual:actual]) {
         return @[];
     } else {
@@ -43,11 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)expected actual:(id)actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)expected actual:(id)actual path:(NSString *_Nullable)path {
     return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" expected:[expected debugDescription] actual:[actual debugDescription]]];
 }
 
-- (NSArray<MuscleAssertDifference *> *)stringDiff:(NSString *)expected actual:(NSString *)actual path:(NSString * _Nullable)path {NSArray *diff = [self lcsDiff:expected right:actual];
+- (NSArray<MuscleAssertDifference *> *)stringDiff:(NSString *)expected actual:(NSString *)actual path:(NSString *_Nullable)path {
+    NSArray *diff = [self lcsDiff:expected right:actual];
     NSInteger length = [diff count];
     
     NSMutableArray *result = [NSMutableArray array];
@@ -61,21 +62,19 @@ NS_ASSUME_NONNULL_BEGIN
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
 }
 
-- (NSArray<MuscleAssertDifference *> *)optionalDiff:(id _Nullable)expected actual:(id _Nullable)actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)optionalDiff:(id _Nullable)expected actual:(id _Nullable)actual path:(NSString *_Nullable)path {
     if (expected == nil && actual == nil) {
         return [self diff:expected actual:actual path:path];
     } else if (expected != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional"
-                                                     expected:[expected debugDescription]
-                                                       actual:@"value is none"]];
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" expected:[expected debugDescription] actual:@"value is none"]];
     } else if (actual != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" expected: @"value is none" actual:[actual debugDescription]]];
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" expected:@"value is none" actual:[actual debugDescription]]];
     } else {
         return @[];
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)dictionaryDiff:(NSDictionary *)expected actual:(NSDictionary *)actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)dictionaryDiff:(NSDictionary *)expected actual:(NSDictionary *)actual path:(NSString *_Nullable)path {
     NSSet *set = [NSSet setWithArray:[expected.allKeys arrayByAddingObjectsFromArray:actual.allKeys]];
     NSMutableArray *result = [NSMutableArray array];
     for (id key in set) {
@@ -96,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
         [result addObjectsFromArray:[self diff:expected[index] actual:actual[index] path:[self pathByAppendingPath:path index:index]]];
     }
     if (length < expectedLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, expectedLength] expected:[expected subarrayWithRange:NSMakeRange(length, expectedLength - length)] actual: @"too sort"]];
+        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, expectedLength] expected:[expected subarrayWithRange:NSMakeRange(length, expectedLength - length)] actual:@"too sort"]];
     } else if (length < actualLength) {
         [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, actualLength] expected:@"too sort" actual:[actual subarrayWithRange:NSMakeRange(length, actualLength - length)]]];
     }
@@ -111,22 +110,24 @@ NS_ASSUME_NONNULL_BEGIN
     NSUInteger idx1 = 0;
     NSUInteger idx2 = 0;
     NSUInteger idxc = 0;
-    NSMutableString *s1 = [[NSMutableString alloc]initWithCapacity:l1];
-    NSMutableString *s2 = [[NSMutableString alloc]initWithCapacity:l2];
+    NSMutableString *s1 = [[NSMutableString alloc] initWithCapacity:l1];
+    NSMutableString *s2 = [[NSMutableString alloc] initWithCapacity:l2];
     NSMutableArray *res = [NSMutableArray arrayWithCapacity:10];
     for (;;) {
         if (idxc >= lc) break;
         unichar c1 = [left characterAtIndex:idx1];
         unichar c2 = [right characterAtIndex:idx2];
         unichar cc = [lcs characterAtIndex:idxc];
-        if ((c1==cc) && (c2 == cc)) {
+        if ((c1 == cc) && (c2 == cc)) {
             if ([s1 length] || [s2 length]) {
-                NSArray *e = @[ s1, s2];
+                NSArray *e = @[s1, s2];
                 [res addObject:e];
-                s1 = [[NSMutableString alloc]initWithCapacity:l1];
-                s2 = [[NSMutableString alloc]initWithCapacity:l1];
+                s1 = [[NSMutableString alloc] initWithCapacity:l1];
+                s2 = [[NSMutableString alloc] initWithCapacity:l1];
             }
-            idx1++; idx2++; idxc++;
+            idx1++;
+            idx2++;
+            idxc++;
             continue;
         }
         if (c1 != cc) {
@@ -138,24 +139,24 @@ NS_ASSUME_NONNULL_BEGIN
             idx2++;
         }
     }
-    if (idx1<l1) {
+    if (idx1 < l1) {
         [s1 appendString:[left substringFromIndex:idx1]];
     }
-    if (idx2<l2) {
+    if (idx2 < l2) {
         [s2 appendString:[right substringFromIndex:idx2]];
     }
     if ([s1 length] || [s2 length]) {
-        NSArray *e = @[ s1, s2];
+        NSArray *e = @[s1, s2];
         [res addObject:e];
     }
     return res;
 }
 
-- (NSString*)longestCommonSubsequence:(NSString*)left right:(NSString *)right {
+- (NSString *)longestCommonSubsequence:(NSString *)left right:(NSString *)right {
     NSUInteger x = left.length;
     NSUInteger y = right.length;
     
-    unsigned int** lengths = malloc((x + 1) * sizeof(unsigned int*));
+    unsigned int **lengths = malloc((x + 1) * sizeof(unsigned int *));
     
     for (unsigned int i = 0; i < (x + 1); ++i) {
         lengths[i] = malloc((y + 1) * sizeof(unsigned int));
@@ -165,14 +166,13 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    NSMutableString* lcs = [NSMutableString string];
+    NSMutableString *lcs = [NSMutableString string];
     
     for (unsigned int i = 0; i < x; ++i) {
         for (unsigned int j = 0; j < y; ++j) {
             if ([left characterAtIndex:i] == [right characterAtIndex:j]) {
                 lengths[i + 1][j + 1] = lengths[i][j] + 1;
-            }
-            else {
+            } else {
                 lengths[i + 1][j + 1] = MAX(lengths[i + 1][j], lengths[i][j + 1]);
             }
         }
@@ -181,11 +181,9 @@ NS_ASSUME_NONNULL_BEGIN
     while (x != 0 && y != 0) {
         if (lengths[x][y] == lengths[x - 1][y]) {
             --x;
-        }
-        else if (lengths[x][y] == lengths[x][y - 1]) {
+        } else if (lengths[x][y] == lengths[x][y - 1]) {
             --y;
-        }
-        else {
+        } else {
             [lcs appendFormat:@"%c", [left characterAtIndex:x - 1]];
             --x;
             --y;
@@ -198,7 +196,7 @@ NS_ASSUME_NONNULL_BEGIN
     
     free(lengths);
     
-    NSMutableString* reversed = [NSMutableString stringWithCapacity:lcs.length];
+    NSMutableString *reversed = [NSMutableString stringWithCapacity:lcs.length];
     
     for (NSInteger i = lcs.length - 1; i >= 0; --i) {
         [reversed appendFormat:@"%c", [lcs characterAtIndex:i]];
