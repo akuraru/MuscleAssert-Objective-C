@@ -231,7 +231,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)debugDescription {
-    return @"MuscleAssertDifference(path: \(path), expected: \(expected), actual: \(actual))";
+    return [NSString stringWithFormat:@"MuscleAssertDifference(path: %@), expected: %@, actual: %@)", self.path, self.expected, self.actual];
 }
 
 @end
