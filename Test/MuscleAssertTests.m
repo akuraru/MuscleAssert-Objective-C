@@ -25,7 +25,7 @@
 - (void)testDeepDiff {
     NSString *diff = [self.assert deepStricEqual:@[@[@"value1"]] expected:@[@[@"value2"]] message:@""];
     XCTAssertEqualObjects(diff, @"\n"
-                          "path: .0.0.5\nactual: 1\nexpected: 2\n"
+                          "path: .0.0.0\nactual: 1\nexpected: 2\n"
                           );
 }
 

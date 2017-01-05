@@ -56,7 +56,7 @@
 - (void)testLongActual {
     NSString *diff = [self.assert deepStricEqual:@"abc123" expected:@"abc" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .3\n"
+                          @"\npath: .0\n"
                           "actual: 123\n"
                           "expected: \n"
                           );
@@ -65,7 +65,7 @@
 - (void)testLongExpected {
     NSString *diff = [self.assert deepStricEqual:@"abc" expected:@"abc123" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .3\n"
+                          @"\npath: .0\n"
                           "actual: \n"
                           "expected: 123\n"
                           );
