@@ -16,6 +16,7 @@
 		BE45C9DE1E1DF544004492AF /* MuscleAssertDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE206C1E1A65AE008FD31E /* MuscleAssertDictionaryTests.m */; };
 		BE45C9DF1E1E1A3D004492AF /* MuscleAssertArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45C9D91E1BCC1C004492AF /* MuscleAssertArrayTests.m */; };
 		BE45C9E21E1E3485004492AF /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45C9E11E1E3485004492AF /* TestModel.m */; };
+		BE45C9E41E1E80EB004492AF /* DateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45C9E31E1E80EB004492AF /* DateTests.m */; };
 		BE8FD8A51E04D8B60008B265 /* MuscleAssertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8FD8A41E04D8B60008B265 /* MuscleAssertTests.m */; };
 		BE8FD8A81E04DBF50008B265 /* MuscleAssertBenchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FD8A71E04DBF50008B265 /* MuscleAssertBenchmarks.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		BE45C9D91E1BCC1C004492AF /* MuscleAssertArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuscleAssertArrayTests.m; sourceTree = "<group>"; };
 		BE45C9E01E1E3485004492AF /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		BE45C9E11E1E3485004492AF /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		BE45C9E31E1E80EB004492AF /* DateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTests.m; sourceTree = "<group>"; };
 		BE4F0DBF1E0FD5790046E03F /* MuscleAssertStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuscleAssertStringTests.m; sourceTree = "<group>"; };
 		BE5B7B0B1BBFB048005732C2 /* Benchmark.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Benchmark.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5B7B0F1BBFB048005732C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BEAE206A1E19F9CC008FD31E /* MuscleAssertCustomDebugStringConvertibleTests.m */,
 				BEAE206C1E1A65AE008FD31E /* MuscleAssertDictionaryTests.m */,
 				BE45C9D91E1BCC1C004492AF /* MuscleAssertArrayTests.m */,
+				BE45C9E31E1E80EB004492AF /* DateTests.m */,
 				BE45C9E01E1E3485004492AF /* TestModel.h */,
 				BE45C9E11E1E3485004492AF /* TestModel.m */,
 			);
@@ -351,6 +354,7 @@
 				BE45C9DD1E1D50C7004492AF /* MuscleAssertCustomDebugStringConvertibleTests.m in Sources */,
 				BE45C9E21E1E3485004492AF /* TestModel.m in Sources */,
 				BE45C9DB1E1D282F004492AF /* MuscleAssertStringTests.m in Sources */,
+				BE45C9E41E1E80EB004492AF /* DateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
