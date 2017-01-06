@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
         return [self stringDiff:expected actual:actual path:path];
     } else if ([expected isKindOfClass:[NSDate class]] && [actual isKindOfClass:[NSDate class]]) {
         return [self dateDiff:expected actual:actual path:path];
+    } else if ([expected isKindOfClass:[NSNumber class]] && [actual isKindOfClass:[NSNumber class]]) {
+        return [self numberDiff:expected actual:actual path:path];
     } else if ([expected isKindOfClass:[NSDictionary class]] && [actual isKindOfClass:[NSDictionary class]]) {
         return [self dictionaryDiff:expected actual:actual path:path];
     } else if ([expected isKindOfClass:[NSArray class]] && [actual isKindOfClass:[NSArray class]]) {
@@ -69,6 +71,14 @@ NS_ASSUME_NONNULL_BEGIN
         return @[];
     } else {
         return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"date" expected:[expected debugDescription] actual:[actual debugDescription]]];
+    }
+}
+
+- (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)expected actual:(NSNumber *)actual path:(NSString * _Nullable)path {
+    if ([expected isEqualToNumber:actual]) {
+        return @[];
+    } else {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" expected:[expected debugDescription] actual:[actual debugDescription]]];
     }
 }
 
