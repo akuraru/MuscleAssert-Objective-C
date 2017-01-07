@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSMutableArray *result = [NSMutableArray array];
     for (NSInteger index = 0; index < length; index++) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[self pathByAppendingPath:path index:index] expected:diff[index][0] actual:diff[index][1]]];
+        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[self pathByAppendingPath:path index:[diff[index][0] integerValue]] expected:diff[index][1] actual:diff[index][2]]];
     }
     return result;
 }
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
 }
 
-- (NSArray<MuscleAssertDifference *> *)dateDiff:(NSDate *)expected actual:(NSDate *)actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)dateDiff:(NSDate *)expected actual:(NSDate *)actual path:(NSString *_Nullable)path {
     if ([expected isEqualToDate:actual]) {
         return @[];
     } else {
@@ -74,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)expected actual:(NSNumber *)actual path:(NSString * _Nullable)path {
+- (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)expected actual:(NSNumber *)actual path:(NSString *_Nullable)path {
     if ([expected isEqualToNumber:actual]) {
         return @[];
     } else {
@@ -140,7 +140,7 @@ NS_ASSUME_NONNULL_BEGIN
         unichar cc = [lcs characterAtIndex:idxc];
         if ((c1 == cc) && (c2 == cc)) {
             if ([s1 length] || [s2 length]) {
-                NSArray *e = @[s1, s2];
+                NSArray *e = @[@(idxc), s1, s2];
                 [res addObject:e];
                 s1 = [[NSMutableString alloc] initWithCapacity:l1];
                 s2 = [[NSMutableString alloc] initWithCapacity:l1];
@@ -166,30 +166,29 @@ NS_ASSUME_NONNULL_BEGIN
         [s2 appendString:[right substringFromIndex:idx2]];
     }
     if ([s1 length] || [s2 length]) {
-        NSArray *e = @[s1, s2];
+        NSArray *e = @[@(idxc), s1, s2];
         [res addObject:e];
     }
     return res;
 }
 
 - (NSString *)longestCommonSubsequence:(NSString *)left right:(NSString *)right {
-    NSUInteger x = left.length;
-    NSUInteger y = right.length;
+    NSUInteger leftLength = left.length;
+    NSUInteger rightLength = right.length;
     
-    unsigned int **lengths = malloc((x + 1) * sizeof(unsigned int *));
+    unsigned int **lengths = malloc((leftLength + 1) * sizeof(unsigned int *));
     
-    for (unsigned int i = 0; i < (x + 1); ++i) {
-        lengths[i] = malloc((y + 1) * sizeof(unsigned int));
+    for (unsigned int i = 0; i < (leftLength + 1); ++i) {
+        lengths[i] = malloc((rightLength + 1) * sizeof(unsigned int));
         
-        for (unsigned int j = 0; j < (y + 1); ++j) {
+        for (unsigned int j = 0; j < (rightLength + 1); ++j) {
             lengths[i][j] = 0;
         }
     }
     
-    NSMutableString *lcs = [NSMutableString string];
     
-    for (unsigned int i = 0; i < x; ++i) {
-        for (unsigned int j = 0; j < y; ++j) {
+    for (unsigned int i = 0; i < leftLength; ++i) {
+        for (unsigned int j = 0; j < rightLength; ++j) {
             if ([left characterAtIndex:i] == [right characterAtIndex:j]) {
                 lengths[i + 1][j + 1] = lengths[i][j] + 1;
             } else {
@@ -197,6 +196,10 @@ NS_ASSUME_NONNULL_BEGIN
             }
         }
     }
+    
+    NSMutableString *lcs = [NSMutableString string];
+    NSUInteger x = leftLength;
+    NSUInteger y = rightLength;
     
     while (x != 0 && y != 0) {
         if (lengths[x][y] == lengths[x - 1][y]) {
@@ -210,7 +213,7 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    for (unsigned int i = 0; i < left.length + 1; ++i) {
+    for (unsigned int i = 0; i < leftLength + 1; ++i) {
         free(lengths[i]);
     }
     
