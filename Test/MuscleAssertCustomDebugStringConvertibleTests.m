@@ -28,12 +28,15 @@
 
 - (void)testDifferentType {
     NSString *diff = [self.assert deepStricEqual:@"" expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: \nexpected: TestModel(string: abc)\n");
+    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: \nexpected: TestModel(string: abc, number: 0)\n");
 }
 
 - (void)testActualEmpty {
-    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@""] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .string.0\nactual: \nexpected: abc\n");
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number: @1] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    XCTAssertEqualObjects(diff, @"\n"
+                          "path: .string.0\nactual: \nexpected: abc\n"
+                          "path: .number\nactual: 1\nexpected: 0\n"
+                          );
 }
 
 @end

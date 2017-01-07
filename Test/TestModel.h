@@ -11,6 +11,10 @@
 
 @interface TestModel: NSObject
 @property(nonatomic) NSString *string;
+@property(nonatomic) NSNumber *number;
 
 - (instancetype)initWithString:(NSString *)string;
+
+- (instancetype)initWithString:(NSString *)string number:(NSNumber *)number;
+
 @end
