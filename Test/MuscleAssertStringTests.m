@@ -71,6 +71,15 @@
                           );
 }
 
+- (void)testJapanese {
+    NSString *diff = [self.assert deepStricEqual:@"あいうえお" expected:@"あいうねお" message:@""];
+    XCTAssertEqualObjects(diff,
+                          @"\npath: .3\n"
+                          "actual: え\n"
+                          "expected: ね\n"
+                          );
+}
+
 - (void)testLongDiff {
     NSString *diff = [self.assert deepStricEqual:@"aXbcdYe" expected:@"abcZdVe" message:@""];
     XCTAssertEqualObjects(diff,@"\n"

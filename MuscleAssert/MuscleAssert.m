@@ -207,7 +207,7 @@ NS_ASSUME_NONNULL_BEGIN
         } else if (lengths[x][y] == lengths[x][y - 1]) {
             --y;
         } else {
-            [lcs appendFormat:@"%c", [left characterAtIndex:x - 1]];
+            [lcs appendFormat:@"%C", [left characterAtIndex:x - 1]];
             --x;
             --y;
         }
@@ -222,7 +222,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableString *reversed = [NSMutableString stringWithCapacity:lcs.length];
     
     for (NSInteger i = lcs.length - 1; i >= 0; --i) {
-        [reversed appendFormat:@"%c", [lcs characterAtIndex:i]];
+        [reversed appendFormat:@"%C", [lcs characterAtIndex:i]];
     }
     
     return reversed;
