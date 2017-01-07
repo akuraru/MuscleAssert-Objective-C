@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
         return @[];
     } else {
         NSArray<NSString *> *propertyNames = [self propertyNames:expected];
-        if (propertyNames.count == 0) {
+        if (!self.deepSearch || propertyNames.count == 0) {
             return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" expected:[expected debugDescription] actual:[actual debugDescription]]];
         } else {
             NSMutableArray *results = [NSMutableArray array];
