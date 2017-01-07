@@ -33,7 +33,7 @@
 
 - (void)testActualEmpty {
     NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@""] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: TestModel(string: )\nexpected: TestModel(string: abc)\n");
+    XCTAssertEqualObjects(diff, @"\npath: .string.0\nactual: \nexpected: abc\n");
 }
 
 @end

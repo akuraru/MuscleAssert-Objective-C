@@ -7,6 +7,7 @@
 //
 
 #import "MuscleAssert.h"
+#import <objc/runtime.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -43,8 +44,34 @@ NS_ASSUME_NONNULL_BEGIN
     if ([expected isEqual:actual]) {
         return @[];
     } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" expected:[expected debugDescription] actual:[actual debugDescription]]];
+        NSArray<NSString *> *propertyNames = [self propertyNames:expected];
+        if (propertyNames.count == 0) {
+            return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" expected:[expected debugDescription] actual:[actual debugDescription]]];
+        } else {
+            NSMutableArray *results = [NSMutableArray array];
+            for (NSString *propertyName in propertyNames) {
+                [results addObjectsFromArray:[self diff:[expected performSelector:NSSelectorFromString(propertyName)] actual:[actual performSelector:NSSelectorFromString(propertyName)] path:propertyName]];
+            }
+            return results;
+        }
     }
+}
+
+- (NSArray<NSString *> *)propertyNames:(id)object {
+    NSMutableArray *propertyNames = [NSMutableArray array];
+    
+    unsigned int outCount;
+    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
+    for(int i = 0; i < outCount; i++) {
+        objc_property_t property = properties[i];
+        const char *propName = property_getName(property);
+        if(propName) {
+            NSString *propertyName = [NSString stringWithCString:propName encoding:[NSString defaultCStringEncoding]];
+            [propertyNames addObject:propertyName];
+        }
+    }
+    free(properties);
+    return propertyNames;
 }
 
 - (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)expected actual:(id)actual path:(NSString *_Nullable)path {

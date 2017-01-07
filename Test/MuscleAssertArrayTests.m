@@ -44,7 +44,7 @@
 
 - (void)testDifferentValue {
     NSString *diff = [self.assert deepStricEqual:@[[[TestModel alloc] initWithString:@"value"]] expected:@[[[TestModel alloc] initWithString:@"2016:12:09"]] message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: TestModel(string: value)\nexpected: TestModel(string: 2016:12:09)\n");
+    XCTAssertEqualObjects(diff, @"\npath: .string.0\nactual: value\nexpected: 2016:12:09\n");
 }
 
 @end
