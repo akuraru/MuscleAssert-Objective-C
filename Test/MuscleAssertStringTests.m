@@ -15,7 +15,7 @@
 
 @implementation MuscleAssertStringTests
 
--(void)setUp {
+- (void)setUp {
     [super setUp];
     self.assert = [[MuscleAssert alloc] init];
 }
@@ -38,55 +38,55 @@
 - (void)testEmptyActual {
     NSString *diff = [self.assert deepStricEqual:@"" expected:@"b" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .0\n"
-                          "actual: \n"
-                          "expected: b\n"
-                          );
+        @"\npath: .0\n"
+            "actual: \n"
+            "expected: b\n"
+    );
 }
 
 - (void)testFirst {
     NSString *diff = [self.assert deepStricEqual:@"a" expected:@"b" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .0\n"
-                          "actual: a\n"
-                          "expected: b\n"
-                          );
+        @"\npath: .0\n"
+            "actual: a\n"
+            "expected: b\n"
+    );
 }
 
 - (void)testLongActual {
     NSString *diff = [self.assert deepStricEqual:@"abc123" expected:@"abc" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .3\n"
-                          "actual: 123\n"
-                          "expected: \n"
-                          );
+        @"\npath: .3\n"
+            "actual: 123\n"
+            "expected: \n"
+    );
 }
 
 - (void)testLongExpected {
     NSString *diff = [self.assert deepStricEqual:@"abc" expected:@"abc123" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .3\n"
-                          "actual: \n"
-                          "expected: 123\n"
-                          );
+        @"\npath: .3\n"
+            "actual: \n"
+            "expected: 123\n"
+    );
 }
 
 - (void)testJapanese {
     NSString *diff = [self.assert deepStricEqual:@"あいうえお" expected:@"あいうねお" message:@""];
     XCTAssertEqualObjects(diff,
-                          @"\npath: .3\n"
-                          "actual: え\n"
-                          "expected: ね\n"
-                          );
+        @"\npath: .3\n"
+            "actual: え\n"
+            "expected: ね\n"
+    );
 }
 
 - (void)testLongDiff {
     NSString *diff = [self.assert deepStricEqual:@"aXbcdYe" expected:@"abcZdVe" message:@""];
-    XCTAssertEqualObjects(diff,@"\n"
-                          "path: .1\n" "actual: X\n" "expected: \n"
-                          "path: .3\n" "actual: \n" "expected: Z\n"
-                          "path: .4\n" "actual: Y\n" "expected: V\n"
-                          );
+    XCTAssertEqualObjects(diff, @"\n"
+        "path: .1\n" "actual: X\n" "expected: \n"
+        "path: .3\n" "actual: \n" "expected: Z\n"
+        "path: .4\n" "actual: Y\n" "expected: V\n"
+    );
 }
 
 @end

@@ -10,15 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MuscleAssert: NSObject
+@interface MuscleAssert : NSObject
 
 @property (nonatomic) BOOL deepSearch;
 
-- (NSString * _Nullable)deepStricEqual:(id _Nullable)actual expected:(id _Nullable)expected message:(NSString * _Nullable)message;
+- (NSString *_Nullable)deepStricEqual:(id _Nullable)actual expected:(id _Nullable)expected message:(NSString *_Nullable)message;
 
 @end
 
-@interface MuscleAssertDifference: NSObject
+@interface MuscleAssertDifference : NSObject
 
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, copy) NSString *expected;

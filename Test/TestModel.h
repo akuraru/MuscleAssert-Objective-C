@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface TestModel: NSObject
-@property(nonatomic) NSString *string;
-@property(nonatomic) NSNumber *number;
+@interface TestModel : NSObject
+@property (nonatomic) NSString *string;
+@property (nonatomic) NSNumber *number;
 
 - (instancetype)initWithString:(NSString *)string;
 

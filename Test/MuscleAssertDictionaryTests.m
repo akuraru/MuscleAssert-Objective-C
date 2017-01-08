@@ -15,7 +15,7 @@
 
 @implementation MuscleAssertDictionaryTests
 
--(void)setUp {
+- (void)setUp {
     [super setUp];
     self.assert = [[MuscleAssert alloc] init];
 }
@@ -47,9 +47,9 @@
 
 - (void)testDifferentKeyAndValue {
     NSString *diff = [self.assert deepStricEqual:@{@"date": @"2016:12:09"} expected:@{@"key": @"value"} message:@""];
-    XCTAssertEqualObjects(diff,  @"\n"
-                          "path: .key\nactual: value is none\nexpected: value\n"
-                          "path: .date\nactual: 2016:12:09\nexpected: value is none\n");
+    XCTAssertEqualObjects(diff, @"\n"
+        "path: .key\nactual: value is none\nexpected: value\n"
+        "path: .date\nactual: 2016:12:09\nexpected: value is none\n");
 }
 
 @end

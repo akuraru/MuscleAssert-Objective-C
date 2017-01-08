@@ -16,7 +16,7 @@
 
 @implementation MuscleAssertCustomDebugStringConvertibleTests
 
--(void)setUp {
+- (void)setUp {
     [super setUp];
     self.assert = [[MuscleAssert alloc] init];
     self.assert.deepSearch = YES;
@@ -33,11 +33,11 @@
 }
 
 - (void)testActualEmpty {
-    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number: @1] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number:@1] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
     XCTAssertEqualObjects(diff, @"\n"
-                          "path: .string.0\nactual: \nexpected: abc\n"
-                          "path: .number\nactual: 1\nexpected: 0\n"
-                          );
+        "path: .string.0\nactual: \nexpected: abc\n"
+        "path: .number\nactual: 1\nexpected: 0\n"
+    );
 }
 
 @end
