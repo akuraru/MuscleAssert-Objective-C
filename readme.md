@@ -4,12 +4,21 @@ A unit test framework for Objective-C using computation expressions.
 
 ## Proposal
 
+What is `MuscleAssert`
+
+* provide an assertion message that makes the difference more obvious.
+* is not "where is it going?" But "What's different?"
+
 ### Related Link
 
 * http://bleis-tift.hatenablog.com/entry/about-power-assert
 * http://pocketberserker.hatenablog.com/entry/2016/06/02/143727
 * https://github.com/persimmon-projects/Persimmon.MuscleAssert
 * http://bleis-tift.hatenablog.com/entry/hello-muscle-assert
+
+## Description
+
+*  
 
 ## Installation
 
@@ -19,7 +28,11 @@ A unit test framework for Objective-C using computation expressions.
 
 ## Usage
 
+MAssert(actual, expected);
+
 ## Contributing
+
+pull-requests, issue reports and patches are always welcomed.
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
