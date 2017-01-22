@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MuscleAssert
 
+- (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right {
+    return [self deepStricEqual:left right:right message:nil];
+}
+
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message {
     NSArray<MuscleAssertDifference *> *differences = [self diff:right left:left path:nil];
     return [self format:message differences:differences];

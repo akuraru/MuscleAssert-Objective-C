@@ -22,28 +22,28 @@
 
 - (void)testEmpty {
     NSNumber *number = @1;
-    NSString *diff = [self.assert deepStricEqual:number right:number message:@""];
+    NSString *diff = [self.assert deepStricEqual:number right:number];
     XCTAssertNil(diff);
 }
 
 - (void)testIntegerDiff {
     NSNumber *number = @1;
     NSNumber *rightNumber = @2;
-    NSString *diff = [self.assert deepStricEqual:number right:rightNumber message:@""];
+    NSString *diff = [self.assert deepStricEqual:number right:rightNumber];
     XCTAssertEqualObjects(diff, @"\npath: .number\n" "left: 1\n" "right: 2\n");
 }
 
 - (void)testFloatDiff {
     NSNumber *number = @1.25;
     NSNumber *rightNumber = @2.5;
-    NSString *diff = [self.assert deepStricEqual:number right:rightNumber message:@""];
+    NSString *diff = [self.assert deepStricEqual:number right:rightNumber];
     XCTAssertEqualObjects(diff, @"\npath: .number\n" "left: 1.25\n" "right: 2.5\n");
 }
 
 - (void)testBoolDiff {
     NSNumber *number = @YES;
     NSNumber *rightNumber = @NO;
-    NSString *diff = [self.assert deepStricEqual:number right:rightNumber message:@""];
+    NSString *diff = [self.assert deepStricEqual:number right:rightNumber];
     XCTAssertEqualObjects(diff, @"\npath: .number\n" "left: 1\n" "right: 0\n");
 }
 

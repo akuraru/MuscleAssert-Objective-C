@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) BOOL deepSearch;
 
+- (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right;
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message;
 
 @end

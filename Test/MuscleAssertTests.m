@@ -22,7 +22,7 @@
 }
 
 - (void)testDeepDiff {
-    NSString *diff = [self.assert deepStricEqual:@[@[@"value1"]] right:@[@[@"value2"]] message:@""];
+    NSString *diff = [self.assert deepStricEqual:@[@[@"value1"]] right:@[@[@"value2"]]];
     XCTAssertEqualObjects(diff, @"\n"
         "path: .0.0.5\nleft: 1\nright: 2\n"
     );

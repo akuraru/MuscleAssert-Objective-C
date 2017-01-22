@@ -21,22 +21,22 @@
 }
 
 - (void)testEmpty {
-    NSString *diff = [self.assert deepStricEqual:@"" right:@"" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"" right:@""];
     XCTAssertNil(diff);
 }
 
 - (void)testLongEqual {
-    NSString *diff = [self.assert deepStricEqual:@"abc" right:@"abc" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"abc" right:@"abc"];
     XCTAssertNil(diff);
 }
 
 - (void)testEmptyRight {
-    NSString *diff = [self.assert deepStricEqual:@"a" right:@"" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"a" right:@""];
     XCTAssertEqualObjects(diff, @"\npath: .0\n" "left: a\n" "right: \n");
 }
 
 - (void)testEmptyLeft {
-    NSString *diff = [self.assert deepStricEqual:@"" right:@"b" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"" right:@"b"];
     XCTAssertEqualObjects(diff,
         @"\npath: .0\n"
             "left: \n"
@@ -45,7 +45,7 @@
 }
 
 - (void)testFirst {
-    NSString *diff = [self.assert deepStricEqual:@"a" right:@"b" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"a" right:@"b"];
     XCTAssertEqualObjects(diff,
         @"\npath: .0\n"
             "left: a\n"
@@ -54,7 +54,7 @@
 }
 
 - (void)testLongLeft {
-    NSString *diff = [self.assert deepStricEqual:@"abc123" right:@"abc" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"abc123" right:@"abc"];
     XCTAssertEqualObjects(diff,
         @"\npath: .3\n"
             "left: 123\n"
@@ -63,7 +63,7 @@
 }
 
 - (void)testLongRight {
-    NSString *diff = [self.assert deepStricEqual:@"abc" right:@"abc123" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"abc" right:@"abc123"];
     XCTAssertEqualObjects(diff,
         @"\npath: .3\n"
             "left: \n"
@@ -72,7 +72,7 @@
 }
 
 - (void)testJapanese {
-    NSString *diff = [self.assert deepStricEqual:@"あいうえお" right:@"あいうねお" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"あいうえお" right:@"あいうねお"];
     XCTAssertEqualObjects(diff,
         @"\npath: .3\n"
             "left: え\n"
@@ -81,7 +81,7 @@
 }
 
 - (void)testLongDiff {
-    NSString *diff = [self.assert deepStricEqual:@"aXbcdYe" right:@"abcZdVe" message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"aXbcdYe" right:@"abcZdVe"];
     XCTAssertEqualObjects(diff, @"\n"
         "path: .1\n" "left: X\n" "right: \n"
         "path: .3\n" "left: \n" "right: Z\n"

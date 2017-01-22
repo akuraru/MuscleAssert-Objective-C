@@ -21,17 +21,17 @@
 }
 
 - (void)testNone {
-    NSString *diff = [self.assert deepStricEqual:nil right:nil message:@""];
+    NSString *diff = [self.assert deepStricEqual:nil right:nil];
     XCTAssertNil(diff);
 }
 
 - (void)testLeftNone {
-    NSString *diff = [self.assert deepStricEqual:nil right:@"abc" message:@""];
+    NSString *diff = [self.assert deepStricEqual:nil right:@"abc"];
     XCTAssertEqualObjects(diff, @"\npath: .Optional\nleft: value is none\nright: abc\n");
 }
 
 - (void)testEmptyRight {
-    NSString *diff = [self.assert deepStricEqual:@"abc" right:nil message:@""];
+    NSString *diff = [self.assert deepStricEqual:@"abc" right:nil];
     XCTAssertEqualObjects(diff, @"\npath: .Optional\nleft: abc\nright: value is none\n");
 }
 
