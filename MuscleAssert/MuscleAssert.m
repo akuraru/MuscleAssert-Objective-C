@@ -13,44 +13,44 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MuscleAssert
 
-- (NSString *_Nullable)deepStricEqual:(id _Nullable)actual expected:(id _Nullable)expected message:(NSString *_Nullable)message {
-    NSArray<MuscleAssertDifference *> *differences = [self diff:expected actual:actual path:nil];
+- (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message {
+    NSArray<MuscleAssertDifference *> *differences = [self diff:right left:left path:nil];
     return [self format:message differences:differences];
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:expected actual:actual path:(NSString *_Nullable)path {
-    if (expected == nil && actual == nil) {
+- (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
+    if (right == nil && left == nil) {
         return @[];
-    } else if (expected == nil || actual == nil) {
-        return [self optionalDiff:expected actual:actual path:path];
-    } else if ([expected isKindOfClass:[NSString class]] && [actual isKindOfClass:[NSString class]]) {
-        return [self stringDiff:expected actual:actual path:path];
-    } else if ([expected isKindOfClass:[NSDate class]] && [actual isKindOfClass:[NSDate class]]) {
-        return [self dateDiff:expected actual:actual path:path];
-    } else if ([expected isKindOfClass:[NSNumber class]] && [actual isKindOfClass:[NSNumber class]]) {
-        return [self numberDiff:expected actual:actual path:path];
-    } else if ([expected isKindOfClass:[NSDictionary class]] && [actual isKindOfClass:[NSDictionary class]]) {
-        return [self dictionaryDiff:expected actual:actual path:path];
-    } else if ([expected isKindOfClass:[NSArray class]] && [actual isKindOfClass:[NSArray class]]) {
-        return [self arrayDiff:expected actual:actual path:path];
-    } else if ([expected isKindOfClass:[actual class]]) {
-        return [self sameTypeDiff:expected actual:actual path:path];
+    } else if (right == nil || left == nil) {
+        return [self optionalDiff:right left:left path:path];
+    } else if ([right isKindOfClass:[NSString class]] && [left isKindOfClass:[NSString class]]) {
+        return [self stringDiff:right left:left path:path];
+    } else if ([right isKindOfClass:[NSDate class]] && [left isKindOfClass:[NSDate class]]) {
+        return [self dateDiff:right left:left path:path];
+    } else if ([right isKindOfClass:[NSNumber class]] && [left isKindOfClass:[NSNumber class]]) {
+        return [self numberDiff:right left:left path:path];
+    } else if ([right isKindOfClass:[NSDictionary class]] && [left isKindOfClass:[NSDictionary class]]) {
+        return [self dictionaryDiff:right left:left path:path];
+    } else if ([right isKindOfClass:[NSArray class]] && [left isKindOfClass:[NSArray class]]) {
+        return [self arrayDiff:right left:left path:path];
+    } else if ([right isKindOfClass:[left class]]) {
+        return [self sameTypeDiff:right left:left path:path];
     } else {
-        return [self diffarentTypeDiff:expected actual:actual path:path];
+        return [self diffarentTypeDiff:right left:left path:path];
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)sameTypeDiff:(id)expected actual:(id)actual path:(NSString *_Nullable)path {
-    if ([expected isEqual:actual]) {
+- (NSArray<MuscleAssertDifference *> *)sameTypeDiff:(id)right left:(id)left path:(NSString *_Nullable)path {
+    if ([right isEqual:left]) {
         return @[];
     } else {
-        NSArray<NSString *> *propertyNames = [self propertyNames:expected];
+        NSArray<NSString *> *propertyNames = [self propertyNames:right];
         if (!self.deepSearch || propertyNames.count == 0) {
-            return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" expected:[expected debugDescription] actual:[actual debugDescription]]];
+            return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" left:[left debugDescription] right:[right debugDescription]]];
         } else {
             NSMutableArray *results = [NSMutableArray array];
             for (NSString *propertyName in propertyNames) {
-                [results addObjectsFromArray:[self diff:[expected performSelector:NSSelectorFromString(propertyName)] actual:[actual performSelector:NSSelectorFromString(propertyName)] path:propertyName]];
+                [results addObjectsFromArray:[self diff:[right performSelector:NSSelectorFromString(propertyName)] left:[left performSelector:NSSelectorFromString(propertyName)] path:propertyName]];
             }
             return results;
         }
@@ -74,17 +74,17 @@ NS_ASSUME_NONNULL_BEGIN
     return propertyNames;
 }
 
-- (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)expected actual:(id)actual path:(NSString *_Nullable)path {
-    return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" expected:[expected debugDescription] actual:[actual debugDescription]]];
+- (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)right left:(id)left path:(NSString *_Nullable)path {
+    return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" left:[left debugDescription] right:[right debugDescription]]];
 }
 
-- (NSArray<MuscleAssertDifference *> *)stringDiff:(NSString *)expected actual:(NSString *)actual path:(NSString *_Nullable)path {
-    NSArray *diff = [self lcsDiff:expected right:actual];
+- (NSArray<MuscleAssertDifference *> *)stringDiff:(NSString *)right left:(NSString *)left path:(NSString *_Nullable)path {
+    NSArray *diff = [self lcsDiff:right right:left];
     NSInteger length = [diff count];
     
     NSMutableArray *result = [NSMutableArray array];
     for (NSInteger index = 0; index < length; index++) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[self pathByAppendingPath:path index:[diff[index][0] integerValue]] expected:diff[index][1] actual:diff[index][2]]];
+        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[self pathByAppendingPath:path index:[diff[index][0] integerValue]]left:diff[index][2] right:diff[index][1] ]];
     }
     return result;
 }
@@ -93,58 +93,58 @@ NS_ASSUME_NONNULL_BEGIN
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
 }
 
-- (NSArray<MuscleAssertDifference *> *)dateDiff:(NSDate *)expected actual:(NSDate *)actual path:(NSString *_Nullable)path {
-    if ([expected isEqualToDate:actual]) {
+- (NSArray<MuscleAssertDifference *> *)dateDiff:(NSDate *)right left:(NSDate *)left path:(NSString *_Nullable)path {
+    if ([right isEqualToDate:left]) {
         return @[];
     } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"date" expected:[expected debugDescription] actual:[actual debugDescription]]];
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"date" left:[left debugDescription] right:[right debugDescription]]];
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)expected actual:(NSNumber *)actual path:(NSString *_Nullable)path {
-    if ([expected isEqualToNumber:actual]) {
+- (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)right left:(NSNumber *)left path:(NSString *_Nullable)path {
+    if ([right isEqualToNumber:left]) {
         return @[];
     } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" expected:[expected debugDescription] actual:[actual debugDescription]]];
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" left:[left debugDescription] right:[right debugDescription]]];
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)optionalDiff:(id _Nullable)expected actual:(id _Nullable)actual path:(NSString *_Nullable)path {
-    if (expected == nil && actual == nil) {
-        return [self diff:expected actual:actual path:path];
-    } else if (expected != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" expected:[expected debugDescription] actual:@"value is none"]];
-    } else if (actual != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" expected:@"value is none" actual:[actual debugDescription]]];
+- (NSArray<MuscleAssertDifference *> *)optionalDiff:(id _Nullable)right left:(id _Nullable)left path:(NSString *_Nullable)path {
+    if (right == nil && left == nil) {
+        return [self diff:right left:left path:path];
+    } else if (right != nil) {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:@"value is none" right:[right debugDescription]]];
+    } else if (left != nil) {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
     } else {
         return @[];
     }
 }
 
-- (NSArray<MuscleAssertDifference *> *)dictionaryDiff:(NSDictionary *)expected actual:(NSDictionary *)actual path:(NSString *_Nullable)path {
-    NSSet *set = [NSSet setWithArray:[expected.allKeys arrayByAddingObjectsFromArray:actual.allKeys]];
+- (NSArray<MuscleAssertDifference *> *)dictionaryDiff:(NSDictionary *)right left:(NSDictionary *)left path:(NSString *_Nullable)path {
+    NSSet *set = [NSSet setWithArray:[right.allKeys arrayByAddingObjectsFromArray:left.allKeys]];
     NSMutableArray *result = [NSMutableArray array];
     for (id key in set) {
-        id expectedValue = expected[key];
-        id actualValue = actual[key];
-        [result addObjectsFromArray:[self diff:expectedValue actual:actualValue path:[key description]]];
+        id rightValue = right[key];
+        id leftValue = left[key];
+        [result addObjectsFromArray:[self diff:rightValue left:leftValue path:[key description]]];
     }
     return [result copy];
 }
 
-- (NSArray<MuscleAssertDifference *> *)arrayDiff:(NSArray *)expected actual:(NSArray *)actual path:(NSString *)path {
-    NSInteger expectedLength = expected.count;
-    NSInteger actualLength = actual.count;
-    NSInteger length = MIN(expectedLength, actualLength);
+- (NSArray<MuscleAssertDifference *> *)arrayDiff:(NSArray *)right left:(NSArray *)left path:(NSString *)path {
+    NSInteger rightLength = right.count;
+    NSInteger leftLength = left.count;
+    NSInteger length = MIN(rightLength, leftLength);
     
     NSMutableArray *result = [NSMutableArray array];
     for (NSInteger index = 0; index < length; index++) {
-        [result addObjectsFromArray:[self diff:expected[index] actual:actual[index] path:[self pathByAppendingPath:path index:index]]];
+        [result addObjectsFromArray:[self diff:right[index] left:left[index] path:[self pathByAppendingPath:path index:index]]];
     }
-    if (length < expectedLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, expectedLength] expected:[expected subarrayWithRange:NSMakeRange(length, expectedLength - length)] actual:@"too sort"]];
-    } else if (length < actualLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, actualLength] expected:@"too sort" actual:[actual subarrayWithRange:NSMakeRange(length, actualLength - length)]]];
+    if (length < rightLength) {
+        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, rightLength] left:@"too sort" right:[right subarrayWithRange:NSMakeRange(length, rightLength - length)]]];
+    } else if (length < leftLength) {
+        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, leftLength] left:[left subarrayWithRange:NSMakeRange(length, leftLength - length)] right:@"too sort"]];
     }
     return result;
 }
@@ -261,7 +261,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     NSString *text = (message != nil) ? [message stringByAppendingString:@"\n"] : @"\n";
     for (MuscleAssertDifference *diff in differences) {
-        text = [text stringByAppendingFormat:@"path: .%@\nactual: %@\nexpected: %@\n", diff.path, diff.actual, diff.expected];
+        text = [text stringByAppendingFormat:@"path: .%@\nleft: %@\nright: %@\n", diff.path, diff.left, diff.right];
     }
     return text;
 }
@@ -270,18 +270,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MuscleAssertDifference
 
-- (instancetype)initWithPath:(NSString *)path expected:(NSString *)expected actual:(NSString *)actual {
+- (instancetype)initWithPath:(NSString *)path left:(NSString *)left right:(NSString *)right {
     self = [super init];
     if (self) {
         _path = path;
-        _expected = expected;
-        _actual = actual;
+        _left = left;
+        _right = right;
     }
     return self;
 }
 
 - (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"MuscleAssertDifference(path: %@), expected: %@, actual: %@)", self.path, self.expected, self.actual];
+    return [NSString stringWithFormat:@"MuscleAssertDifference(path: %@), left: %@, right: %@)", self.path, self.left, self.right];
 }
 
 @end

@@ -22,15 +22,15 @@
 
 - (void)testSame {
     NSURL *url = [NSURL URLWithString:@"http://example.com"];
-    NSString *diff = [self.assert deepStricEqual:url expected:url message:@""];
+    NSString *diff = [self.assert deepStricEqual:url right:url message:@""];
     XCTAssertNil(diff);
 }
 
 - (void)testHttpsDiff {
-    NSURL *actualUrl = [NSURL URLWithString:@"http://example.com"];
-    NSURL *expectedUrl = [NSURL URLWithString:@"https://example.com"];
-    NSString *diff = [self.assert deepStricEqual:actualUrl expected:expectedUrl message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .0\n" "actual: http://example.com\n" "expected: https://example.com\n");
+    NSURL *leftUrl = [NSURL URLWithString:@"http://example.com"];
+    NSURL *rightUrl = [NSURL URLWithString:@"https://example.com"];
+    NSString *diff = [self.assert deepStricEqual:leftUrl right:rightUrl message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0\n" "left: http://example.com\n" "right: https://example.com\n");
 }
 
 @end

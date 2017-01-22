@@ -23,20 +23,20 @@
 }
 
 - (void)testSameTestModel {
-    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"abc"] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"abc"] right:[[TestModel alloc] initWithString:@"abc"] message:@""];
     XCTAssertNil(diff);
 }
 
 - (void)testDifferentType {
-    NSString *diff = [self.assert deepStricEqual:@"" expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .0\nactual: \nexpected: TestModel(string: abc, number: 0)\n");
+    NSString *diff = [self.assert deepStricEqual:@"" right:[[TestModel alloc] initWithString:@"abc"] message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .0\nleft: \nright: TestModel(string: abc, number: 0)\n");
 }
 
-- (void)testActualEmpty {
-    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number:@1] expected:[[TestModel alloc] initWithString:@"abc"] message:@""];
+- (void)testLeftEmpty {
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number:@1] right:[[TestModel alloc] initWithString:@"abc"] message:@""];
     XCTAssertEqualObjects(diff, @"\n"
-        "path: .string.0\nactual: \nexpected: abc\n"
-        "path: .number\nactual: 1\nexpected: 0\n"
+        "path: .string.0\nleft: \nright: abc\n"
+        "path: .number\nleft: 1\nright: 0\n"
     );
 }
 

@@ -28,7 +28,7 @@ What is `MuscleAssert`
 
 ## Usage
 
-MAssert(actual, expected);
+MAssert(left, right);
 
 ## Contributing
 

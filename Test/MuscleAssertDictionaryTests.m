@@ -21,35 +21,35 @@
 }
 
 - (void)testNone {
-    NSString *diff = [self.assert deepStricEqual:@{} expected:@{} message:@""];
+    NSString *diff = [self.assert deepStricEqual:@{} right:@{} message:@""];
     XCTAssertNil(diff);
 }
 
 - (void)testKeyAndValue {
-    NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} expected:@{@"key": @"value"} message:@""];
+    NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} right:@{@"key": @"value"} message:@""];
     XCTAssertNil(diff);
 }
 
-- (void)testEmptyActual {
-    NSString *diff = [self.assert deepStricEqual:@{} expected:@{@"key": @"value"} message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .key\nactual: value is none\nexpected: value\n");
+- (void)testEmptyLeft {
+    NSString *diff = [self.assert deepStricEqual:@{} right:@{@"key": @"value"} message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .key\nleft: value is none\nright: value\n");
 }
 
-- (void)testEmptyExpected {
-    NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} expected:@{} message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .key\nactual: value\nexpected: value is none\n");
+- (void)testEmptyRight {
+    NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} right:@{} message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .key\nleft: value\nright: value is none\n");
 }
 
 - (void)testDifferentValue {
-    NSString *diff = [self.assert deepStricEqual:@{@"key": @"2016:12:09"} expected:@{@"key": @"value"} message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .key.0\nactual: 2016:12:09\nexpected: value\n");
+    NSString *diff = [self.assert deepStricEqual:@{@"key": @"2016:12:09"} right:@{@"key": @"value"} message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .key.0\nleft: 2016:12:09\nright: value\n");
 }
 
 - (void)testDifferentKeyAndValue {
-    NSString *diff = [self.assert deepStricEqual:@{@"date": @"2016:12:09"} expected:@{@"key": @"value"} message:@""];
+    NSString *diff = [self.assert deepStricEqual:@{@"date": @"2016:12:09"} right:@{@"key": @"value"} message:@""];
     XCTAssertEqualObjects(diff, @"\n"
-        "path: .key\nactual: value is none\nexpected: value\n"
-        "path: .date\nactual: 2016:12:09\nexpected: value is none\n");
+        "path: .key\nleft: value is none\nright: value\n"
+        "path: .date\nleft: 2016:12:09\nright: value is none\n");
 }
 
 @end

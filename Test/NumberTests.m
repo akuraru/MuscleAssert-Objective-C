@@ -22,29 +22,29 @@
 
 - (void)testEmpty {
     NSNumber *number = @1;
-    NSString *diff = [self.assert deepStricEqual:number expected:number message:@""];
+    NSString *diff = [self.assert deepStricEqual:number right:number message:@""];
     XCTAssertNil(diff);
 }
 
 - (void)testIntegerDiff {
     NSNumber *number = @1;
-    NSNumber *expectedNumber = @2;
-    NSString *diff = [self.assert deepStricEqual:number expected:expectedNumber message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .number\n" "actual: 1\n" "expected: 2\n");
+    NSNumber *rightNumber = @2;
+    NSString *diff = [self.assert deepStricEqual:number right:rightNumber message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .number\n" "left: 1\n" "right: 2\n");
 }
 
 - (void)testFloatDiff {
     NSNumber *number = @1.25;
-    NSNumber *expectedNumber = @2.5;
-    NSString *diff = [self.assert deepStricEqual:number expected:expectedNumber message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .number\n" "actual: 1.25\n" "expected: 2.5\n");
+    NSNumber *rightNumber = @2.5;
+    NSString *diff = [self.assert deepStricEqual:number right:rightNumber message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .number\n" "left: 1.25\n" "right: 2.5\n");
 }
 
 - (void)testBoolDiff {
     NSNumber *number = @YES;
-    NSNumber *expectedNumber = @NO;
-    NSString *diff = [self.assert deepStricEqual:number expected:expectedNumber message:@""];
-    XCTAssertEqualObjects(diff, @"\npath: .number\n" "actual: 1\n" "expected: 0\n");
+    NSNumber *rightNumber = @NO;
+    NSString *diff = [self.assert deepStricEqual:number right:rightNumber message:@""];
+    XCTAssertEqualObjects(diff, @"\npath: .number\n" "left: 1\n" "right: 0\n");
 }
 
 @end
