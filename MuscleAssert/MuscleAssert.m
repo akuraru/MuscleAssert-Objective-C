@@ -265,7 +265,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     NSString *text = (message != nil) ? [message stringByAppendingString:@"\n"] : @"\n";
     for (MuscleAssertDifference *diff in differences) {
-        text = [text stringByAppendingFormat:@"path: .%@\nleft: %@\nright: %@\n", diff.path, diff.left, diff.right];
+        text = [text stringByAppendingFormat:@"path: .%@\n  left: %@\n  right: %@\n", diff.path, diff.left, diff.right];
     }
     return text;
 }

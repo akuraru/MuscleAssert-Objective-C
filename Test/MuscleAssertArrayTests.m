@@ -35,17 +35,23 @@
 
 - (void)testEmptyLeft {
     NSString *diff = [self.assert deepStricEqual:@[] right:@[@"value"]];
-    XCTAssertEqualObjects(diff, @"\npath: .0..<1\nleft: too sort\nright: (\n    value\n)\n");
+    XCTAssertEqualObjects(diff, @"\npath: .0..<1\n"
+                          "  left: too sort\n"
+                          "  right: (\n    value\n)\n");
 }
 
 - (void)testEmptyRight {
     NSString *diff = [self.assert deepStricEqual:@[@"value"] right:@[]];
-    XCTAssertEqualObjects(diff, @"\npath: .0..<1\nleft: (\n    value\n)\nright: too sort\n");
+    XCTAssertEqualObjects(diff, @"\npath: .0..<1\n"
+                          "  left: (\n    value\n)\n"
+                          "  right: too sort\n");
 }
 
 - (void)testDifferentValue {
     NSString *diff = [self.assert deepStricEqual:@[[[TestModel alloc] initWithString:@"value"]] right:@[[[TestModel alloc] initWithString:@"2016:12:09"]]];
-    XCTAssertEqualObjects(diff, @"\npath: .string.0\nleft: value\nright: 2016:12:09\n");
+    XCTAssertEqualObjects(diff, @"\npath: .string.0\n"
+                          "  left: value\n"
+                          "  right: 2016:12:09\n");
 }
 
 @end

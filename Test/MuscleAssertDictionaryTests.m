@@ -32,24 +32,34 @@
 
 - (void)testEmptyLeft {
     NSString *diff = [self.assert deepStricEqual:@{} right:@{@"key": @"value"}];
-    XCTAssertEqualObjects(diff, @"\npath: .key\nleft: value is none\nright: value\n");
+    XCTAssertEqualObjects(diff, @"\npath: .key\n"
+                          "  left: value is none\n"
+                          "  right: value\n");
 }
 
 - (void)testEmptyRight {
     NSString *diff = [self.assert deepStricEqual:@{@"key": @"value"} right:@{}];
-    XCTAssertEqualObjects(diff, @"\npath: .key\nleft: value\nright: value is none\n");
+    XCTAssertEqualObjects(diff, @"\npath: .key\n"
+                          "  left: value\n"
+                          "  right: value is none\n");
 }
 
 - (void)testDifferentValue {
     NSString *diff = [self.assert deepStricEqual:@{@"key": @"2016:12:09"} right:@{@"key": @"value"}];
-    XCTAssertEqualObjects(diff, @"\npath: .key.0\nleft: 2016:12:09\nright: value\n");
+    XCTAssertEqualObjects(diff, @"\npath: .key.0\n"
+                          "  left: 2016:12:09\n"
+                          "  right: value\n");
 }
 
 - (void)testDifferentKeyAndValue {
     NSString *diff = [self.assert deepStricEqual:@{@"date": @"2016:12:09"} right:@{@"key": @"value"}];
     XCTAssertEqualObjects(diff, @"\n"
-        "path: .key\nleft: value is none\nright: value\n"
-        "path: .date\nleft: 2016:12:09\nright: value is none\n");
+                          "path: .key\n"
+                          "  left: value is none\n"
+                          "  right: value\n"
+                          "path: .date\n"
+                          "  left: 2016:12:09\n"
+                          "  right: value is none\n");
 }
 
 @end
