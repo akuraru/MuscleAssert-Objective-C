@@ -30,4 +30,8 @@
                           );
 }
 
+- (void)testMAssert {
+    MAssert(@"a", @"a");
+}
+
 @end

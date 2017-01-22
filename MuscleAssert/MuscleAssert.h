@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define MAssert(_left,_right) XCTAssertNil([[[MuscleAssert alloc] init] deepStricEqual:_left right:_right])
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MuscleAssert : NSObject
