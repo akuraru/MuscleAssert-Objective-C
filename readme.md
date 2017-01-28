@@ -18,17 +18,37 @@ What is `MuscleAssert`
 
 ## Description
 
-*  
+* 
 
 ## Installation
 
 ### CocoaPods
 
-1. ``pod 'MuscleAssert'``
+1. `pod 'MuscleAssert'`
 
 ## Usage
 
-MAssert(left, right);
+```
+NSArray *left = @{
+    @"user": @{
+        @"name" : @"akuraru",
+    }
+};
+NSArray *right = @{
+    @"user": @{
+        @"name" : @"",
+    }
+};
+```
+
+Result
+
+```
+path: .user.name.0
+left: akuraru
+right: 
+```
+
 
 ## Contributing
 
