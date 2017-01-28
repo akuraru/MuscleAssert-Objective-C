@@ -21,14 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MuscleAssertDifference : NSObject
-
-@property (nonatomic, copy) NSString *path;
-@property (nonatomic, copy) NSString *left;
-@property (nonatomic, copy) NSString *right;
-
-- (instancetype)initWithPath:(NSString *)path left:(NSString *)left right:(NSString *)right;
-
-@end
-
 NS_ASSUME_NONNULL_END

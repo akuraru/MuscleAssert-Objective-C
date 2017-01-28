@@ -7,6 +7,8 @@
 //
 
 #import "MuscleAssert.h"
+#import "MuscleAssertDifference.h"
+#import "MACustomDiff.h"
 #import <objc/runtime.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -268,24 +270,6 @@ NS_ASSUME_NONNULL_BEGIN
         text = [text stringByAppendingFormat:@"path: .%@\n  left: %@\n  right: %@\n", diff.path, diff.left, diff.right];
     }
     return text;
-}
-
-@end
-
-@implementation MuscleAssertDifference
-
-- (instancetype)initWithPath:(NSString *)path left:(NSString *)left right:(NSString *)right {
-    self = [super init];
-    if (self) {
-        _path = path;
-        _left = left;
-        _right = right;
-    }
-    return self;
-}
-
-- (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"MuscleAssertDifference(path: %@), left: %@, right: %@)", self.path, self.left, self.right];
 }
 
 @end
