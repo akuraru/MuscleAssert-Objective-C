@@ -18,7 +18,6 @@
 - (void)setUp {
     [super setUp];
     self.assert = [[MuscleAssert alloc] init];
-    self.assert.deepSearch = YES;
 }
 
 - (void)testEqualRange {

@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MuscleAssert : NSObject
 
-@property (nonatomic) BOOL deepSearch;
-
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right;
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message;
 
