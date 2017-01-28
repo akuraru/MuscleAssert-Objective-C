@@ -30,7 +30,7 @@
     NSURL *leftUrl = [NSURL URLWithString:@"http://example.com"];
     NSURL *rightUrl = [NSURL URLWithString:@"https://example.com"];
     NSString *diff = [self.assert deepStricEqual:leftUrl right:rightUrl];
-    XCTAssertEqualObjects(diff, @"\npath: .0\n"
+    XCTAssertEqualObjects(diff, @"\npath: .URL\n"
                           "  left: http://example.com\n"
                           "  right: https://example.com\n");
 }

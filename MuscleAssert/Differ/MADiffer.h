@@ -13,3 +13,4 @@
 #import "MAOptionalDiffer.h"
 #import "MASameTypeDiffer.h"
 #import "MAStringDiffer.h"
+#import "MAURLDiffer.h"

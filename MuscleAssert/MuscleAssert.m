@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
                         [[MAOptionalDiffer alloc] init],
                         [[MAStringDiffer alloc] init],
                         [[MADateDiffer alloc] init],
+                        [[MAURLDiffer alloc] init],
                         [[MANumberDiffer alloc] init],
                         [[MADictionaryDiffer alloc] init],
                         [[MAArrayDiffer alloc] init],
