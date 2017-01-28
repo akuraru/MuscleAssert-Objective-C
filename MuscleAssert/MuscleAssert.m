@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
                         [[MADictionaryDiffer alloc] init],
                         [[MAArrayDiffer alloc] init],
                         [[MASameTypeDiffer alloc] init],
+                        [[MADiffarentTypeDiffer alloc] init],
                         ];
     }
     return self;
@@ -53,16 +54,6 @@ NS_ASSUME_NONNULL_BEGIN
             return [diff diff:left right:right path:path delegatge:self];
         }
     }
-    
-    return [self diffarentTypeDiff:right left:left path:path];
-}
-
-- (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)right left:(id)left path:(NSString *_Nullable)path {
-    return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" left:[left debugDescription] right:[right debugDescription]]];
-}
-
-- (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index {
-    return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
 }
 
 - (NSString *)format:(NSString *)message differences:(NSArray<MuscleAssertDifference *> *)differences {

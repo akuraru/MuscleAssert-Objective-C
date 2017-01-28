@@ -9,6 +9,7 @@
 #import "MAArrayDiffer.h"
 #import "MADateDiffer.h"
 #import "MADictionaryDiffer.h"
+#import "MADiffarentTypeDiffer.h"
 #import "MANumberDiffer.h"
 #import "MAOptionalDiffer.h"
 #import "MASameTypeDiffer.h"
