@@ -12,10 +12,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MACustomDiff;
+
 @interface MuscleAssert : NSObject
 
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right;
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message;
+
+- (void)cons:(MACustomDiff *)differ;
+- (void)add:(MACustomDiff *)differ;
 
 @end
 
