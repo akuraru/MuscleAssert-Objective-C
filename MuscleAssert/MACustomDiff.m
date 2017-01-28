@@ -27,10 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MACustomClassDiff ()
-@property (nonatomic, copy) Class class;
-@end
-
 @implementation MACustomClassDiff
 
 - (BOOL)match:(id)left right:(id)right {

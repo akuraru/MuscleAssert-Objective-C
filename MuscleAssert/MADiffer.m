@@ -11,10 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MACustomClassDiff ()
-@property (nonatomic, copy) Class class;
-@end
-
 @implementation MAOptionalDiffer
 
 - (BOOL)match:(id)left right:(id)right {
@@ -38,12 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MAStringDiffer
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.class = [NSString class];
-    }
-    return self;
+- (Class)class {
+    return [NSString class];
 }
 
 - (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
@@ -171,12 +163,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MADateDiffer
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.class = [NSDate class];
-    }
-    return self;
+- (Class)class {
+    return [NSDate class];
 }
 
 - (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
