@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
                         [[MADateDiffer alloc] init],
                         [[MANumberDiffer alloc] init],
                         [[MADictionaryDiffer alloc] init],
+                        [[MAArrayDiffer alloc] init],
                         ];
     }
     return self;
@@ -52,9 +53,6 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    if ([right isKindOfClass:[NSArray class]] && [left isKindOfClass:[NSArray class]]) {
-        return [self arrayDiff:right left:left path:path];
-    }
     if ([right isKindOfClass:[left class]]) {
         return [self sameTypeDiff:right left:left path:path];
     }
@@ -101,23 +99,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index {
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
-}
-
-- (NSArray<MuscleAssertDifference *> *)arrayDiff:(NSArray *)right left:(NSArray *)left path:(NSString *)path {
-    NSInteger rightLength = right.count;
-    NSInteger leftLength = left.count;
-    NSInteger length = MIN(rightLength, leftLength);
-    
-    NSMutableArray *result = [NSMutableArray array];
-    for (NSInteger index = 0; index < length; index++) {
-        [result addObjectsFromArray:[self diff:right[index] left:left[index] path:[self pathByAppendingPath:path index:index]]];
-    }
-    if (length < rightLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, rightLength] left:@"too sort" right:[right subarrayWithRange:NSMakeRange(length, rightLength - length)]]];
-    } else if (length < leftLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, leftLength] left:[left subarrayWithRange:NSMakeRange(length, leftLength - length)] right:@"too sort"]];
-    }
-    return result;
 }
 
 - (NSString *)format:(NSString *)message differences:(NSArray<MuscleAssertDifference *> *)differences {
