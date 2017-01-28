@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     return NO;
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
     return @[];
 }
 

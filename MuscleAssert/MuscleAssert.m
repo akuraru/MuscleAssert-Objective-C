@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MuscleAssert ()
+@interface MuscleAssert () <MSDeepDiffProtocol>
 
 @property (nonatomic, copy) NSArray<MACustomDiff *> *differ;
 
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
     for (MACustomDiff *diff in self.differ) {
         if ([diff match:left right:right]) {
-            return [diff diff:left right:right path:path];
+            return [diff diff:left right:right path:path delegatge:self];
         }
     }
     

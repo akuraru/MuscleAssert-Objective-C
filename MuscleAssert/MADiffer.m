@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     return left == nil || right == nil;
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
     if (right == nil && left == nil) {
         return @[];
     } else if (right != nil) {
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
     return [NSString class];
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
     return [self stringDiff:right left:left path:path];
 }
 
@@ -167,7 +167,7 @@ NS_ASSUME_NONNULL_BEGIN
     return [NSDate class];
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
     if ([right isEqualToDate:left]) {
         return @[];
     } else {
@@ -183,7 +183,7 @@ NS_ASSUME_NONNULL_BEGIN
     return [NSNumber class];
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
     if ([right isEqualToNumber:left]) {
         return @[];
     } else {
