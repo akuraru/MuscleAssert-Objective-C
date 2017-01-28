@@ -11,4 +11,5 @@
 #import "MADictionaryDiffer.h"
 #import "MANumberDiffer.h"
 #import "MAOptionalDiffer.h"
+#import "MASameTypeDiffer.h"
 #import "MAStringDiffer.h"

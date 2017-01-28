@@ -10,7 +10,6 @@
 #import "MuscleAssertDifference.h"
 #import "MACustomDiff.h"
 #import "MADiffer.h"
-#import <objc/runtime.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
                         [[MANumberDiffer alloc] init],
                         [[MADictionaryDiffer alloc] init],
                         [[MAArrayDiffer alloc] init],
+                        [[MASameTypeDiffer alloc] init],
                         ];
     }
     return self;
@@ -53,44 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    if ([right isKindOfClass:[left class]]) {
-        return [self sameTypeDiff:right left:left path:path];
-    }
     return [self diffarentTypeDiff:right left:left path:path];
-}
-
-- (NSArray<MuscleAssertDifference *> *)sameTypeDiff:(id)right left:(id)left path:(NSString *_Nullable)path {
-    if ([right isEqual:left]) {
-        return @[];
-    } else {
-        NSArray<NSString *> *propertyNames = [self propertyNames:right];
-        if (!self.deepSearch || propertyNames.count == 0) {
-            return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"0" left:[left debugDescription] right:[right debugDescription]]];
-        } else {
-            NSMutableArray *results = [NSMutableArray array];
-            for (NSString *propertyName in propertyNames) {
-                [results addObjectsFromArray:[self diff:[right performSelector:NSSelectorFromString(propertyName)] left:[left performSelector:NSSelectorFromString(propertyName)] path:propertyName]];
-            }
-            return results;
-        }
-    }
-}
-
-- (NSArray<NSString *> *)propertyNames:(id)object {
-    NSMutableArray *propertyNames = [NSMutableArray array];
-    
-    unsigned int outCount;
-    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
-    for (int i = 0; i < outCount; i++) {
-        objc_property_t property = properties[i];
-        const char *propName = property_getName(property);
-        if (propName) {
-            NSString *propertyName = [NSString stringWithCString:propName encoding:[NSString defaultCStringEncoding]];
-            [propertyNames addObject:propertyName];
-        }
-    }
-    free(properties);
-    return propertyNames;
 }
 
 - (NSArray<MuscleAssertDifference *> *)diffarentTypeDiff:(id)right left:(id)left path:(NSString *_Nullable)path {
