@@ -16,4 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MAStringDiffer : MACustomClassDiff
 @end
 
+@interface MADateDiffer : MACustomClassDiff
+@end
+
 NS_ASSUME_NONNULL_END

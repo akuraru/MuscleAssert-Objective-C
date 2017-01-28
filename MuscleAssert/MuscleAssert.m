@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
         self.differ = @[
                         [[MAOptionalDiffer alloc] init],
                         [[MAStringDiffer alloc] init],
+                        [[MADateDiffer alloc] init]
                         ];
     }
     return self;
@@ -49,9 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    if ([right isKindOfClass:[NSDate class]] && [left isKindOfClass:[NSDate class]]) {
-        return [self dateDiff:right left:left path:path];
-    } else if ([right isKindOfClass:[NSNumber class]] && [left isKindOfClass:[NSNumber class]]) {
+    if ([right isKindOfClass:[NSNumber class]] && [left isKindOfClass:[NSNumber class]]) {
         return [self numberDiff:right left:left path:path];
     } else if ([right isKindOfClass:[NSDictionary class]] && [left isKindOfClass:[NSDictionary class]]) {
         return [self dictionaryDiff:right left:left path:path];
@@ -104,14 +103,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index {
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
-}
-
-- (NSArray<MuscleAssertDifference *> *)dateDiff:(NSDate *)right left:(NSDate *)left path:(NSString *_Nullable)path {
-    if ([right isEqualToDate:left]) {
-        return @[];
-    } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"date" left:[left debugDescription] right:[right debugDescription]]];
-    }
 }
 
 - (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)right left:(NSNumber *)left path:(NSString *_Nullable)path {

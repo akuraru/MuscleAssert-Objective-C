@@ -169,4 +169,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@implementation MADateDiffer
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.class = [NSDate class];
+    }
+    return self;
+}
+
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+    if ([right isEqualToDate:left]) {
+        return @[];
+    } else {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"date" left:[left debugDescription] right:[right debugDescription]]];
+    }
+}
+
+@end
+
 NS_ASSUME_NONNULL_END
