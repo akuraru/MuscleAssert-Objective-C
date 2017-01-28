@@ -189,4 +189,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@implementation MANumberDiffer
+
+- (Class)class {
+    return [NSNumber class];
+}
+
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+    if ([right isEqualToNumber:left]) {
+        return @[];
+    } else {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" left:[left debugDescription] right:[right debugDescription]]];
+    }
+}
+
+@end
+
 NS_ASSUME_NONNULL_END

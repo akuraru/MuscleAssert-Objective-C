@@ -19,4 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MADateDiffer : MACustomClassDiff
 @end
 
+@interface MANumberDiffer : MACustomClassDiff
+@end
+
 NS_ASSUME_NONNULL_END

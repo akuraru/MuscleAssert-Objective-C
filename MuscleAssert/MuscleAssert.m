@@ -28,7 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
         self.differ = @[
                         [[MAOptionalDiffer alloc] init],
                         [[MAStringDiffer alloc] init],
-                        [[MADateDiffer alloc] init]
+                        [[MADateDiffer alloc] init],
+                        [[MANumberDiffer alloc] init],
                         ];
     }
     return self;
@@ -50,17 +51,16 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    if ([right isKindOfClass:[NSNumber class]] && [left isKindOfClass:[NSNumber class]]) {
-        return [self numberDiff:right left:left path:path];
-    } else if ([right isKindOfClass:[NSDictionary class]] && [left isKindOfClass:[NSDictionary class]]) {
+    if ([right isKindOfClass:[NSDictionary class]] && [left isKindOfClass:[NSDictionary class]]) {
         return [self dictionaryDiff:right left:left path:path];
-    } else if ([right isKindOfClass:[NSArray class]] && [left isKindOfClass:[NSArray class]]) {
-        return [self arrayDiff:right left:left path:path];
-    } else if ([right isKindOfClass:[left class]]) {
-        return [self sameTypeDiff:right left:left path:path];
-    } else {
-        return [self diffarentTypeDiff:right left:left path:path];
     }
+    if ([right isKindOfClass:[NSArray class]] && [left isKindOfClass:[NSArray class]]) {
+        return [self arrayDiff:right left:left path:path];
+    }
+    if ([right isKindOfClass:[left class]]) {
+        return [self sameTypeDiff:right left:left path:path];
+    }
+    return [self diffarentTypeDiff:right left:left path:path];
 }
 
 - (NSArray<MuscleAssertDifference *> *)sameTypeDiff:(id)right left:(id)left path:(NSString *_Nullable)path {
@@ -103,14 +103,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index {
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
-}
-
-- (NSArray<MuscleAssertDifference *> *)numberDiff:(NSNumber *)right left:(NSNumber *)left path:(NSString *_Nullable)path {
-    if ([right isEqualToNumber:left]) {
-        return @[];
-    } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" left:[left debugDescription] right:[right debugDescription]]];
-    }
 }
 
 - (NSArray<MuscleAssertDifference *> *)dictionaryDiff:(NSDictionary *)right left:(NSDictionary *)left path:(NSString *_Nullable)path {
