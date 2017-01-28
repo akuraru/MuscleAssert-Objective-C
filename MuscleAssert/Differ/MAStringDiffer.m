@@ -6,31 +6,10 @@
 //
 //
 
-#import "MADiffer.h"
+#import "MAStringDiffer.h"
 #import "MuscleAssertDifference.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@implementation MAOptionalDiffer
-
-- (BOOL)match:(id)left right:(id)right {
-    return left == nil || right == nil;
-}
-
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
-    if (right == nil && left == nil) {
-        return @[];
-    } else if (right != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:@"value is none" right:[right debugDescription]]];
-    } else if (left != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
-    } else {
-        @throw [NSException exceptionWithName:NSGenericException reason:@"Unreachable code is reached" userInfo:@{@"left": left, @"right": right }];
-    }
-}
-
-
-@end
 
 @implementation MAStringDiffer
 
@@ -157,83 +136,6 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     return reversed;
-}
-
-@end
-
-@implementation MADateDiffer
-
-- (Class)class {
-    return [NSDate class];
-}
-
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
-    if ([right isEqualToDate:left]) {
-        return @[];
-    } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"date" left:[left debugDescription] right:[right debugDescription]]];
-    }
-}
-
-@end
-
-@implementation MANumberDiffer
-
-- (Class)class {
-    return [NSNumber class];
-}
-
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
-    if ([right isEqualToNumber:left]) {
-        return @[];
-    } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" left:[left debugDescription] right:[right debugDescription]]];
-    }
-}
-
-@end
-
-@implementation MADictionaryDiffer
-
-- (Class)class {
-    return [NSDictionary class];
-}
-
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
-    NSSet *set = [NSSet setWithArray:[[right allKeys] arrayByAddingObjectsFromArray:[left allKeys]]];
-    NSMutableArray *result = [NSMutableArray array];
-    for (id key in set) {
-        id rightValue = right[key];
-        id leftValue = left[key];
-        NSString *nextPath = path ? [path stringByAppendingFormat:@".%@", [key description]] : [key description];
-        [result addObjectsFromArray:[delegate diff:rightValue left:leftValue path:nextPath]];
-    }
-    return [result copy];
-}
-
-@end
-
-@implementation MAArrayDiffer
-
-- (Class)class {
-    return [NSArray class];
-}
-
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
-    NSInteger rightLength = [right count];
-    NSInteger leftLength = [left count];
-    NSInteger length = MIN(rightLength, leftLength);
-    
-    NSMutableArray *result = [NSMutableArray array];
-    for (NSInteger index = 0; index < length; index++) {
-        [result addObjectsFromArray:[delegate diff:right[index] left:left[index] path:[self pathByAppendingPath:path index:index]]];
-    }
-    if (length < rightLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, rightLength] left:@"too sort" right:[right subarrayWithRange:NSMakeRange(length, rightLength - length)]]];
-    } else if (length < leftLength) {
-        [result addObject:[[MuscleAssertDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, leftLength] left:[left subarrayWithRange:NSMakeRange(length, leftLength - length)] right:@"too sort"]];
-    }
-    return result;
 }
 
 @end

@@ -6,26 +6,9 @@
 //
 //
 
-#import "MACustomDiff.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface MAOptionalDiffer : MACustomDiff
-@end
-
-@interface MAStringDiffer : MACustomClassDiff
-@end
-
-@interface MADateDiffer : MACustomClassDiff
-@end
-
-@interface MANumberDiffer : MACustomClassDiff
-@end
-
-@interface MADictionaryDiffer : MACustomClassDiff
-@end
-
-@interface MAArrayDiffer : MACustomClassDiff
-@end
-
-NS_ASSUME_NONNULL_END
+#import "MAArrayDiffer.h"
+#import "MADateDiffer.h"
+#import "MADictionaryDiffer.h"
+#import "MANumberDiffer.h"
+#import "MAOptionalDiffer.h"
+#import "MAStringDiffer.h"
