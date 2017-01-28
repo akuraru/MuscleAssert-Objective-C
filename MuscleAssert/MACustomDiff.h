@@ -14,10 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MACustomDiff : NSObject
 
-@property (nonatomic, copy) BOOL(^match)(id, id);
-@property (nonatomic, copy) NSArray<MuscleAssertDifference *> *(^diff)(id, id);
-
-- (instancetype)initWithMatch:(BOOL(^)(id, id))match diff:(NSArray<MuscleAssertDifference *> *(^)(id, id))diff;
+- (BOOL)match:(id)left right:(id)right;
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path;
 
 @end
 

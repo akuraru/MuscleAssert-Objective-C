@@ -13,7 +13,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface MuscleAssert ()
+
+@property (nonatomic, copy) NSArray<MACustomDiff *> *differ;
+
+@end
+
 @implementation MuscleAssert
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.differ = @[
+                        
+                        ];
+    }
+    return self;
+}
 
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right {
     return [self deepStricEqual:left right:right message:nil];
@@ -25,6 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
+    for (MACustomDiff *diff in self.differ) {
+        if ([diff match:left right:right]) {
+            return [diff diff:left right:right path:path];
+        }
+    }
     if (right == nil && left == nil) {
         return @[];
     } else if (right == nil || left == nil) {
