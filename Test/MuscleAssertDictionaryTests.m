@@ -62,4 +62,13 @@
                           "  right: value is none\n");
 }
 
+- (void)testDeepDictionary {
+    NSString *diff = [self.assert deepStricEqual:@{@"user": @{ @"name": @"akuraru" } }
+                                           right:@{@"user": @{ @"name": @"Akuraru" } }];
+    XCTAssertEqualObjects(diff, @"\n"
+                          "path: .user.name.0\n"
+                          "  left: a\n"
+                          "  right: A\n");
+}
+
 @end

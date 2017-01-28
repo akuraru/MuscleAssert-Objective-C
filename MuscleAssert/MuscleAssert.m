@@ -111,7 +111,8 @@ NS_ASSUME_NONNULL_BEGIN
     for (id key in set) {
         id rightValue = right[key];
         id leftValue = left[key];
-        [result addObjectsFromArray:[self diff:rightValue left:leftValue path:[key description]]];
+        NSString *nextPath = path ? [path stringByAppendingFormat:@".%@", [key description]] : [key description];
+        [result addObjectsFromArray:[self diff:rightValue left:leftValue path:nextPath]];
     }
     return [result copy];
 }
