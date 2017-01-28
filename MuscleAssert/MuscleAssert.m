@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
     self = [super init];
     if (self) {
         self.differ = @[
+                        [[MAOptionalDiffer alloc] init],
                         [[MAStringDiffer alloc] init],
                         ];
     }
@@ -42,12 +43,6 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
-    if (right == nil && left == nil) {
-        return @[];
-    } else if (right == nil || left == nil) {
-        return [self optionalDiff:right left:left path:path];
-    }
-    
     for (MACustomDiff *diff in self.differ) {
         if ([diff match:left right:right]) {
             return [diff diff:left right:right path:path];
@@ -124,18 +119,6 @@ NS_ASSUME_NONNULL_BEGIN
         return @[];
     } else {
         return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"number" left:[left debugDescription] right:[right debugDescription]]];
-    }
-}
-
-- (NSArray<MuscleAssertDifference *> *)optionalDiff:(id _Nullable)right left:(id _Nullable)left path:(NSString *_Nullable)path {
-    if (right == nil && left == nil) {
-        return [self diff:right left:left path:path];
-    } else if (right != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:@"value is none" right:[right debugDescription]]];
-    } else if (left != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
-    } else {
-        return @[];
     }
 }
 

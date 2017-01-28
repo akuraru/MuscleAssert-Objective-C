@@ -12,8 +12,27 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MACustomClassDiff ()
-
 @property (nonatomic, copy) Class class;
+@end
+
+@implementation MAOptionalDiffer
+
+- (BOOL)match:(id)left right:(id)right {
+    return left == nil || right == nil;
+}
+
+- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path {
+    if (right == nil && left == nil) {
+        return @[];
+    } else if (right != nil) {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:@"value is none" right:[right debugDescription]]];
+    } else if (left != nil) {
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
+    } else {
+        @throw [NSException exceptionWithName:NSGenericException reason:@"Unreachable code is reached" userInfo:@{@"left": left, @"right": right }];
+    }
+}
+
 
 @end
 

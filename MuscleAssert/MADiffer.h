@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface MAOptionalDiffer : MACustomDiff
+@end
+
 @interface MAStringDiffer : MACustomClassDiff
 @end
 
