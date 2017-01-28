@@ -22,4 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MANumberDiffer : MACustomClassDiff
 @end
 
+@interface MADictionaryDiffer : MACustomClassDiff
+@end
+
 NS_ASSUME_NONNULL_END

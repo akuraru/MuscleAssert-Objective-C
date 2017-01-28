@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
                         [[MAStringDiffer alloc] init],
                         [[MADateDiffer alloc] init],
                         [[MANumberDiffer alloc] init],
+                        [[MADictionaryDiffer alloc] init],
                         ];
     }
     return self;
@@ -51,9 +52,6 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     
-    if ([right isKindOfClass:[NSDictionary class]] && [left isKindOfClass:[NSDictionary class]]) {
-        return [self dictionaryDiff:right left:left path:path];
-    }
     if ([right isKindOfClass:[NSArray class]] && [left isKindOfClass:[NSArray class]]) {
         return [self arrayDiff:right left:left path:path];
     }
@@ -103,18 +101,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index {
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
-}
-
-- (NSArray<MuscleAssertDifference *> *)dictionaryDiff:(NSDictionary *)right left:(NSDictionary *)left path:(NSString *_Nullable)path {
-    NSSet *set = [NSSet setWithArray:[right.allKeys arrayByAddingObjectsFromArray:left.allKeys]];
-    NSMutableArray *result = [NSMutableArray array];
-    for (id key in set) {
-        id rightValue = right[key];
-        id leftValue = left[key];
-        NSString *nextPath = path ? [path stringByAppendingFormat:@".%@", [key description]] : [key description];
-        [result addObjectsFromArray:[self diff:rightValue left:leftValue path:nextPath]];
-    }
-    return [result copy];
 }
 
 - (NSArray<MuscleAssertDifference *> *)arrayDiff:(NSArray *)right left:(NSArray *)left path:(NSString *)path {
