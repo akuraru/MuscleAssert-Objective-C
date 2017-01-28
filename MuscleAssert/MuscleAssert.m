@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MuscleAssert () <MSDeepDiffProtocol>
 
 @property (nonatomic, copy) NSArray<MACustomDiff *> *differ;
+@property (nonatomic) MADiffarentTypeDiffer *diffarentTypeDiffer;
 
 @end
 
@@ -33,8 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
                         [[MADictionaryDiffer alloc] init],
                         [[MAArrayDiffer alloc] init],
                         [[MASameTypeDiffer alloc] init],
-                        [[MADiffarentTypeDiffer alloc] init],
                         ];
+        self.diffarentTypeDiffer = [[MADiffarentTypeDiffer alloc] init];
     }
     return self;
 }
@@ -49,7 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
-    for (MACustomDiff *diff in self.differ) {
+    NSArray *differ = [[self differ] arrayByAddingObject:self.diffarentTypeDiffer];
+    for (MACustomDiff *diff in differ) {
         if ([diff match:left right:right]) {
             return [diff diff:left right:right path:path delegatge:self];
         }
