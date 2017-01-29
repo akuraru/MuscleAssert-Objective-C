@@ -58,10 +58,16 @@
 
 - (void)testAdd {
     [self.assert add:[[StringNumberDiffer alloc] init]];
-    NSString *format = [self.assert deepStricEqual:@"1" right:@0];
+    NSString *format = [self.assert deepStricEqual:@1 right:@"0"];
     XCTAssertEqualObjects(format, @"\npath: .\n"
                           "  left: 1\n"
                           "  right: 0\n");
+}
+
+- (void)testAddEqual {
+    [self.assert add:[[StringNumberDiffer alloc] init]];
+    NSString *format = [self.assert deepStricEqual:@1 right:@"1"];
+    XCTAssertNil(format);
 }
 
 @end
