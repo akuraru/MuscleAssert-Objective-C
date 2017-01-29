@@ -40,8 +40,8 @@
 }
 
 - (void)testMatchClass {
-    MAStringDiffer *differ = [[MAStringDiffer alloc] init];
-    XCTAssertTrue([@"" isKindOfClass:differ.matchClass]);
+    MACustomClassDiff *differ = [[MACustomClassDiff alloc] init];
+    XCTAssertNil(differ.matchClass);
 }
 
 @end
