@@ -22,10 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
         return @[];
     } else if (right != nil) {
         return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:@"value is none" right:[right debugDescription]]];
-    } else if (left != nil) {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
     } else {
-        @throw [NSException exceptionWithName:NSGenericException reason:@"Unreachable code is reached" userInfo:@{@"left": left, @"right": right }];
+        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
     }
 }
 

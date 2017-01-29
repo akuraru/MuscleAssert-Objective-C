@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MuscleAssert () <MSDeepDiffProtocol>
+@interface MuscleAssert ()
 
 @property (nonatomic) NSMutableArray<MACustomDiff *> *differ;
 @property (nonatomic) MADiffarentTypeDiffer *diffarentTypeDiffer;

@@ -7,11 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-
 #import "MuscleAssert/MuscleAssert.h"
+#import "MuscleAssert/MAStringDiffer.h"
 
 @interface MuscleAssertTests : XCTestCase
-@property (nonatomic) MuscleAssert *assert;
+@property (nonatomic, nonnull) MuscleAssert *assert;
 @end
 
 @implementation MuscleAssertTests
@@ -32,6 +32,16 @@
 
 - (void)testMAssert {
     MAssert(@"a", @"a");
+}
+
+- (void)testCustomDiff {
+    MACustomDiff *differ = [[MACustomDiff alloc] init];
+    XCTAssertEqualObjects([differ diff:@"" right:@"" path:@"" delegatge:self.assert], @[]);
+}
+
+- (void)testMatchClass {
+    MAStringDiffer *differ = [[MAStringDiffer alloc] init];
+    XCTAssertTrue([@"" isKindOfClass:differ.matchClass]);
 }
 
 @end

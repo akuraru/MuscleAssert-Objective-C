@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import "MACustomDiff.h"
 
 #define MAssert(_left,_right) XCTAssertNil([[[MuscleAssert alloc] init] deepStricEqual:_left right:_right])
 
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class MACustomDiff;
 
-@interface MuscleAssert : NSObject
+@interface MuscleAssert : NSObject <MSDeepDiffProtocol>
 
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right;
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message;
