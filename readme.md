@@ -1,4 +1,4 @@
-# MuscleAssert
+# MuscleAssert [![Build Status](https://travis-ci.org/akuraru/MuscleAssert-Objective-C.svg?branch=master)](https://travis-ci.org/akuraru/MuscleAssert-Objective-C)
 
 A unit test framework for Objective-C using computation expressions.
 
