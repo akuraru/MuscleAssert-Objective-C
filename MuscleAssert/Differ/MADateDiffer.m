@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MADateDiffer
 
-- (Class)class {
+- (Class)matchClass {
     return [NSDate class];
 }
 

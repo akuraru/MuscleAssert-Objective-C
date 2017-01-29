@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MANumberDiffer
 
-- (Class)class {
+- (Class)matchClass {
     return [NSNumber class];
 }
 

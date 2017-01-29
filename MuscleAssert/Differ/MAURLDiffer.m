@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MAURLDiffer
 
-- (Class)class {
+- (Class)matchClass {
     return [NSURL class];
 }
 

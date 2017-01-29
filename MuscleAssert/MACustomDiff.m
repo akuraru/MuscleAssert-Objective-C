@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation MACustomClassDiff
 
 - (BOOL)match:(id)left right:(id)right {
-    return [left isKindOfClass:self.class] && [right isKindOfClass:self.class];
+    return [left isKindOfClass:self.matchClass] && [right isKindOfClass:self.matchClass];
 }
 
 @end

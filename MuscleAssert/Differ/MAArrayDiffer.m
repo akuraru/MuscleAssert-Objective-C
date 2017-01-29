@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MAArrayDiffer
 
-- (Class)class {
+- (Class)matchClass {
     return [NSArray class];
 }
 

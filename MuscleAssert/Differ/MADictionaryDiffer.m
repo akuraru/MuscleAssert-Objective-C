@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MADictionaryDiffer
 
-- (Class)class {
+- (Class)matchClass {
     return [NSDictionary class];
 }
 

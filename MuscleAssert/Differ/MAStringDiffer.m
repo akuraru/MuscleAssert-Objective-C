@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MAStringDiffer
 
-- (Class)class {
+- (Class)matchClass {
     return [NSString class];
 }
 
