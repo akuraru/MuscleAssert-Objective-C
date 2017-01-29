@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"MuscleAssertDifference(path: %@), left: %@, right: %@)", self.path, self.left, self.right];
+    return [NSString stringWithFormat:@"MuscleAssertDifference(path: %@, left: %@, right: %@)", self.path, self.left, self.right];
 }
 
 @end
