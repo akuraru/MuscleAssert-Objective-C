@@ -10,6 +10,7 @@
 #import "MuscleAssertDifference.h"
 #import "MACustomDiff.h"
 #import "MADiffer.h"
+#import "MAStandardFormatter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
                             [[MASameTypeDiffer alloc] init],
                             [[MADiffarentTypeDiffer alloc] init]
                             ];
+        self.formatter = [[MAStandardFormatter alloc] init];
     }
     return self;
 }
@@ -48,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message {
     NSArray<MuscleAssertDifference *> *differences = [self diff:right left:left path:nil];
-    return [self format:message differences:differences];
+    return [self.formatter format:message differences:differences];
 }
 
 - (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
@@ -66,17 +68,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)add:(MACustomDiff *)differ {
     [self.differ addObject:differ];
-}
-
-- (NSString *)format:(NSString *)message differences:(NSArray<MuscleAssertDifference *> *)differences {
-    if ([differences count] == 0) {
-        return nil;
-    }
-    NSString *text = (message != nil) ? [message stringByAppendingString:@"\n"] : @"\n";
-    for (MuscleAssertDifference *diff in differences) {
-        text = [text stringByAppendingFormat:@"path: .%@\n  left: %@\n  right: %@\n", diff.path, diff.left, diff.right];
-    }
-    return text;
 }
 
 @end
