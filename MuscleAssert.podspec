@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "akuraru" => "akuraru@gmail.com" }
   s.source       = {
-    :git => "https://github.com/akuraru/MuscleAssert.git",
+    :git => "https://github.com/akuraru/MuscleAssert-Objective-C.git",
     :tag => s.version.to_s
   }
   s.platform     = :ios, '9.0'
