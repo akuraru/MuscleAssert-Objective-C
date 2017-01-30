@@ -9,9 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "MuscleAssert.h"
 #import "TestModel.h"
-#import "MuscleAssertDifference.h"
+#import "MUSDifference.h"
 
-@interface StringNumberDiffer : MACustomClassDiff
+@interface StringNumberDiffer : MUSCustomClassDiffer
 @end
 
 @implementation StringNumberDiffer
@@ -21,7 +21,7 @@
     && ([right isKindOfClass:[NSString class]] || [right isKindOfClass:[NSNumber class]]);
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MSDeepDiffProtocol>)delegate {
+- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate {
     if ([left isKindOfClass:[NSNumber class]]) {
         left = [left stringValue];
     }
@@ -31,7 +31,7 @@
     if ([left isEqualToString:right]) {
         return @[];
     } else {
-        return @[[[MuscleAssertDifference alloc] initWithPath:path ?: @"" left:left right:right]];
+        return @[[[MUSDifference alloc] initWithPath:path ?: @"" left:left right:right]];
     }
 }
 

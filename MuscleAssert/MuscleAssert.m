@@ -7,17 +7,17 @@
 //
 
 #import "MuscleAssert.h"
-#import "MuscleAssertDifference.h"
-#import "MACustomDiff.h"
-#import "MADiffer.h"
-#import "MAStandardFormatter.h"
+#import "MUSDifference.h"
+#import "MUSCustomDiffer.h"
+#import "MUSDiffer.h"
+#import "MUSStandardFormatter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MuscleAssert ()
 
-@property (nonatomic) NSMutableArray<MACustomDiff *> *differ;
-@property (nonatomic) NSArray<MACustomDiff *> *lastDiffer;
+@property (nonatomic) NSMutableArray<MUSCustomDiffer *> *differ;
+@property (nonatomic) NSArray<MUSCustomDiffer *> *lastDiffer;
 
 @end
 
@@ -27,19 +27,19 @@ NS_ASSUME_NONNULL_BEGIN
     self = [super init];
     if (self) {
         self.differ = [@[
-                        [[MAOptionalDiffer alloc] init],
-                        [[MAStringDiffer alloc] init],
-                        [[MADateDiffer alloc] init],
-                        [[MAURLDiffer alloc] init],
-                        [[MANumberDiffer alloc] init],
-                        [[MADictionaryDiffer alloc] init],
-                        [[MAArrayDiffer alloc] init],
+                        [[MUSOptionalDiffer alloc] init],
+                        [[MUSStringDiffer alloc] init],
+                        [[MUSDateDiffer alloc] init],
+                        [[MUSURLDiffer alloc] init],
+                        [[MUSNumberDiffer alloc] init],
+                        [[MUSDictionaryDiffer alloc] init],
+                        [[MUSArrayDiffer alloc] init],
                         ] mutableCopy];
         self.lastDiffer = @[
-                            [[MASameTypeDiffer alloc] init],
-                            [[MADiffarentTypeDiffer alloc] init]
+                            [[MUSSameTypeDiffer alloc] init],
+                            [[MUSDifferentTypeDiffer alloc] init]
                             ];
-        self.formatter = [[MAStandardFormatter alloc] init];
+        self.formatter = [[MUSStandardFormatter alloc] init];
     }
     return self;
 }
@@ -49,24 +49,24 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message {
-    NSArray<MuscleAssertDifference *> *differences = [self diff:right left:left path:nil];
+    NSArray<MUSDifference *> *differences = [self diff:right left:left path:nil];
     return [self.formatter format:message differences:differences];
 }
 
-- (NSArray<MuscleAssertDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
+- (NSArray<MUSDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
     NSArray *differ = [[self differ] arrayByAddingObjectsFromArray:self.lastDiffer];
-    for (MACustomDiff *diff in differ) {
+    for (MUSCustomDiffer *diff in differ) {
         if ([diff match:left right:right]) {
             return [diff diff:left right:right path:path delegatge:self];
         }
     }
 }
 
-- (void)cons:(MACustomDiff *)differ {
+- (void)cons:(MUSCustomDiffer *)differ {
     [self.differ insertObject:differ atIndex:0];
 }
 
-- (void)add:(MACustomDiff *)differ {
+- (void)add:(MUSCustomDiffer *)differ {
     [self.differ addObject:differ];
 }
 

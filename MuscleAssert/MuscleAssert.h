@@ -6,24 +6,24 @@
 //
 //
 
-#import "MACustomDiff.h"
-#import "MAFormatterProtocol.h"
+#import "MUSCustomDiffer.h"
+#import "MUSFormatterProtocol.h"
 
 #define MAssert(_left,_right) XCTAssertNil([[[MuscleAssert alloc] init] deepStricEqual:_left right:_right])
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class MACustomDiff;
+@class MUSCustomDiffer;
 
-@interface MuscleAssert : NSObject <MSDeepDiffProtocol>
+@interface MuscleAssert : NSObject <MUSDeepDiffProtocol>
 
-@property (nonatomic, nonnull) id<MAFormatterProtocol> formatter;
+@property (nonatomic, nonnull) id<MUSFormatterProtocol> formatter;
 
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right;
 - (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message;
 
-- (void)cons:(MACustomDiff *)differ;
-- (void)add:(MACustomDiff *)differ;
+- (void)cons:(MUSCustomDiffer *)differ;
+- (void)add:(MUSCustomDiffer *)differ;
 
 @end
 
