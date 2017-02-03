@@ -9,6 +9,8 @@
 #import "MUSStandardFormatter.h"
 #import "MUSDifference.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @implementation MUSStandardFormatter
 
 - (NSString *)format:(NSString *)message differences:(NSArray<MUSDifference *> *)differences {
@@ -23,3 +25,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

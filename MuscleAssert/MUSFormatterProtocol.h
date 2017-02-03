@@ -11,6 +11,8 @@
 #ifndef MAFormatterProtocol_h
 #define MAFormatterProtocol_h
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class MUSDifference;
 
 @protocol MUSFormatterProtocol <NSObject>
@@ -19,5 +21,6 @@
 
 @end
 
+NS_ASSUME_NONNULL_END
 
 #endif /* MAFormatterProtocol_h */
