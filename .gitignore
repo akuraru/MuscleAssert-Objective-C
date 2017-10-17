@@ -17,3 +17,5 @@ DerivedData
 *.hmap
 *.xccheckout
 
+report.xml
+fastlane/test_output

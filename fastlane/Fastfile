@@ -1,0 +1,30 @@
+fastlane_version "1.104.0"
+
+default_platform :ios
+
+skip_docs
+
+platform :ios do
+  before_all do
+  end
+
+  lane :citest do |options|
+    case options[:ios]
+    when '11'
+      scan(device: 'iPad Air (11.0)')
+      scan(device: 'iPhone 5 (11.0)')
+    else
+      raise
+    end
+  end
+
+  lane :cocoapods_lint do |_options|
+    pod_lib_lint(private: true, allow_warnings: true)
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end
