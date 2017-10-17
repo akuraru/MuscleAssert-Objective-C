@@ -60,6 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
             return [diff diff:left right:right path:path delegatge:self];
         }
     }
+    return differ;
 }
 
 - (void)cons:(MUSCustomDiffer *)differ {
