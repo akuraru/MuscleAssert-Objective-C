@@ -83,15 +83,15 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)longestCommonSubsequence:(NSString *)left right:(NSString *)right {
-    NSUInteger leftLength = left.length;
-    NSUInteger rightLength = right.length;
+    const NSUInteger leftLength = left.length;
+    const NSUInteger rightLength = right.length;
     
     unsigned int **lengths = malloc((leftLength + 1) * sizeof(unsigned int *));
     
-    for (unsigned int i = 0; i < (leftLength + 1); ++i) {
+    for (unsigned int i = 0; i <= leftLength; ++i) {
         lengths[i] = malloc((rightLength + 1) * sizeof(unsigned int));
         
-        for (unsigned int j = 0; j < (rightLength + 1); ++j) {
+        for (unsigned int j = 0; j <= rightLength; ++j) {
             lengths[i][j] = 0;
         }
     }
@@ -117,25 +117,19 @@ NS_ASSUME_NONNULL_BEGIN
         } else if (lengths[x][y] == lengths[x][y - 1]) {
             --y;
         } else {
-            [lcs appendFormat:@"%C", [left characterAtIndex:x - 1]];
+            [lcs insertString:[NSString stringWithFormat:@"%C", [left characterAtIndex:x - 1]] atIndex:0];
             --x;
             --y;
         }
     }
     
-    for (unsigned int i = 0; i < leftLength + 1; ++i) {
+    for (unsigned int i = 0; i <= leftLength; ++i) {
         free(lengths[i]);
     }
     
     free(lengths);
     
-    NSMutableString *reversed = [NSMutableString stringWithCapacity:lcs.length];
-    
-    for (NSInteger i = lcs.length - 1; i >= 0; --i) {
-        [reversed appendFormat:@"%C", [lcs characterAtIndex:i]];
-    }
-    
-    return reversed;
+    return lcs;
 }
 
 @end
