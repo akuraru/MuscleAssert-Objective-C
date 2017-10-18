@@ -13,88 +13,64 @@ class MUSStringDiffer: MUSCustomClassDiffer {
         guard let left = left as? String, let right = right as? String else {
             fatalError("none reach")
         }
-        return [MUSDifference(path: path ?? "", left: left, right: right)]
-    }
-}
-
-/*
-#import "MUSStringDiffer.h"
-#import "MUSDifference.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@implementation MUSStringDiffer
-
-- (Class)matchClass {
-    return [NSString class];
-}
-
-- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(nullable NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate {
-    return [self stringDiff:right left:left path:path];
-}
-
-- (NSArray<MUSDifference *> *)stringDiff:(NSString *)right left:(NSString *)left path:(NSString *_Nullable)path {
-    NSArray *diff = [self lcsDiff:right right:left];
-    NSInteger length = [diff count];
+        let diff = lcsDiff(left: left, right: right)
     
-    NSMutableArray *result = [NSMutableArray array];
-    for (NSInteger index = 0; index < length; index++) {
-        [result addObject:[[MUSDifference alloc] initWithPath:[self pathByAppendingPath:path index:[diff[index][0] integerValue]]left:diff[index][2] right:diff[index][1] ]];
+        return diff.map { d in
+            MUSDifference(path: pathByAppendingPath(path:path, index:d.index), left:d.left, right:d.right)
+        }
     }
-    return result;
-}
-
-- (NSArray *)lcsDiff:(NSString *)left right:(NSString *)right {
-    NSString *lcs = [self longestCommonSubsequence:left right:right];
-    NSUInteger l1 = [left length];
-    NSUInteger l2 = [right length];
-    NSUInteger lc = [lcs length];
-    NSUInteger idx1 = 0;
-    NSUInteger idx2 = 0;
-    NSUInteger idxc = 0;
-    NSMutableString *s1 = [[NSMutableString alloc] initWithCapacity:l1];
-    NSMutableString *s2 = [[NSMutableString alloc] initWithCapacity:l2];
-    NSMutableArray *res = [NSMutableArray arrayWithCapacity:10];
-    for (;;) {
-        if (idxc >= lc) break;
-        unichar c1 = [left characterAtIndex:idx1];
-        unichar c2 = [right characterAtIndex:idx2];
-        unichar cc = [lcs characterAtIndex:idxc];
-        if ((c1 == cc) && (c2 == cc)) {
-            if ([s1 length] || [s2 length]) {
-                NSArray *e = @[@(idxc), s1, s2];
-                [res addObject:e];
-                s1 = [[NSMutableString alloc] initWithCapacity:l1];
-                s2 = [[NSMutableString alloc] initWithCapacity:l1];
+    func lcsDiff(left: String, right: String) -> [(index: Int, left: String, right: String)] {
+        let lcs = longestCommonSubsequence(left: left, right: right)
+        let l1 = left.endIndex
+        let l2 = right.endIndex
+        let lc = lcs.endIndex
+        var idx1 = left.startIndex;
+        var idx2 = right.startIndex;
+        var idxc = lcs.startIndex;
+        var s1 = String()
+        var s2 = String()
+        var res = [(index: Int, left: String, right: String)]()
+        while true {
+            if idxc >= lc { break }
+            let c1 = left[idx1]
+            let c2 = right[idx2]
+            let cc = lcs[idxc]
+            if ((c1 == cc) && (c2 == cc)) {
+                if !s1.isEmpty || !s2.isEmpty {
+                    res.append((idxc.encodedOffset, s1, s2))
+                    s1 = String()
+                    s2 = String()
+                }
+                idx1 = left.index(after: idx1)
+                idx2 = right.index(after: idx2)
+                idxc = lcs.index(after: idxc)
+                continue;
             }
-            idx1++;
-            idx2++;
-            idxc++;
-            continue;
+            if (c1 != cc) {
+                s1.append(c1)
+                idx1 = left.index(after: idx1)
+            }
+            if (c2 != cc) {
+                s2.append(c2)
+                idx2 = right.index(after: idx2)
+            }
         }
-        if (c1 != cc) {
-            [s1 appendString:[NSString stringWithCharacters:&c1 length:1]];
-            idx1++;
+        if (idx1 < l1) {
+            s1.append(String(left[idx1..<left.endIndex]))
         }
-        if (c2 != cc) {
-            [s2 appendString:[NSString stringWithCharacters:&c2 length:1]];
-            idx2++;
+        if (idx2 < l2) {
+            s2.append(String(right[idx2..<right.endIndex]))
         }
+        if !s1.isEmpty || !s2.isEmpty {
+            res.append((idxc.encodedOffset, s1, s2))
+        }
+        return res;
     }
-    if (idx1 < l1) {
-        [s1 appendString:[left substringFromIndex:idx1]];
+    func longestCommonSubsequence(left : String, right: String) -> String {
+        return ""
     }
-    if (idx2 < l2) {
-        [s2 appendString:[right substringFromIndex:idx2]];
-    }
-    if ([s1 length] || [s2 length]) {
-        NSArray *e = @[@(idxc), s1, s2];
-        [res addObject:e];
-    }
-    return res;
 }
-
-- (NSString *)longestCommonSubsequence:(NSString *)left right:(NSString *)right {
+    /*
     const NSUInteger leftLength = left.length;
     const NSUInteger rightLength = right.length;
     
@@ -143,9 +119,5 @@ NS_ASSUME_NONNULL_BEGIN
     
     return lcs;
 }
-
-@end
-
-NS_ASSUME_NONNULL_END
-*/
-
+}
+ */
