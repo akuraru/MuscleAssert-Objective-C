@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A8C60F06B2C07E10D164647CF10B98A /* MUSDateDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = ED53A763BCD961550376599000B0645A /* MUSDateDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FD96C732404BC92C4AD839AB457B6B2 /* MUSDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = D0EB83BE2E1E1879D0D9C64A84F062EF /* MUSDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		202154F2259762FE6B95FD35A32F0F3E /* MUSStringDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12DD3C1CB25FC3F5E9BEFCAC07840B /* MUSStringDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25E21E54B45EF470D1AFD4FD410CCF0E /* MUSStringDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAFACD3C1D863623BDCD011481A97 /* MUSStringDiffer.m */; };
 		27E133471E7B4ADFB4D1B757745E74D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		2C59ADFECB6712CC9A4E0028978BFB67 /* Pods-Test-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF84CBF570A2B583B548E4398631B50 /* Pods-Test-dummy.m */; };
-		3FDC3B989FA1D9B7A6C4D434D4AAA6F3 /* MUSNumberDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72FD621FF4C0E7C443F2DC3045B7E7 /* MUSNumberDiffer.m */; };
-		42A634191537BA83EA1B88F3D24DD9F5 /* MUSDifferentTypeDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 335C81B4929C17E664C084CF57E8C988 /* MUSDifferentTypeDiffer.m */; };
-		46AEF6C037F7DFEA4681C249288237C1 /* MUSStandardFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F2190E881870DE6C8B3F268BAF415D /* MUSStandardFormatter.m */; };
-		4D4F65435F7822E82AB18A3AEBCF9D5F /* MUSDictionaryDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A482FAE514E91F414BA864D6AB942F3 /* MUSDictionaryDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4EC177E982BB0D09FF819F24474A4C68 /* MUSDifferentTypeDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4EFBBD33A1237B3E39A33381671067 /* MUSDifferentTypeDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AFA50ECA84236899FFD522AB2440216 /* MUSNumberDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CE82B2E43C5FFC9AC41B389B6A9C8BE /* MUSNumberDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F4B7A533F71B492DADF54D935C20712 /* MUSSameTypeDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 711910BA851FEBEDF6E89F3B4F62969F /* MUSSameTypeDiffer.m */; };
-		72E64055492ADEBFB24391E7BF4037FA /* MUSStringDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEDB561782805AFBC778DAAA9DC43BBE /* MUSStringDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		734BE647ED8ED4F77B989DC6939857B6 /* MUSCustomDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BF6E4069E10A5AD20F84ABFD1750CE /* MUSCustomDiffer.m */; };
-		74A38636B22A49288E51846AF5A0A74E /* MUSDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A4CC632D89ECE7B5A8693C2F2D40B607 /* MUSDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BCC18924F8FC514960EE23072D4A19E /* MUSDateDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9C175A2CE1C03EFE90260D748F18D7 /* MUSDateDiffer.m */; };
-		7F2E5BE2A04E12CC6F09649D27AB6FDB /* MUSOptionalDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C44C5C9F395DB4770FD4F7AC233714E /* MUSOptionalDiffer.m */; };
-		829600DC211D15F98639E2F4C291F6DB /* MUSStandardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D5F04C2B769EC3E9EB17185D977E02 /* MUSStandardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87EF42FF06D2E2920DEE8FB324922EBC /* MuscleAssert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C15383D685FB54C81BC6D4FB7B583B /* MuscleAssert-dummy.m */; };
-		94A3EB598C66977F31D42172526C0626 /* MUSDifference.h in Headers */ = {isa = PBXBuildFile; fileRef = EC60518C66F8C06E90E4479F42E5A9E5 /* MUSDifference.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B57EA886DCB80A9230E817C3C9B61E5 /* MUSDictionaryDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED48607CBF48FCF4C60F1C34BD2817F1 /* MUSDictionaryDiffer.m */; };
-		A0B995955E6D3EF5C364E8D00C2D8ED2 /* MUSFormatterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 41515B5FD64B2881DDCE7E72343A3C54 /* MUSFormatterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		329C77E76D31B5EA34E40407123738A3 /* MUSStandardFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C07A2B0CEC3DE4FBA29E309B98321 /* MUSStandardFormatter.m */; };
+		3C44A65CDFD37E66C1773E23EC2B739B /* MUSDateDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = F117E369669D1B408A46B0CEB7CD5BF5 /* MUSDateDiffer.m */; };
+		471AA681855791E885C3AB5D18FFB94D /* MUSStandardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A294F919482C9EBE714D5A0A24A8FD4 /* MUSStandardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A22A12B7483E590A1F28A9C947C7621 /* MUSOptionalDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = F23DF3559F2A563E52650EB3365DC158 /* MUSOptionalDiffer.m */; };
+		4BF1DC74ADF83D344D3309BCDC8A202F /* MUSOptionalDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F4DBF61C51B3C1D86D19D831D76E1D /* MUSOptionalDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		532CA7790EE2E7A7DE597FFE690538D0 /* MUSDifference.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAFC056A08E4A27499AA7BE7C74298C /* MUSDifference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		581E69AC53AD8A6723248D314462E0CF /* MUSDictionaryDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = BB186C6B620C8BFEE199FE9B281B728B /* MUSDictionaryDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		586DC03F6C7B4D29083A61F35BCC1CEA /* MUSDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B7059C8FD85D40AF7F7D20AA405A14 /* MUSDifference.m */; };
+		5915DE9E5CF02F9739F1BBF66B228C87 /* MUSSameTypeDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD08DC9E5EFC984D1DD71E1CEEC55CF /* MUSSameTypeDiffer.m */; };
+		5B41B229CD7B20025C20EF840E5F6D5A /* MuscleAssert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 087D017ACF1C59A1D9155C9BB5D4F719 /* MuscleAssert-dummy.m */; };
+		7102A81793B434B1987395F949DD7963 /* MUSArrayDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = C6A223E0AE92E47670953D201D6955D5 /* MUSArrayDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71B90C4B55764E6B3E97ED11DFB7409C /* MUSNumberDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4904923B0414DDEFDD3B16C74B3765A2 /* MUSNumberDiffer.m */; };
+		80168CA56774390115DFC3E0D5AA0658 /* MUSCustomDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58398016C5D5D552CB55182EA160B526 /* MUSCustomDiffer.m */; };
+		8D9856634E59934F239A2250AEB60ADE /* MuscleAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A50C8C85E8A6E1C49EFBF13DA1AEE14 /* MuscleAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9281DD87346588FE887A364803D8A4FB /* MUSFormatterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B07EE24866D1857DCCBCC78DF70F73 /* MUSFormatterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F710FE210561AA46B0C181394D68F7C /* MuscleAssert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4678DFFFC43CA9779ACE8E38BC250462 /* MuscleAssert.m */; };
 		A533E37F52AC2DE33ED53089425F560B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		AEDC56819A492AF6966AC0264152AABF /* MUSArrayDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E5DF5314316A452EED268EB92E5735 /* MUSArrayDiffer.m */; };
+		AC556B1A0BA8C8CC5EE9C0C3D1A04D54 /* MUSDifferentTypeDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F02C268B50271D14E36D3C4FC6C2580C /* MUSDifferentTypeDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACC872D2F043DEA1926457E7F6A3C51E /* MUSNumberDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B38602B749C3B1ECEFBEC14307C9FA9 /* MUSNumberDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0C7660C9E1609E1F2F3105DC4F11DAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		C765070E02D81A8515445F0DBDAE147C /* MUSStringDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A745D6F6087130138A9E776265A29 /* MUSStringDiffer.m */; };
-		CF8F554C840C244D0082F2C9115619A5 /* MUSURLDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF245FB414DB843A7D6C72B361A5244 /* MUSURLDiffer.m */; };
-		D1213A4B38604420077DD4A4C7C9D822 /* MUSArrayDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F46FF016DB3D3DAF8063796F10D892B /* MUSArrayDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB5F9017D63E35CCEDC7B3588DFB9783 /* MuscleAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A74FF6B22D720DFB8A832B80157F0E0 /* MuscleAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E04BE2F4D4E71C93C8D98562584A7FFA /* MUSDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 33880B8A0E75743D4FA3AD3B558026F7 /* MUSDifference.m */; };
-		E262EF4F7CFA71C0E04DA67C7F48C452 /* MUSSameTypeDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = E602B4799CB25AD2E9C6BC128CB8FECA /* MUSSameTypeDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6AEF67AB6D8F9B4188F38822673E2C9 /* MUSURLDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 43D72D0F59826A69884B7592B1950A31 /* MUSURLDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4BC140BD7845D2AA6BC39C88B06935A /* MUSCustomDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AB2CA74DFB644D895664C329E12017 /* MUSCustomDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA439F831BA4172AE7F30BD5C3892915 /* MUSDictionaryDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4333A4293F4A0C015579671CC470CDE7 /* MUSDictionaryDiffer.m */; };
+		C17B276E6F7952B1B87FB94B2B0B79DF /* MUSCustomDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 79171EBA41E63FEDA7698D062447FCAD /* MUSCustomDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5DE70566A7BA47C03CAF9A630D0E81B /* MUSDateDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = EF28B09CF6D12F657888899065E30C58 /* MUSDateDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0E561F364DC770F76B76BFAD769D02C /* MUSURLDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 195334A45988835DEAA479061D9CC827 /* MUSURLDiffer.m */; };
+		D7E90B28CA4BCE8D55376A2A766120C9 /* MUSSameTypeDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1DFA55F8A965A7143837693743F1E1 /* MUSSameTypeDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5412DC23A31F3BD2DD9F65CDF63E191 /* MUSArrayDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 880F720741CC7EF3DD25923D21915A0F /* MUSArrayDiffer.m */; };
+		F79A378B1DBA4C57CD9FDF95598654BD /* MUSDifferentTypeDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA5B4BE7CF427C7F5CAF14324E47DF /* MUSDifferentTypeDiffer.m */; };
 		F9BFE57BBE7C58241F19511CB8C97C8B /* Pods-Benchmark-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED70A1AEC4EC342B041A7336D69B407 /* Pods-Benchmark-dummy.m */; };
-		FC5ABA9365EDBEF80FCD08DBD205D077 /* MuscleAssert.m in Sources */ = {isa = PBXBuildFile; fileRef = 42473CBA13453C0AAD2836CBC475472C /* MuscleAssert.m */; };
-		FDFA6A1F15957FDAEFF7149000DB0F24 /* MUSOptionalDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DED04DFDFEC2EEA93CA186BFB1BCD8D /* MUSOptionalDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDEB3B3C109193661B6DD1219180EC18 /* MUSURLDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47102D9BD47279A10EAE4B4D79B2AE1A /* MUSURLDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,55 +54,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F5A745D6F6087130138A9E776265A29 /* MUSStringDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSStringDiffer.m; sourceTree = "<group>"; };
-		1A72FD621FF4C0E7C443F2DC3045B7E7 /* MUSNumberDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSNumberDiffer.m; sourceTree = "<group>"; };
-		20C15383D685FB54C81BC6D4FB7B583B /* MuscleAssert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MuscleAssert-dummy.m"; sourceTree = "<group>"; };
-		2A74FF6B22D720DFB8A832B80157F0E0 /* MuscleAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MuscleAssert.h; path = MuscleAssert/MuscleAssert.h; sourceTree = "<group>"; };
-		335C81B4929C17E664C084CF57E8C988 /* MUSDifferentTypeDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDifferentTypeDiffer.m; sourceTree = "<group>"; };
-		33880B8A0E75743D4FA3AD3B558026F7 /* MUSDifference.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MUSDifference.m; path = MuscleAssert/MUSDifference.m; sourceTree = "<group>"; };
-		38E5DF5314316A452EED268EB92E5735 /* MUSArrayDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSArrayDiffer.m; sourceTree = "<group>"; };
+		087D017ACF1C59A1D9155C9BB5D4F719 /* MuscleAssert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MuscleAssert-dummy.m"; sourceTree = "<group>"; };
+		0B38602B749C3B1ECEFBEC14307C9FA9 /* MUSNumberDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSNumberDiffer.h; sourceTree = "<group>"; };
+		195334A45988835DEAA479061D9CC827 /* MUSURLDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSURLDiffer.m; sourceTree = "<group>"; };
+		1CCD3FC434290689695552EDD10BAEC8 /* MuscleAssert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MuscleAssert-prefix.pch"; sourceTree = "<group>"; };
+		24AAAFACD3C1D863623BDCD011481A97 /* MUSStringDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSStringDiffer.m; sourceTree = "<group>"; };
+		2A294F919482C9EBE714D5A0A24A8FD4 /* MUSStandardFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSStandardFormatter.h; sourceTree = "<group>"; };
+		32B7059C8FD85D40AF7F7D20AA405A14 /* MUSDifference.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDifference.m; sourceTree = "<group>"; };
 		3AD297B82BAA1BD9E31A22EA2914BA21 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Test.a"; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CE82B2E43C5FFC9AC41B389B6A9C8BE /* MUSNumberDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSNumberDiffer.h; sourceTree = "<group>"; };
-		41515B5FD64B2881DDCE7E72343A3C54 /* MUSFormatterProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSFormatterProtocol.h; path = MuscleAssert/MUSFormatterProtocol.h; sourceTree = "<group>"; };
-		42473CBA13453C0AAD2836CBC475472C /* MuscleAssert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MuscleAssert.m; path = MuscleAssert/MuscleAssert.m; sourceTree = "<group>"; };
-		43D72D0F59826A69884B7592B1950A31 /* MUSURLDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSURLDiffer.h; sourceTree = "<group>"; };
-		4DED04DFDFEC2EEA93CA186BFB1BCD8D /* MUSOptionalDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSOptionalDiffer.h; sourceTree = "<group>"; };
-		5C44C5C9F395DB4770FD4F7AC233714E /* MUSOptionalDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSOptionalDiffer.m; sourceTree = "<group>"; };
-		5D4EFBBD33A1237B3E39A33381671067 /* MUSDifferentTypeDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDifferentTypeDiffer.h; sourceTree = "<group>"; };
+		3BD08DC9E5EFC984D1DD71E1CEEC55CF /* MUSSameTypeDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSSameTypeDiffer.m; sourceTree = "<group>"; };
+		416CDFD30E70DCEAC2EFB79798FA9F08 /* MuscleAssert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MuscleAssert.xcconfig; sourceTree = "<group>"; };
+		4333A4293F4A0C015579671CC470CDE7 /* MUSDictionaryDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDictionaryDiffer.m; sourceTree = "<group>"; };
+		4678DFFFC43CA9779ACE8E38BC250462 /* MuscleAssert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MuscleAssert.m; sourceTree = "<group>"; };
+		47102D9BD47279A10EAE4B4D79B2AE1A /* MUSURLDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSURLDiffer.h; sourceTree = "<group>"; };
+		4904923B0414DDEFDD3B16C74B3765A2 /* MUSNumberDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSNumberDiffer.m; sourceTree = "<group>"; };
+		58398016C5D5D552CB55182EA160B526 /* MUSCustomDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSCustomDiffer.m; sourceTree = "<group>"; };
 		5D7F2D529F9F9F03DFCCD6014AAF5143 /* Pods-Test-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Test-resources.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6990DC16FDF28AFC8E7F4D72548F9CEE /* libPods-Benchmark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Benchmark.a"; path = "libPods-Benchmark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CF245FB414DB843A7D6C72B361A5244 /* MUSURLDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSURLDiffer.m; sourceTree = "<group>"; };
 		6CF84CBF570A2B583B548E4398631B50 /* Pods-Test-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Test-dummy.m"; sourceTree = "<group>"; };
-		711910BA851FEBEDF6E89F3B4F62969F /* MUSSameTypeDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSSameTypeDiffer.m; sourceTree = "<group>"; };
+		6F1DFA55F8A965A7143837693743F1E1 /* MUSSameTypeDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSSameTypeDiffer.h; sourceTree = "<group>"; };
 		7559902DEE38E56B8308A1606F76B5A6 /* Pods-Test-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Test-acknowledgements.plist"; sourceTree = "<group>"; };
 		78BAC72EF20CE34BA61528E654D5313F /* Pods-Test-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Test-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7A482FAE514E91F414BA864D6AB942F3 /* MUSDictionaryDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDictionaryDiffer.h; sourceTree = "<group>"; };
+		79171EBA41E63FEDA7698D062447FCAD /* MUSCustomDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSCustomDiffer.h; sourceTree = "<group>"; };
+		7A50C8C85E8A6E1C49EFBF13DA1AEE14 /* MuscleAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MuscleAssert.h; sourceTree = "<group>"; };
+		7D12DD3C1CB25FC3F5E9BEFCAC07840B /* MUSStringDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSStringDiffer.h; sourceTree = "<group>"; };
 		7DF48253BB3CD21906AB172CA0FCEA0A /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		7F2ADBB9F202DC57D9ED76E1024654D2 /* Pods-Benchmark-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Benchmark-frameworks.sh"; sourceTree = "<group>"; };
 		834D3FCAF21FE3650A316DD6193A1572 /* libMuscleAssert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMuscleAssert.a; path = libMuscleAssert.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BE2C825E6DF07D5FC09A4C3F61A3BB /* Pods-Benchmark-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Benchmark-resources.sh"; sourceTree = "<group>"; };
+		84EA5B4BE7CF427C7F5CAF14324E47DF /* MUSDifferentTypeDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDifferentTypeDiffer.m; sourceTree = "<group>"; };
 		8680FA73D1B86D9B905E16300F34EDF3 /* Pods-Benchmark-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Benchmark-acknowledgements.plist"; sourceTree = "<group>"; };
-		88D5F04C2B769EC3E9EB17185D977E02 /* MUSStandardFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSStandardFormatter.h; path = MuscleAssert/MUSStandardFormatter.h; sourceTree = "<group>"; };
+		880F720741CC7EF3DD25923D21915A0F /* MUSArrayDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSArrayDiffer.m; sourceTree = "<group>"; };
 		8ED70A1AEC4EC342B041A7336D69B407 /* Pods-Benchmark-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Benchmark-dummy.m"; sourceTree = "<group>"; };
-		8F46FF016DB3D3DAF8063796F10D892B /* MUSArrayDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSArrayDiffer.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97F2190E881870DE6C8B3F268BAF415D /* MUSStandardFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MUSStandardFormatter.m; path = MuscleAssert/MUSStandardFormatter.m; sourceTree = "<group>"; };
 		97F3935E18BD3B490195F0BF36BAAA42 /* Pods-Benchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Benchmark.debug.xcconfig"; sourceTree = "<group>"; };
-		A125B4F5E3454FD458A5C22372EC91E3 /* MuscleAssert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MuscleAssert-prefix.pch"; sourceTree = "<group>"; };
-		A1D0F0381121F53419D52A15D2B425FD /* MuscleAssert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MuscleAssert.xcconfig; sourceTree = "<group>"; };
-		A4CC632D89ECE7B5A8693C2F2D40B607 /* MUSDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDiffer.h; sourceTree = "<group>"; };
+		9A9C07A2B0CEC3DE4FBA29E309B98321 /* MUSStandardFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSStandardFormatter.m; sourceTree = "<group>"; };
+		A2F4DBF61C51B3C1D86D19D831D76E1D /* MUSOptionalDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSOptionalDiffer.h; sourceTree = "<group>"; };
 		A7DB93EFA180BADE6C69AAFB396F690E /* Pods-Test-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Test-frameworks.sh"; sourceTree = "<group>"; };
 		A843D0EAEDA8EB6D556F668A92C631FB /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		AEAFC056A08E4A27499AA7BE7C74298C /* MUSDifference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDifference.h; sourceTree = "<group>"; };
 		B1331168771DEFF01BEEC805025473B9 /* Pods-Benchmark-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Benchmark-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BEDB561782805AFBC778DAAA9DC43BBE /* MUSStringDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSStringDiffer.h; sourceTree = "<group>"; };
-		C4AB2CA74DFB644D895664C329E12017 /* MUSCustomDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSCustomDiffer.h; path = MuscleAssert/MUSCustomDiffer.h; sourceTree = "<group>"; };
-		CF9C175A2CE1C03EFE90260D748F18D7 /* MUSDateDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDateDiffer.m; sourceTree = "<group>"; };
-		D5BF6E4069E10A5AD20F84ABFD1750CE /* MUSCustomDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MUSCustomDiffer.m; path = MuscleAssert/MUSCustomDiffer.m; sourceTree = "<group>"; };
-		E602B4799CB25AD2E9C6BC128CB8FECA /* MUSSameTypeDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSSameTypeDiffer.h; sourceTree = "<group>"; };
-		EC60518C66F8C06E90E4479F42E5A9E5 /* MUSDifference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSDifference.h; path = MuscleAssert/MUSDifference.h; sourceTree = "<group>"; };
-		ED48607CBF48FCF4C60F1C34BD2817F1 /* MUSDictionaryDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDictionaryDiffer.m; sourceTree = "<group>"; };
-		ED53A763BCD961550376599000B0645A /* MUSDateDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDateDiffer.h; sourceTree = "<group>"; };
+		BB186C6B620C8BFEE199FE9B281B728B /* MUSDictionaryDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDictionaryDiffer.h; sourceTree = "<group>"; };
+		C6A223E0AE92E47670953D201D6955D5 /* MUSArrayDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSArrayDiffer.h; sourceTree = "<group>"; };
+		D0EB83BE2E1E1879D0D9C64A84F062EF /* MUSDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDiffer.h; sourceTree = "<group>"; };
+		D7B07EE24866D1857DCCBCC78DF70F73 /* MUSFormatterProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSFormatterProtocol.h; sourceTree = "<group>"; };
+		EF28B09CF6D12F657888899065E30C58 /* MUSDateDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDateDiffer.h; sourceTree = "<group>"; };
+		F02C268B50271D14E36D3C4FC6C2580C /* MUSDifferentTypeDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDifferentTypeDiffer.h; sourceTree = "<group>"; };
+		F117E369669D1B408A46B0CEB7CD5BF5 /* MUSDateDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDateDiffer.m; sourceTree = "<group>"; };
+		F23DF3559F2A563E52650EB3365DC158 /* MUSOptionalDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSOptionalDiffer.m; sourceTree = "<group>"; };
 		FDE8EAE301D85BE5FCB35BB518FC2786 /* Pods-Benchmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Benchmark.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +143,24 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		1F78897DC8968E5737016159BE9386CD /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				7A50C8C85E8A6E1C49EFBF13DA1AEE14 /* MuscleAssert.h */,
+				4678DFFFC43CA9779ACE8E38BC250462 /* MuscleAssert.m */,
+				79171EBA41E63FEDA7698D062447FCAD /* MUSCustomDiffer.h */,
+				58398016C5D5D552CB55182EA160B526 /* MUSCustomDiffer.m */,
+				AEAFC056A08E4A27499AA7BE7C74298C /* MUSDifference.h */,
+				32B7059C8FD85D40AF7F7D20AA405A14 /* MUSDifference.m */,
+				D7B07EE24866D1857DCCBCC78DF70F73 /* MUSFormatterProtocol.h */,
+				2A294F919482C9EBE714D5A0A24A8FD4 /* MUSStandardFormatter.h */,
+				9A9C07A2B0CEC3DE4FBA29E309B98321 /* MUSStandardFormatter.m */,
+				53F3A9902ECAA4B0A9BAFBA0039122E2 /* Differ */,
+			);
+			name = ObjC;
+			path = ObjC;
+			sourceTree = "<group>";
+		};
 		271D81194B477E2C1E6DABCE3D5BB4E9 /* Pods-Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,29 +176,57 @@
 			path = "Target Support Files/Pods-Test";
 			sourceTree = "<group>";
 		};
+		2AAA17109237D962AB356A3438D766CE /* MuscleAssert */ = {
+			isa = PBXGroup;
+			children = (
+				57330C2370AE8FF55D3C77541853ED71 /* ObjC */,
+				7F397E139466E0701F8AEB54ABE77197 /* Support Files */,
+			);
+			name = MuscleAssert;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3CE8A62D6D6C2A0FD79A8943291555C1 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8EF315F3E79E39FD9CEEC5A50C301AB9 /* MuscleAssert */,
+				2AAA17109237D962AB356A3438D766CE /* MuscleAssert */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		590167FBF047671BB783235CBCE60AC9 /* Core */ = {
+		53F3A9902ECAA4B0A9BAFBA0039122E2 /* Differ */ = {
 			isa = PBXGroup;
 			children = (
-				2A74FF6B22D720DFB8A832B80157F0E0 /* MuscleAssert.h */,
-				42473CBA13453C0AAD2836CBC475472C /* MuscleAssert.m */,
-				C4AB2CA74DFB644D895664C329E12017 /* MUSCustomDiffer.h */,
-				D5BF6E4069E10A5AD20F84ABFD1750CE /* MUSCustomDiffer.m */,
-				EC60518C66F8C06E90E4479F42E5A9E5 /* MUSDifference.h */,
-				33880B8A0E75743D4FA3AD3B558026F7 /* MUSDifference.m */,
-				41515B5FD64B2881DDCE7E72343A3C54 /* MUSFormatterProtocol.h */,
-				88D5F04C2B769EC3E9EB17185D977E02 /* MUSStandardFormatter.h */,
-				97F2190E881870DE6C8B3F268BAF415D /* MUSStandardFormatter.m */,
-				C16D69272A5BE493F0DA28E3AD79C489 /* Differ */,
+				C6A223E0AE92E47670953D201D6955D5 /* MUSArrayDiffer.h */,
+				880F720741CC7EF3DD25923D21915A0F /* MUSArrayDiffer.m */,
+				EF28B09CF6D12F657888899065E30C58 /* MUSDateDiffer.h */,
+				F117E369669D1B408A46B0CEB7CD5BF5 /* MUSDateDiffer.m */,
+				BB186C6B620C8BFEE199FE9B281B728B /* MUSDictionaryDiffer.h */,
+				4333A4293F4A0C015579671CC470CDE7 /* MUSDictionaryDiffer.m */,
+				D0EB83BE2E1E1879D0D9C64A84F062EF /* MUSDiffer.h */,
+				F02C268B50271D14E36D3C4FC6C2580C /* MUSDifferentTypeDiffer.h */,
+				84EA5B4BE7CF427C7F5CAF14324E47DF /* MUSDifferentTypeDiffer.m */,
+				0B38602B749C3B1ECEFBEC14307C9FA9 /* MUSNumberDiffer.h */,
+				4904923B0414DDEFDD3B16C74B3765A2 /* MUSNumberDiffer.m */,
+				A2F4DBF61C51B3C1D86D19D831D76E1D /* MUSOptionalDiffer.h */,
+				F23DF3559F2A563E52650EB3365DC158 /* MUSOptionalDiffer.m */,
+				6F1DFA55F8A965A7143837693743F1E1 /* MUSSameTypeDiffer.h */,
+				3BD08DC9E5EFC984D1DD71E1CEEC55CF /* MUSSameTypeDiffer.m */,
+				7D12DD3C1CB25FC3F5E9BEFCAC07840B /* MUSStringDiffer.h */,
+				24AAAFACD3C1D863623BDCD011481A97 /* MUSStringDiffer.m */,
+				47102D9BD47279A10EAE4B4D79B2AE1A /* MUSURLDiffer.h */,
+				195334A45988835DEAA479061D9CC827 /* MUSURLDiffer.m */,
 			);
-			name = Core;
+			name = Differ;
+			path = Differ;
+			sourceTree = "<group>";
+		};
+		57330C2370AE8FF55D3C77541853ED71 /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				ABD5B9D2DE671BD7E7E4746457B07FCD /* MuscleAssert */,
+			);
+			name = ObjC;
 			sourceTree = "<group>";
 		};
 		61EA1D81F4C4E1EEEB86012A3D71A1D7 /* Pods-Benchmark */ = {
@@ -209,14 +255,24 @@
 			);
 			sourceTree = "<group>";
 		};
-		8EF315F3E79E39FD9CEEC5A50C301AB9 /* MuscleAssert */ = {
+		7F397E139466E0701F8AEB54ABE77197 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				590167FBF047671BB783235CBCE60AC9 /* Core */,
-				EDB22B1217FF7D6266A9C02A332EFF93 /* Support Files */,
+				416CDFD30E70DCEAC2EFB79798FA9F08 /* MuscleAssert.xcconfig */,
+				087D017ACF1C59A1D9155C9BB5D4F719 /* MuscleAssert-dummy.m */,
+				1CCD3FC434290689695552EDD10BAEC8 /* MuscleAssert-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/MuscleAssert";
+			sourceTree = "<group>";
+		};
+		ABD5B9D2DE671BD7E7E4746457B07FCD /* MuscleAssert */ = {
+			isa = PBXGroup;
+			children = (
+				1F78897DC8968E5737016159BE9386CD /* ObjC */,
 			);
 			name = MuscleAssert;
-			path = ..;
+			path = MuscleAssert;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -225,33 +281,6 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C16D69272A5BE493F0DA28E3AD79C489 /* Differ */ = {
-			isa = PBXGroup;
-			children = (
-				8F46FF016DB3D3DAF8063796F10D892B /* MUSArrayDiffer.h */,
-				38E5DF5314316A452EED268EB92E5735 /* MUSArrayDiffer.m */,
-				ED53A763BCD961550376599000B0645A /* MUSDateDiffer.h */,
-				CF9C175A2CE1C03EFE90260D748F18D7 /* MUSDateDiffer.m */,
-				7A482FAE514E91F414BA864D6AB942F3 /* MUSDictionaryDiffer.h */,
-				ED48607CBF48FCF4C60F1C34BD2817F1 /* MUSDictionaryDiffer.m */,
-				A4CC632D89ECE7B5A8693C2F2D40B607 /* MUSDiffer.h */,
-				5D4EFBBD33A1237B3E39A33381671067 /* MUSDifferentTypeDiffer.h */,
-				335C81B4929C17E664C084CF57E8C988 /* MUSDifferentTypeDiffer.m */,
-				3CE82B2E43C5FFC9AC41B389B6A9C8BE /* MUSNumberDiffer.h */,
-				1A72FD621FF4C0E7C443F2DC3045B7E7 /* MUSNumberDiffer.m */,
-				4DED04DFDFEC2EEA93CA186BFB1BCD8D /* MUSOptionalDiffer.h */,
-				5C44C5C9F395DB4770FD4F7AC233714E /* MUSOptionalDiffer.m */,
-				E602B4799CB25AD2E9C6BC128CB8FECA /* MUSSameTypeDiffer.h */,
-				711910BA851FEBEDF6E89F3B4F62969F /* MUSSameTypeDiffer.m */,
-				BEDB561782805AFBC778DAAA9DC43BBE /* MUSStringDiffer.h */,
-				0F5A745D6F6087130138A9E776265A29 /* MUSStringDiffer.m */,
-				43D72D0F59826A69884B7592B1950A31 /* MUSURLDiffer.h */,
-				6CF245FB414DB843A7D6C72B361A5244 /* MUSURLDiffer.m */,
-			);
-			name = Differ;
-			path = MuscleAssert/Differ;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -272,39 +301,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDB22B1217FF7D6266A9C02A332EFF93 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A1D0F0381121F53419D52A15D2B425FD /* MuscleAssert.xcconfig */,
-				20C15383D685FB54C81BC6D4FB7B583B /* MuscleAssert-dummy.m */,
-				A125B4F5E3454FD458A5C22372EC91E3 /* MuscleAssert-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/MuscleAssert";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1F5C41C873E01E67AD685A5A87BE2E77 /* Headers */ = {
+		D916266A4A11E2B61897714266482F19 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1213A4B38604420077DD4A4C7C9D822 /* MUSArrayDiffer.h in Headers */,
-				DB5F9017D63E35CCEDC7B3588DFB9783 /* MuscleAssert.h in Headers */,
-				F4BC140BD7845D2AA6BC39C88B06935A /* MUSCustomDiffer.h in Headers */,
-				1A8C60F06B2C07E10D164647CF10B98A /* MUSDateDiffer.h in Headers */,
-				4D4F65435F7822E82AB18A3AEBCF9D5F /* MUSDictionaryDiffer.h in Headers */,
-				74A38636B22A49288E51846AF5A0A74E /* MUSDiffer.h in Headers */,
-				94A3EB598C66977F31D42172526C0626 /* MUSDifference.h in Headers */,
-				4EC177E982BB0D09FF819F24474A4C68 /* MUSDifferentTypeDiffer.h in Headers */,
-				A0B995955E6D3EF5C364E8D00C2D8ED2 /* MUSFormatterProtocol.h in Headers */,
-				6AFA50ECA84236899FFD522AB2440216 /* MUSNumberDiffer.h in Headers */,
-				FDFA6A1F15957FDAEFF7149000DB0F24 /* MUSOptionalDiffer.h in Headers */,
-				E262EF4F7CFA71C0E04DA67C7F48C452 /* MUSSameTypeDiffer.h in Headers */,
-				829600DC211D15F98639E2F4C291F6DB /* MUSStandardFormatter.h in Headers */,
-				72E64055492ADEBFB24391E7BF4037FA /* MUSStringDiffer.h in Headers */,
-				E6AEF67AB6D8F9B4188F38822673E2C9 /* MUSURLDiffer.h in Headers */,
+				7102A81793B434B1987395F949DD7963 /* MUSArrayDiffer.h in Headers */,
+				8D9856634E59934F239A2250AEB60ADE /* MuscleAssert.h in Headers */,
+				C17B276E6F7952B1B87FB94B2B0B79DF /* MUSCustomDiffer.h in Headers */,
+				C5DE70566A7BA47C03CAF9A630D0E81B /* MUSDateDiffer.h in Headers */,
+				581E69AC53AD8A6723248D314462E0CF /* MUSDictionaryDiffer.h in Headers */,
+				1FD96C732404BC92C4AD839AB457B6B2 /* MUSDiffer.h in Headers */,
+				532CA7790EE2E7A7DE597FFE690538D0 /* MUSDifference.h in Headers */,
+				AC556B1A0BA8C8CC5EE9C0C3D1A04D54 /* MUSDifferentTypeDiffer.h in Headers */,
+				9281DD87346588FE887A364803D8A4FB /* MUSFormatterProtocol.h in Headers */,
+				ACC872D2F043DEA1926457E7F6A3C51E /* MUSNumberDiffer.h in Headers */,
+				4BF1DC74ADF83D344D3309BCDC8A202F /* MUSOptionalDiffer.h in Headers */,
+				D7E90B28CA4BCE8D55376A2A766120C9 /* MUSSameTypeDiffer.h in Headers */,
+				471AA681855791E885C3AB5D18FFB94D /* MUSStandardFormatter.h in Headers */,
+				202154F2259762FE6B95FD35A32F0F3E /* MUSStringDiffer.h in Headers */,
+				FDEB3B3C109193661B6DD1219180EC18 /* MUSURLDiffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,9 +333,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7BEEC8F3D3D512BA419C0EBDFFF2A1CA /* Build configuration list for PBXNativeTarget "MuscleAssert" */;
 			buildPhases = (
-				D3604E6FC28BEA302A19FCC70159AD92 /* Sources */,
+				8275C9C0F01A268F1E7B7EB2482F0DB7 /* Sources */,
 				B319BA34DEAA6C99B31103562688AE0B /* Frameworks */,
-				1F5C41C873E01E67AD685A5A87BE2E77 /* Headers */,
+				D916266A4A11E2B61897714266482F19 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -398,32 +416,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8275C9C0F01A268F1E7B7EB2482F0DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5412DC23A31F3BD2DD9F65CDF63E191 /* MUSArrayDiffer.m in Sources */,
+				5B41B229CD7B20025C20EF840E5F6D5A /* MuscleAssert-dummy.m in Sources */,
+				9F710FE210561AA46B0C181394D68F7C /* MuscleAssert.m in Sources */,
+				80168CA56774390115DFC3E0D5AA0658 /* MUSCustomDiffer.m in Sources */,
+				3C44A65CDFD37E66C1773E23EC2B739B /* MUSDateDiffer.m in Sources */,
+				BA439F831BA4172AE7F30BD5C3892915 /* MUSDictionaryDiffer.m in Sources */,
+				586DC03F6C7B4D29083A61F35BCC1CEA /* MUSDifference.m in Sources */,
+				F79A378B1DBA4C57CD9FDF95598654BD /* MUSDifferentTypeDiffer.m in Sources */,
+				71B90C4B55764E6B3E97ED11DFB7409C /* MUSNumberDiffer.m in Sources */,
+				4A22A12B7483E590A1F28A9C947C7621 /* MUSOptionalDiffer.m in Sources */,
+				5915DE9E5CF02F9739F1BBF66B228C87 /* MUSSameTypeDiffer.m in Sources */,
+				329C77E76D31B5EA34E40407123738A3 /* MUSStandardFormatter.m in Sources */,
+				25E21E54B45EF470D1AFD4FD410CCF0E /* MUSStringDiffer.m in Sources */,
+				D0E561F364DC770F76B76BFAD769D02C /* MUSURLDiffer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92D5A9EA355488E40E66DAA9203E8F69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F9BFE57BBE7C58241F19511CB8C97C8B /* Pods-Benchmark-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3604E6FC28BEA302A19FCC70159AD92 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEDC56819A492AF6966AC0264152AABF /* MUSArrayDiffer.m in Sources */,
-				87EF42FF06D2E2920DEE8FB324922EBC /* MuscleAssert-dummy.m in Sources */,
-				FC5ABA9365EDBEF80FCD08DBD205D077 /* MuscleAssert.m in Sources */,
-				734BE647ED8ED4F77B989DC6939857B6 /* MUSCustomDiffer.m in Sources */,
-				7BCC18924F8FC514960EE23072D4A19E /* MUSDateDiffer.m in Sources */,
-				9B57EA886DCB80A9230E817C3C9B61E5 /* MUSDictionaryDiffer.m in Sources */,
-				E04BE2F4D4E71C93C8D98562584A7FFA /* MUSDifference.m in Sources */,
-				42A634191537BA83EA1B88F3D24DD9F5 /* MUSDifferentTypeDiffer.m in Sources */,
-				3FDC3B989FA1D9B7A6C4D434D4AAA6F3 /* MUSNumberDiffer.m in Sources */,
-				7F2E5BE2A04E12CC6F09649D27AB6FDB /* MUSOptionalDiffer.m in Sources */,
-				6F4B7A533F71B492DADF54D935C20712 /* MUSSameTypeDiffer.m in Sources */,
-				46AEF6C037F7DFEA4681C249288237C1 /* MUSStandardFormatter.m in Sources */,
-				C765070E02D81A8515445F0DBDAE147C /* MUSStringDiffer.m in Sources */,
-				CF8F554C840C244D0082F2C9115619A5 /* MUSURLDiffer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,14 +457,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08F9240D2D6BEE00D49B316BBD15EBE7 /* Release */ = {
+		1B5F613884B1BF6F78A1882E62DECD10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A843D0EAEDA8EB6D556F668A92C631FB /* Pods-Test.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
@@ -460,7 +475,7 @@
 			};
 			name = Release;
 		};
-		6F9224530522DD3C735EC96CF142642E /* Release */ = {
+		22037095D24AAB1B94564D0EDB0EB5E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -489,7 +504,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -509,40 +523,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		85B12013C161C3FC82564EE8C1D319D8 /* Debug */ = {
+		2DC9EABF840FF4934780D72F9B40594B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DF48253BB3CD21906AB172CA0FCEA0A /* Pods-Test.debug.xcconfig */;
+			baseConfigurationReference = 416CDFD30E70DCEAC2EFB79798FA9F08 /* MuscleAssert.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		9C5B29FE3F7AAA0A2DC7A56562D13049 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1D0F0381121F53419D52A15D2B425FD /* MuscleAssert.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MuscleAssert/MuscleAssert-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = "";
@@ -551,13 +541,12 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
+		340151C403B8DCE5C4F3DF2A79D4CB3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -586,7 +575,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -610,62 +598,16 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		BF6A52100B6F8015AA36BC17CE419DAE /* Release */ = {
+		83F551B542EB12A4B876E1388F5F4255 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDE8EAE301D85BE5FCB35BB518FC2786 /* Pods-Benchmark.release.xcconfig */;
+			baseConfigurationReference = 416CDFD30E70DCEAC2EFB79798FA9F08 /* MuscleAssert.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		DBECE1654D94EA456AD1D196E51E3EC2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97F3935E18BD3B490195F0BF36BAAA42 /* Pods-Benchmark.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E195E00BB2F5C72EAAC509E08DBB2A40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1D0F0381121F53419D52A15D2B425FD /* MuscleAssert.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MuscleAssert/MuscleAssert-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = "";
@@ -674,8 +616,57 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A39F7B72D42A8A83D1556B8812821AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DF48253BB3CD21906AB172CA0FCEA0A /* Pods-Test.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA265A936B23BD8BBA2BA9DA9FD2D614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F3935E18BD3B490195F0BF36BAAA42 /* Pods-Benchmark.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B75F213B9CA72E5997D78CC64D23B523 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE8EAE301D85BE5FCB35BB518FC2786 /* Pods-Benchmark.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -687,8 +678,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
-				6F9224530522DD3C735EC96CF142642E /* Release */,
+				340151C403B8DCE5C4F3DF2A79D4CB3E /* Debug */,
+				22037095D24AAB1B94564D0EDB0EB5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -696,8 +687,8 @@
 		7BEEC8F3D3D512BA419C0EBDFFF2A1CA /* Build configuration list for PBXNativeTarget "MuscleAssert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C5B29FE3F7AAA0A2DC7A56562D13049 /* Debug */,
-				E195E00BB2F5C72EAAC509E08DBB2A40 /* Release */,
+				83F551B542EB12A4B876E1388F5F4255 /* Debug */,
+				2DC9EABF840FF4934780D72F9B40594B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -705,8 +696,8 @@
 		C8CF17F0568DB49FEB4D0334BB1FAE9E /* Build configuration list for PBXNativeTarget "Pods-Benchmark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DBECE1654D94EA456AD1D196E51E3EC2 /* Debug */,
-				BF6A52100B6F8015AA36BC17CE419DAE /* Release */,
+				AA265A936B23BD8BBA2BA9DA9FD2D614 /* Debug */,
+				B75F213B9CA72E5997D78CC64D23B523 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -714,8 +705,8 @@
 		CB5FA2D06BF0230CB6EC220C778586D5 /* Build configuration list for PBXNativeTarget "Pods-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85B12013C161C3FC82564EE8C1D319D8 /* Debug */,
-				08F9240D2D6BEE00D49B316BBD15EBE7 /* Release */,
+				A39F7B72D42A8A83D1556B8812821AB7 /* Debug */,
+				1B5F613884B1BF6F78A1882E62DECD10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

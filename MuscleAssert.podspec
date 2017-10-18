@@ -12,12 +12,12 @@ Pod::Spec.new do |s|
   }
   s.platform     = :ios, '9.0'
 
-  s.default_subspec = 'All'
+  s.default_subspec = 'ObjC'
 
   s.subspec 'All' do |ss|
-    ss.dependency 'MuscleAssert/Core'
+    ss.dependency 'MuscleAssert/ObjC'
   end
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'MuscleAssert/**/*.{h,m}'
+  s.subspec 'ObjC' do |ss|
+    ss.source_files = 'MuscleAssert/ObjC/**/*.{h,m}'
   end
 end

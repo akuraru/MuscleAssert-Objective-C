@@ -17,19 +17,19 @@
   "platforms": {
     "ios": "9.0"
   },
-  "default_subspecs": "All",
+  "default_subspecs": "ObjC",
   "subspecs": [
     {
       "name": "All",
       "dependencies": {
-        "MuscleAssert/Core": [
+        "MuscleAssert/ObjC": [
 
         ]
       }
     },
     {
-      "name": "Core",
-      "source_files": "MuscleAssert/**/*.{h,m}"
+      "name": "ObjC",
+      "source_files": "MuscleAssert/ObjC/**/*.{h,m}"
     }
   ]
 }
