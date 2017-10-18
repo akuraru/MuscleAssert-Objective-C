@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate;
 
 - (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index;
+- (NSString *)pathByAppendingPath:(NSString *)path string:(NSString *)string;
 
 @end
 

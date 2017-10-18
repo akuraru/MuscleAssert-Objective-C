@@ -30,16 +30,19 @@
     NSString *diff = [self.assert deepStricEqual:@"" right:[[TestModel alloc] initWithString:@"abc"]];
     XCTAssertEqualObjects(diff, @"\npath: .0\n"
                           "  left: \n"
-                          "  right: TestModel(string: abc, number: 0)\n");
+                          "  right: TestModel(string: abc, number: 0, integer: 0)\n");
 }
 
 - (void)testLeftEmpty {
-    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number:@1] right:[[TestModel alloc] initWithString:@"abc"]];
+    NSString *diff = [self.assert deepStricEqual:[[TestModel alloc] initWithString:@"" number:@1 interger:1] right:[[TestModel alloc] initWithString:@"abc"]];
     XCTAssertEqualObjects(diff, @"\n"
                           "path: .string.0\n"
                           "  left: \n"
                           "  right: abc\n"
                           "path: .number\n"
+                          "  left: 1\n"
+                          "  right: 0\n"
+                          "path: .integer\n"
                           "  left: 1\n"
                           "  right: 0\n"
                           );

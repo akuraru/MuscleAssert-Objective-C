@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
     return path ? [path stringByAppendingFormat:@".%zd", index] : [NSString stringWithFormat:@"%zd", index];
 }
 
+- (NSString *)pathByAppendingPath:(NSString *)path string:(NSString *)string {
+    return path ? [path stringByAppendingFormat:@".%@", string] : string;
+}
+
 @end
 
 @implementation MUSCustomClassDiffer

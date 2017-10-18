@@ -12,9 +12,12 @@
 @interface TestModel : NSObject
 @property (nonatomic) NSString *string;
 @property (nonatomic) NSNumber *number;
+@property (nonatomic) NSInteger integer;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) CGSize size;
 
 - (instancetype)initWithString:(NSString *)string;
 
-- (instancetype)initWithString:(NSString *)string number:(NSNumber *)number;
+- (instancetype)initWithString:(NSString *)string number:(NSNumber *)number interger:(NSInteger)interger;
 
 @end
