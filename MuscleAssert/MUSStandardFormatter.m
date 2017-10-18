@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation MUSStandardFormatter
 
-- (NSString *)format:(NSString *)message differences:(NSArray<MUSDifference *> *)differences {
+- (NSString * _Nullable)format:(NSString *)message differences:(NSArray<MUSDifference *> *)differences {
     if ([differences count] == 0) {
         return nil;
     }

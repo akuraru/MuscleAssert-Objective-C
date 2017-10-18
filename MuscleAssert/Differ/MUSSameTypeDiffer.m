@@ -28,7 +28,15 @@ NS_ASSUME_NONNULL_BEGIN
         } else {
             NSMutableArray *results = [NSMutableArray array];
             for (NSString *propertyName in propertyNames) {
-                [results addObjectsFromArray:[delegate diff:[right performSelector:NSSelectorFromString(propertyName)] left:[left performSelector:NSSelectorFromString(propertyName)] path:propertyName]];
+                SEL selector = NSSelectorFromString(propertyName);
+                if ([right respondsToSelector:selector] && [left respondsToSelector:selector]) {
+                    #pragma clang diagnostic push
+                    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                    id rightValue = [right performSelector:selector];
+                    id leftValue = [left performSelector:selector];
+                    [results addObjectsFromArray:[delegate diff:rightValue left:leftValue path:propertyName]];
+                    #pragma clang diagnostic pop
+                }
             }
             return results;
         }

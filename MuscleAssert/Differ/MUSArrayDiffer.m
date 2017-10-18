@@ -27,9 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
         [result addObjectsFromArray:[delegate diff:right[index] left:left[index] path:[self pathByAppendingPath:path index:index]]];
     }
     if (length < rightLength) {
-        [result addObject:[[MUSDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, rightLength] left:@"too sort" right:[right subarrayWithRange:NSMakeRange(length, rightLength - length)]]];
+        NSString *tooLongRight = [NSString stringWithFormat:@"%@", [right subarrayWithRange:NSMakeRange(length, rightLength - length)]];
+        [result addObject:[[MUSDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, rightLength] left:@"too sort" right:tooLongRight]];
     } else if (length < leftLength) {
-        [result addObject:[[MUSDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, leftLength] left:[left subarrayWithRange:NSMakeRange(length, leftLength - length)] right:@"too sort"]];
+        NSString *tooLongLeft = [NSString stringWithFormat:@"%@", [left subarrayWithRange:NSMakeRange(length, leftLength - length)]];
+        [result addObject:[[MUSDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, leftLength] left:tooLongLeft right:@"too sort"]];
     }
     return result;
 }
