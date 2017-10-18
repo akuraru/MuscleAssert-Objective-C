@@ -30,6 +30,10 @@
     {
       "name": "ObjC",
       "source_files": "MuscleAssert/ObjC/**/*.{h,m}"
+    },
+    {
+      "name": "Swift",
+      "source_files": "MuscleAssert/Swift/**/*.{swift}"
     }
   ]
 }

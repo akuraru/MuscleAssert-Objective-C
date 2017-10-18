@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double MuscleAssertVersionNumber;
+FOUNDATION_EXPORT const unsigned char MuscleAssertVersionString[];
+

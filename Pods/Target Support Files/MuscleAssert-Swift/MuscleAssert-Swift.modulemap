@@ -1,0 +1,6 @@
+framework module MuscleAssert {
+  umbrella header "MuscleAssert-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

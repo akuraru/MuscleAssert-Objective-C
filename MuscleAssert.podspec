@@ -20,4 +20,7 @@ Pod::Spec.new do |s|
   s.subspec 'ObjC' do |ss|
     ss.source_files = 'MuscleAssert/ObjC/**/*.{h,m}'
   end
+  s.subspec 'Swift' do |ss|
+    ss.source_files = 'MuscleAssert/Swift/**/*.{swift}'
+  end
 end

@@ -20,6 +20,20 @@
                ReferencedContainer = "container:MuscleAssert.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BEC0FC961F9759CB00167A7F"
+               BuildableName = "SwiftTest.xctest"
+               BlueprintName = "SwiftTest"
+               ReferencedContainer = "container:MuscleAssert.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -39,7 +53,26 @@
                ReferencedContainer = "container:MuscleAssert.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BEC0FC961F9759CB00167A7F"
+               BuildableName = "SwiftTest.xctest"
+               BlueprintName = "SwiftTest"
+               ReferencedContainer = "container:MuscleAssert.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "73FCA16D18DE837D009ED4AD"
+            BuildableName = "Test.xctest"
+            BlueprintName = "Test"
+            ReferencedContainer = "container:MuscleAssert.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -72,6 +105,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "73FCA16D18DE837D009ED4AD"
+            BuildableName = "Test.xctest"
+            BlueprintName = "Test"
+            ReferencedContainer = "container:MuscleAssert.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

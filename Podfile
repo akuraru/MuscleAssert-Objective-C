@@ -8,3 +8,8 @@ end
 
 target :Benchmark do
 end
+
+target :SwiftTest do
+  use_frameworks!
+  pod "MuscleAssert/Swift", :path => "./"
+end

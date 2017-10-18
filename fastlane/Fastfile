@@ -12,7 +12,7 @@ platform :ios do
     case options[:ios]
     when '11'
       scan(device: 'iPad Air (11.0)')
-      scan(device: 'iPhone 5 (11.0)')
+      scan(device: 'iPhone 5s (11.0)')
     else
       raise
     end
