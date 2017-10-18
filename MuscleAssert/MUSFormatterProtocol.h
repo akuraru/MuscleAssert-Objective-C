@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MUSFormatterProtocol <NSObject>
 
-- (NSString * _Nullable)format:(NSString *)message differences:(NSArray<MUSDifference *> *)differences;
+- (NSString * _Nullable)format:(nullable NSString *)message differences:(NSArray<MUSDifference *> *)differences;
 
 @end
 

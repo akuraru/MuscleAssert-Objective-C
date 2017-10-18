@@ -44,23 +44,23 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
-- (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right {
+- (nullable NSString *)deepStricEqual:(nullable id)left right:(nullable id)right {
     return [self deepStricEqual:left right:right message:nil];
 }
 
-- (NSString *_Nullable)deepStricEqual:(id _Nullable)left right:(id _Nullable)right message:(NSString *_Nullable)message {
+- (nullable NSString *)deepStricEqual:(nullable id)left right:(nullable id)right message:(nullable NSString *)message {
     NSArray<MUSDifference *> *differences = [self diff:right left:left path:nil];
     return [self.formatter format:message differences:differences];
 }
 
 - (NSArray<MUSDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
-    NSArray *differ = [[self differ] arrayByAddingObjectsFromArray:self.lastDiffer];
+    NSArray<MUSCustomDiffer *> *differ = [[self differ] arrayByAddingObjectsFromArray:self.lastDiffer];
     for (MUSCustomDiffer *diff in differ) {
         if ([diff match:left right:right]) {
             return [diff diff:left right:right path:path delegatge:self];
         }
     }
-    return differ;
+    return @[];
 }
 
 - (void)cons:(MUSCustomDiffer *)differ {

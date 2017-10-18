@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     return left == nil || right == nil;
 }
 
-- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate {
+- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(nullable NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate {
     if (right == nil && left == nil) {
         return @[];
     } else if (right != nil) {

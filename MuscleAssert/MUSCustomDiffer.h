@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @class MUSDifference;
 
 @protocol MUSDeepDiffProtocol <NSObject>
-- (NSArray<MUSDifference *> *)diff:right left:left path:(NSString *_Nullable)path;
+- (NSArray<MUSDifference *> *)diff:right left:left path:(nullable NSString *)path;
 @end
 
 @interface MUSCustomDiffer : NSObject
 
 - (BOOL)match:(id)left right:(id)right;
-- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate;
+- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(nullable  NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate;
 
 - (NSString *)pathByAppendingPath:(NSString *)path index:(NSInteger)index;
 - (NSString *)pathByAppendingPath:(NSString *)path string:(NSString *)string;
