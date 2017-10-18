@@ -32,7 +32,14 @@ extension MUSCustomDiffer {
     }
 }
 
-protocol MUSCustomClassDiffer {
+protocol MUSCustomClassDiffer: MUSCustomDiffer {
+    associatedtype MatchType
+}
+extension MUSCustomClassDiffer {
+    
+    func match(left: Any, right: Any) -> Bool {
+        return left is MatchType && right is MatchType
+    }
 }
 
 /*

@@ -6,49 +6,28 @@
 //
 //
 
-class MUSArrayDiffer: MUSCustomDiffer {
-    func match(left: Any, right: Any) -> Bool {
-        return false
-    }
+class MUSArrayDiffer: MUSCustomClassDiffer {
+    typealias MatchType = Array<Any>
     
     func diff(left: Any, right: Any, path: String?, delegatge: MUSDeepDiffProtocol) -> [MUSDifference] {
-        return []
+        guard let left = left as? [Any], let right = right as? [Any] else {
+            fatalError("none reach")
+        }
+        let leftCount = left.count
+        let rightCount = right.count
+        let length = min(rightCount, leftCount)
+        
+        var result = [MUSDifference]()
+        for index in 0..<length {
+            result.append(contentsOf: delegatge.diff(left:left[index], right:right[index], path: pathByAppendingPath(path:path, index:index)))
+        }
+        if length < rightCount {
+            let tooLongRight = "\(right[length..<(rightCount - length)])"
+            result.append(MUSDifference(path:"\(length)..<\(rightCount)", left:"too sort", right:tooLongRight))
+        } else if length < leftCount {
+            let tooLongLeft = "\(left[length..<(leftCount - length)])"
+            result.append(MUSDifference(path:"\(length)..<\(leftCount)", left:tooLongLeft, right:"too sort"))
+        }
+        return result;
     }
 }
-
-/*
-#import "MUSArrayDiffer.h"
-#import "MUSDifference.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@implementation MUSArrayDiffer
-
-- (Class)matchClass {
-    return [NSArray class];
-}
-
-- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(nullable NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate {
-    NSInteger rightLength = [right count];
-    NSInteger leftLength = [left count];
-    NSInteger length = MIN(rightLength, leftLength);
-    
-    NSMutableArray *result = [NSMutableArray array];
-    for (NSInteger index = 0; index < length; index++) {
-        [result addObjectsFromArray:[delegate diff:right[index] left:left[index] path:[self pathByAppendingPath:path index:index]]];
-    }
-    if (length < rightLength) {
-        NSString *tooLongRight = [NSString stringWithFormat:@"%@", [right subarrayWithRange:NSMakeRange(length, rightLength - length)]];
-        [result addObject:[[MUSDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, rightLength] left:@"too sort" right:tooLongRight]];
-    } else if (length < leftLength) {
-        NSString *tooLongLeft = [NSString stringWithFormat:@"%@", [left subarrayWithRange:NSMakeRange(length, leftLength - length)]];
-        [result addObject:[[MUSDifference alloc] initWithPath:[NSString stringWithFormat:@"%zd..<%zd", length, leftLength] left:tooLongLeft right:@"too sort"]];
-    }
-    return result;
-}
-
-@end
-
-NS_ASSUME_NONNULL_END
-*/
-

@@ -6,7 +6,10 @@
 //
 //
 
-class MUSDifference {
+struct MUSDifference {
+    let path: String
+    let left: String
+    let right: String
 }
 /*
 @implementation MUSDifference

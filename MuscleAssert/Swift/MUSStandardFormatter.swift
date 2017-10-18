@@ -8,7 +8,11 @@
 
 class MUSStandardFormatter: MUSFormatterProtocol {
     func format(message: String?, differences: [MUSDifference]) -> String? {
-        return nil
+        guard differences.count != 0 else {
+            return nil
+        }
+    
+        return "\(differences)"
     }
 }
 

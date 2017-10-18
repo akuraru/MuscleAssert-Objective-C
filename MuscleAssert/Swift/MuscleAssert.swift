@@ -33,7 +33,7 @@ class MuscleAssert: MUSDeepDiffProtocol {
         return deepStricEqual(left:left, right:right, message:nil)
     }
     func deepStricEqual(left :Any?, right: Any?, message: String?) -> String? {
-        let differences: [MUSDifference] = diff(left:left, right:right, path:nil)
+        let differences = diff(left:left, right:right, path:nil)
         return formatter.format(message:message, differences:differences)
     }
 

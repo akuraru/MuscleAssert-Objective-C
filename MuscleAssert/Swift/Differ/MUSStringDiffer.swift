@@ -6,13 +6,14 @@
 //
 //
 
-class MUSStringDiffer: MUSCustomDiffer {
-    func match(left: Any, right: Any) -> Bool {
-        return false
-    }
+class MUSStringDiffer: MUSCustomClassDiffer {
+    typealias MatchType = String
     
     func diff(left: Any, right: Any, path: String?, delegatge: MUSDeepDiffProtocol) -> [MUSDifference] {
-        return []
+        guard let left = left as? String, let right = right as? String else {
+            fatalError("none reach")
+        }
+        return [MUSDifference(path: path ?? "", left: left, right: right)]
     }
 }
 
