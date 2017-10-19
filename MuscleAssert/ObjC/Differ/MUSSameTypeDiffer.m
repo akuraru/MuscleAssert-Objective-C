@@ -61,23 +61,6 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (NSArray<NSString *> *)propertyNames:(id)object {
-    NSMutableArray *propertyNames = [NSMutableArray array];
-    
-    unsigned int outCount;
-    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
-    for (int i = 0; i < outCount; i++) {
-        objc_property_t property = properties[i];
-        const char *propName = property_getName(property);
-        if (propName) {
-            NSString *propertyName = [NSString stringWithCString:propName encoding:[NSString defaultCStringEncoding]];
-            [propertyNames addObject:propertyName];
-        }
-    }
-    free(properties);
-    return propertyNames;
-}
-
 @end
 
 NS_ASSUME_NONNULL_END
