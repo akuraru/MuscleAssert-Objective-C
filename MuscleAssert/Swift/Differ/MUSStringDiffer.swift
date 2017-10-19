@@ -88,13 +88,13 @@ class MUSStringDiffer: MUSCustomClassDiffer {
         }
         
         var lcs = [Character]()
-        var x = left.index(before: left.endIndex)
-        var y = right.index(before: right.endIndex)
+        var x = left.endIndex
+        var y = right.endIndex
         
         while (x != left.startIndex && y != right.startIndex) {
-            if (lengths[x]![y] == lengths[left.index(before: x)]![y]) {
+            if (lengths[x]![y] ?? 0 == lengths[left.index(before: x)]![y] ?? 0) {
                 x = left.index(before: x)
-            } else if (lengths[x]![y] == lengths[x]![right.index(before: y)]) {
+            } else if (lengths[x]![y] ?? 0 == lengths[x]![right.index(before: y)] ?? 0) {
                 y = right.index(before: y)
             } else {
                 x = left.index(before: x)

@@ -12,6 +12,7 @@
 		73FCA17718DE837D009ED4AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73FCA17518DE837D009ED4AD /* InfoPlist.strings */; };
 		A8E2B471644D2741EB5CC650 /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9EFCD474D8556C4D7A1441 /* Pods_SwiftTest.framework */; };
 		BE34E2271F978F6000A047D5 /* MuscleAssertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34E2261F978F6000A047D5 /* MuscleAssertTests.swift */; };
+		BE34E2291F98FEF600A047D5 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34E2281F98FEF600A047D5 /* StringTests.swift */; };
 		BE45C9DB1E1D282F004492AF /* StringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4F0DBF1E0FD5790046E03F /* StringTests.m */; };
 		BE45C9DC1E1D482D004492AF /* OptionalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE20681E19F402008FD31E /* OptionalTests.m */; };
 		BE45C9DE1E1DF544004492AF /* DictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE206C1E1A65AE008FD31E /* DictionaryTests.m */; };
@@ -44,6 +45,7 @@
 		96A8327000FCCEA910AA4798 /* Pods-Benchmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benchmark.release.xcconfig"; path = "Pods/Target Support Files/Pods-Benchmark/Pods-Benchmark.release.xcconfig"; sourceTree = "<group>"; };
 		B47990179E21B2DCAF99C4FC /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		BE34E2261F978F6000A047D5 /* MuscleAssertTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleAssertTests.swift; sourceTree = "<group>"; };
+		BE34E2281F98FEF600A047D5 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		BE45C9D91E1BCC1C004492AF /* ArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTests.m; sourceTree = "<group>"; };
 		BE45C9E01E1E3485004492AF /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		BE45C9E11E1E3485004492AF /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				BE34E2261F978F6000A047D5 /* MuscleAssertTests.swift */,
 				BEC0FC9B1F9759CB00167A7F /* Info.plist */,
+				BE34E2281F98FEF600A047D5 /* StringTests.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE34E2291F98FEF600A047D5 /* StringTests.swift in Sources */,
 				BE34E2271F978F6000A047D5 /* MuscleAssertTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

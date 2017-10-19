@@ -20,40 +20,8 @@ class MuscleAssertTests : XCTestCase {
             "  right: 2\n"
         )
     }
+    
+    func testMAssert() {
+        XCTAssertNil(assert.deepStricEqual(left: "a", right:  "a"))
+    }
 }
-/*
-@property (nonatomic, nonnull) MuscleAssert *assert;
-@end
-
-@implementation MuscleAssertTests
-
-- (void)setUp {
-    [super setUp];
-    self.assert = [[MuscleAssert alloc] init];
-}
-
-- (void)testDeepDiff {
-    NSString *diff = [self.assert deepStricEqual:@[@[@"value1"]] right:@[@[@"value2"]]];
-    XCTAssertEqualObjects(diff, @"\n"
-                          "path: .0.0.5\n"
-                          "  left: 1\n"
-                          "  right: 2\n"
-                          );
-}
-
-- (void)testMAssert {
-    MAssert(@"a", @"a");
-}
-
-- (void)testCustomDiff {
-    MUSCustomDiffer *differ = [[MUSCustomDiffer alloc] init];
-    XCTAssertEqualObjects([differ diff:@"" right:@"" path:@"" delegatge:self.assert], @[]);
-}
-
-- (void)testMatchClass {
-    MUSCustomClassDiffer *differ = [[MUSCustomClassDiffer alloc] init];
-    XCTAssertNil(differ.matchClass);
-}
-
-@end
-*/
