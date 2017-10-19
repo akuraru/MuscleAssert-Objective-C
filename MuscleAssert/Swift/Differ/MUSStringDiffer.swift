@@ -6,6 +6,12 @@
 //
 //
 
+extension String.Index: Hashable {
+    public var hashValue: Int {
+        return self.encodedOffset
+    }
+}
+
 class MUSStringDiffer: MUSCustomClassDiffer {
     typealias MatchType = String
     
@@ -67,57 +73,37 @@ class MUSStringDiffer: MUSCustomClassDiffer {
         return res;
     }
     func longestCommonSubsequence(left : String, right: String) -> String {
-        return ""
-    }
-}
-    /*
-    const NSUInteger leftLength = left.length;
-    const NSUInteger rightLength = right.length;
-    
-    unsigned int **lengths = malloc((leftLength + 1) * sizeof(unsigned int *));
-    
-    for (unsigned int i = 0; i <= leftLength; ++i) {
-        lengths[i] = malloc((rightLength + 1) * sizeof(unsigned int));
+        var lengths = [String.Index: [String.Index: Int]]()
         
-        for (unsigned int j = 0; j <= rightLength; ++j) {
-            lengths[i][j] = 0;
-        }
-    }
-    
-    
-    for (unsigned int i = 0; i < leftLength; ++i) {
-        for (unsigned int j = 0; j < rightLength; ++j) {
-            if ([left characterAtIndex:i] == [right characterAtIndex:j]) {
-                lengths[i + 1][j + 1] = lengths[i][j] + 1;
-            } else {
-                lengths[i + 1][j + 1] = MAX(lengths[i + 1][j], lengths[i][j + 1]);
+        lengths[left.startIndex] = [String.Index: Int]()
+        for leftIndex in left.indices {
+            lengths[left.index(after: leftIndex)] = [String.Index: Int]()
+            for rightIndex in right.indices {
+                if left[leftIndex] == right[rightIndex] {
+                    lengths[left.index(after: leftIndex)]![right.index(after: rightIndex)] = (lengths[leftIndex]?[rightIndex] ?? 0) + 1
+                } else {
+                    lengths[left.index(after: leftIndex)]![right.index(after: rightIndex)] = max(lengths[left.index(after: leftIndex)]?[rightIndex] ?? 0, lengths[leftIndex]?[right.index(after: rightIndex)] ?? 0)
+                }
             }
         }
-    }
-    
-    NSMutableString *lcs = [NSMutableString string];
-    NSUInteger x = leftLength;
-    NSUInteger y = rightLength;
-    
-    while (x != 0 && y != 0) {
-        if (lengths[x][y] == lengths[x - 1][y]) {
-            --x;
-        } else if (lengths[x][y] == lengths[x][y - 1]) {
-            --y;
-        } else {
-            [lcs insertString:[NSString stringWithFormat:@"%C", [left characterAtIndex:x - 1]] atIndex:0];
-            --x;
-            --y;
+        
+        var lcs = [Character]()
+        var x = left.index(before: left.endIndex)
+        var y = right.index(before: right.endIndex)
+        
+        while (x != left.startIndex && y != right.startIndex) {
+            if (lengths[x]![y] == lengths[left.index(before: x)]![y]) {
+                x = left.index(before: x)
+            } else if (lengths[x]![y] == lengths[x]![right.index(before: y)]) {
+                y = right.index(before: y)
+            } else {
+                x = left.index(before: x)
+                y = right.index(before: y)
+                lcs.append(left[x])
+            }
         }
+        
+        return String(lcs.reversed())
     }
-    
-    for (unsigned int i = 0; i <= leftLength; ++i) {
-        free(lengths[i]);
-    }
-    
-    free(lengths);
-    
-    return lcs;
 }
-}
- */
+
