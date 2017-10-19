@@ -10,15 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface MUSDifference ()
+
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, copy) NSString *left;
+@property (nonatomic, copy) NSString *right;
+
+@end
+
 @implementation MUSDifference
 
 - (instancetype)initWithPath:(NSString *)path left:(NSString *)left right:(NSString *)right {
     self = [super init];
-    if (self) {
-        _path = path;
-        _left = left;
-        _right = right;
-    }
+    
+    self.path = path;
+    self.left = left;
+    self.right = right;
+    
     return self;
 }
 

@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MuscleAssert ()
 
 @property (nonatomic) NSMutableArray<MUSCustomDiffer *> *differ;
-@property (nonatomic) NSArray<MUSCustomDiffer *> *lastDiffer;
+@property (nonatomic) MUSSameTypeDiffer *sameTypeDiffer;
+@property (nonatomic) MUSDifferentTypeDiffer *differentTypeDiffer;
 
 @end
 
@@ -25,22 +26,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init {
     self = [super init];
-    if (self) {
-        self.differ = [@[
-                        [[MUSOptionalDiffer alloc] init],
-                        [[MUSStringDiffer alloc] init],
-                        [[MUSDateDiffer alloc] init],
-                        [[MUSURLDiffer alloc] init],
-                        [[MUSNumberDiffer alloc] init],
-                        [[MUSDictionaryDiffer alloc] init],
-                        [[MUSArrayDiffer alloc] init],
-                        ] mutableCopy];
-        self.lastDiffer = @[
-                            [[MUSSameTypeDiffer alloc] init],
-                            [[MUSDifferentTypeDiffer alloc] init]
-                            ];
-        self.formatter = [[MUSStandardFormatter alloc] init];
-    }
+    
+    self.differ = [@[
+                     [[MUSOptionalDiffer alloc] init],
+                     [[MUSStringDiffer alloc] init],
+                     [[MUSDateDiffer alloc] init],
+                     [[MUSURLDiffer alloc] init],
+                     [[MUSNumberDiffer alloc] init],
+                     [[MUSDictionaryDiffer alloc] init],
+                     [[MUSArrayDiffer alloc] init],
+                     ] mutableCopy];
+    
+    self.sameTypeDiffer = [[MUSSameTypeDiffer alloc] init];
+    self.differentTypeDiffer = [[MUSDifferentTypeDiffer alloc] init];
+    self.formatter = [[MUSStandardFormatter alloc] init];
+    
     return self;
 }
 
@@ -54,13 +54,16 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSArray<MUSDifference *> *)diff:right left:left path:(NSString *_Nullable)path {
-    NSArray<MUSCustomDiffer *> *differ = [[self differ] arrayByAddingObjectsFromArray:self.lastDiffer];
+    NSArray<MUSCustomDiffer *> *differ = [self differ];
     for (MUSCustomDiffer *diff in differ) {
         if ([diff match:left right:right]) {
             return [diff diff:left right:right path:path delegatge:self];
         }
     }
-    return @[];
+    if ([self.sameTypeDiffer match:left right:right]) {
+        return [self.sameTypeDiffer diff:left right:right path:path delegatge:self];
+    }
+    return [self.differentTypeDiffer diff:left right:right path:path delegatge:self];
 }
 
 - (void)cons:(MUSCustomDiffer *)differ {
