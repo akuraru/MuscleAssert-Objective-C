@@ -7,38 +7,16 @@
 //
 
 class MUSOptionalDiffer {
-    func match(left: Any?, right: Any?) -> Bool {
-        return false
-    }
-    
     func diff(left: Any?, right: Any?, path: String?, delegatge: MUSDeepDiffProtocol) -> [MUSDifference] {
-        return []
+        if left == nil && right == nil {
+            return []
+        }
+        if let left = left {
+            return [MUSDifference(path: path ?? "Optional", left: "\(left)", right: "value is none")]
+        }
+        if let right = right {
+            return [MUSDifference(path: path ?? "Optional", left: "value is none", right: "\(right)")]
+        }
+        fatalError()
     }
 }
-
-/*
-#import "MUSOptionalDiffer.h"
-#import "MUSDifference.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@implementation MUSOptionalDiffer
-
-- (BOOL)match:(id)left right:(id)right {
-    return left == nil || right == nil;
-}
-
-- (NSArray<MUSDifference *> *)diff:(id)left right:(id)right path:(nullable NSString *)path delegatge:(id<MUSDeepDiffProtocol>)delegate {
-    if (right == nil && left == nil) {
-        return @[];
-    } else if (right != nil) {
-        return @[[[MUSDifference alloc] initWithPath:path ?: @"Optional" left:@"value is none" right:[right debugDescription]]];
-    } else {
-        return @[[[MUSDifference alloc] initWithPath:path ?: @"Optional" left:[left debugDescription] right:@"value is none"]];
-    }
-}
-
-@end
-
-NS_ASSUME_NONNULL_END
-*/
