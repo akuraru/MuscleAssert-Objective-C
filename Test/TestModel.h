@@ -13,8 +13,6 @@
 @property (nonatomic) NSString *string;
 @property (nonatomic) NSNumber *number;
 @property (nonatomic) NSInteger integer;
-@property (nonatomic) CGFloat height;
-@property (nonatomic) CGSize size;
 
 - (instancetype)initWithString:(NSString *)string;
 

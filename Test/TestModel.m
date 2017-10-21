@@ -16,11 +16,11 @@
 
 - (instancetype)initWithString:(NSString *)string number:(NSNumber *)number interger:(NSInteger)interger {
     self = [super init];
-    if (self) {
-        _string = string;
-        _number = number;
-        _integer = interger;
-    }
+    
+    self.string = string;
+    self.number = number;
+    self.integer = interger;
+    
     return self;
 }
 
