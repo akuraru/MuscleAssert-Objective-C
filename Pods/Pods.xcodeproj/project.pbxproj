@@ -7,59 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05B6DA47073420A6689B7CF846F43757 /* MUSArrayDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B73C2A4AC838949123984A8DB885CA /* MUSArrayDiffer.swift */; };
 		0B388328179E3E1046A751A5BC358714 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		1A8C60F06B2C07E10D164647CF10B98A /* MUSDateDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A031C7445D0FE5C2CCAAE84551CD0361 /* MUSDateDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24FAAC9CD678A77D68001A096902F293 /* MUSStandardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC2105006BC88FB15CEC66C818CAFC /* MUSStandardFormatter.swift */; };
+		27026E081C0FF22544862DE12F72C0CF /* MUSDictionaryDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBAB681D31015799C23562BD1BF5B99 /* MUSDictionaryDiffer.swift */; };
 		27E133471E7B4ADFB4D1B757745E74D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		2C59ADFECB6712CC9A4E0028978BFB67 /* Pods-Test-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D69262FB14BADF261556072FC706FA /* Pods-Test-dummy.m */; };
 		2E515C4FD6FE827FBEEF6FB97792B067 /* MUSStandardFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38612931194810442C475AC46D0408 /* MUSStandardFormatter.m */; };
 		3B0E072878A5B241916F672E350C94E0 /* MUSFormatterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 98CB0AF85F7B4912FC9C5DAD50A25CC6 /* MUSFormatterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FAED3E60F81DA81927B1171D74B87E1 /* MUSDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC79117C3D99A38873AD8CD57F5E9116 /* MUSDifference.swift */; };
 		3FDC3B989FA1D9B7A6C4D434D4AAA6F3 /* MUSNumberDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FEAE81CAF290F720E12B7E2CAC39A2 /* MUSNumberDiffer.m */; };
+		3FF467466666854860B1FDF171516E5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		41420666702E8CAF03ED9094858893C1 /* MuscleAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49518FF69DF768038B69CD3682E4BFDC /* MuscleAssert.swift */; };
 		42A634191537BA83EA1B88F3D24DD9F5 /* MUSDifferentTypeDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD388863197E2C5B760C487B034DAF4F /* MUSDifferentTypeDiffer.m */; };
 		4D4F65435F7822E82AB18A3AEBCF9D5F /* MUSDictionaryDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BDD3B5FC0780EA6D5B23066C1285428 /* MUSDictionaryDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EC177E982BB0D09FF819F24474A4C68 /* MUSDifferentTypeDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D9BD9413D68E7ED44FD465926C965B /* MUSDifferentTypeDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EDBF066A9C2309AEBEB76B0E24F079B /* MUSURLDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB4FD30689B19D90B63BE8CDF8CD6 /* MUSURLDiffer.swift */; };
+		51B9FAC841D4DBA794266F252DB18BED /* MUSSameTypeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CFC9CB40B0D4CD106ABA9206594BB3 /* MUSSameTypeDiffer.swift */; };
+		53D766693C686247E3132F48F7523D61 /* MuscleAssert-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8CC9BD59DD9B00C2655184271553F01 /* MuscleAssert-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B9454DE1DB5D1BC2F91E554EAF225B2 /* MUSArrayDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B64C36A0DFB27490BCBDE399FF5935 /* MUSArrayDiffer.swift */; };
 		61D1A46A821B306539FF7418BB92B7F4 /* MUSStandardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = FBD95EB46716476E6199375192E49211 /* MUSStandardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		664B00E09EB533D1EC6BA96612AC8C72 /* MuscleAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF231FA6D97743D95CF3F3AF49A081 /* MuscleAssert.swift */; };
 		6AFA50ECA84236899FFD522AB2440216 /* MUSNumberDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A8952D8CB856600EE342961197A2F0 /* MUSNumberDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BEB438592FDC4124B9A7A0E2ED587DD /* MUSCustomDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B811080F599CB356AAA73CEC21DAC2 /* MUSCustomDiffer.swift */; };
 		6F4B7A533F71B492DADF54D935C20712 /* MUSSameTypeDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 841EB684F434503BD57AC2D9B20C831C /* MUSSameTypeDiffer.m */; };
 		6F50A9E8B8A91E1673CBEA88A9AD21D0 /* MuscleAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = F1BEF21C70D193F9D26E1D6EB0F24FEE /* MuscleAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F7EE0BA99F6C46F898B4C66CF5FA5E4 /* MUSOptionalDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7573024E47B7D556C8351259F6A13B /* MUSOptionalDiffer.swift */; };
 		72474BDCB66B0C5768EA02E26B4789DE /* MUSCustomDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 184BBCE0709FF424FB50A8B2554530E3 /* MUSCustomDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72E64055492ADEBFB24391E7BF4037FA /* MUSStringDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = E60672FD5566ED85A0671FDC4C7EC3C1 /* MUSStringDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74A38636B22A49288E51846AF5A0A74E /* MUSDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 728B56AC63402D3E25D97F1F83EC6DD8 /* MUSDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BCC18924F8FC514960EE23072D4A19E /* MUSDateDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41E8A1CCE94DE22977F58EA92D3F6D /* MUSDateDiffer.m */; };
-		7C525AC568E9662967BEDB02EBF6A94F /* MUSDateDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D61F4C4A8898876877D03BFFD54CB /* MUSDateDiffer.swift */; };
 		7F2E5BE2A04E12CC6F09649D27AB6FDB /* MUSOptionalDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AFE50A8C74236DA04CACAB2CBC1EB1 /* MUSOptionalDiffer.m */; };
-		87A3155E1C5B8A38D48BD9D8624B42C7 /* MuscleAssert-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B01CA3CAB639EBB6C77E70ACB9DD781A /* MuscleAssert-Swift-dummy.m */; };
 		87EF42FF06D2E2920DEE8FB324922EBC /* MuscleAssert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B8054ED91800BF4EE80D830E9A38E1 /* MuscleAssert-dummy.m */; };
-		8CBA0781A2C73BDD1AABFF23B1C5276E /* MUSDifferentTypeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE81B9E03884967D2D9250BAEFE3FD /* MUSDifferentTypeDiffer.swift */; };
-		93B98C50CA00E2D4C7A56E2FDF664F50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		9B57EA886DCB80A9230E817C3C9B61E5 /* MUSDictionaryDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9E8D16524DDCF8700C2B33577C84CE /* MUSDictionaryDiffer.m */; };
+		9E2683FFC567A4FEC85013F0EB6B20F3 /* MUSDifferentTypeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C25F4E4AC07B331F2FB79312D89AB0 /* MUSDifferentTypeDiffer.swift */; };
 		A533E37F52AC2DE33ED53089425F560B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		A6D17E02ECA0B4041AAD569B4ECA43DA /* Pods-SwiftTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C096332B278907E9D503BF9D0CB06CD /* Pods-SwiftTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7B1C4B2F3B90D762F7AC23662FEB902 /* MuscleAssert.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4ADF7A9CC9DD219EB6080702DEE8A6 /* MuscleAssert.m */; };
-		A9E52BF646969D72C578CA2049AE7F08 /* MUSCustomDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2659E08A287BE7EAEEFC9F152A35CF9 /* MUSCustomDiffer.swift */; };
 		AEDC56819A492AF6966AC0264152AABF /* MUSArrayDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9474CEEAE6C131E9BCDE147D5066584 /* MUSArrayDiffer.m */; };
 		B0C7660C9E1609E1F2F3105DC4F11DAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		B375905BE19DFC95EA5AC9655A716B78 /* MUSFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4022F0EFFB79332FBA582E8B53543B4 /* MUSFormatterProtocol.swift */; };
-		B600C376C05117CD30BC57B5E8099F0E /* MUSStringDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035432496D4C4DA0505EC5540442FF3 /* MUSStringDiffer.swift */; };
-		BB7542C00AD27AB5A7B6DE92A4587911 /* MUSSameTypeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D52548710C2AABFC4CA3DD8A1A4173 /* MUSSameTypeDiffer.swift */; };
+		B567F8A19749BDB533DCBB22D31C3BCF /* MUSGenericTypeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6D34BF5579E17292D4359FDBDB42EE /* MUSGenericTypeDiffer.swift */; };
 		BBAEEBCA07E02585C7C798A0819C9DF7 /* MUSCustomDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 569B82F1B71E176319ED7FF019926FC1 /* MUSCustomDiffer.m */; };
 		BD2CC1BBF89974458426BE390DFCE52A /* MUSDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A491C011517C1116E68077A9E86D7BF /* MUSDifference.m */; };
-		BE6AA27B0C205B378859B0BAD8BB084E /* MUSNumberDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B2DCC6469E73519D5DEA5D8676933 /* MUSNumberDiffer.swift */; };
 		C765070E02D81A8515445F0DBDAE147C /* MUSStringDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D5F6641B147DB84D635042F96BB34 /* MUSStringDiffer.m */; };
 		C7A9279AA483ADDF8CE00AD8B24FF9EF /* Pods-SwiftTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C3E28F4CC40896888953427453C79A /* Pods-SwiftTest-dummy.m */; };
 		C8C63A21945DADB21C698516A6C12A3E /* MUSDifference.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4C1C9486DB6BDF93BBD3B126A33DCB /* MUSDifference.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8E640E8126B080BB55853FA2CF5B43A /* MUSDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E57C7A16A5E753EEAF2C1CDA601E3E /* MUSDifference.swift */; };
-		CEF22823BBA9B32467F961BF55A3FF1A /* MuscleAssert-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8CC9BD59DD9B00C2655184271553F01 /* MuscleAssert-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C985F53EBCD448CB790C1E61B229BC68 /* MUSFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFB64712EFF9E18965CA44AD3EA628C /* MUSFormatterProtocol.swift */; };
+		CE1F4A2EB7D0FF30C17D86A6B64A1DBB /* MUSStandardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291570D1B8CC79DCE6F80EB518790721 /* MUSStandardFormatter.swift */; };
 		CF8F554C840C244D0082F2C9115619A5 /* MUSURLDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162CB731C970BB887DBBBC7B2613150 /* MUSURLDiffer.m */; };
-		D015B402E2B692B2DA375724E662027E /* MUSOptionalDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648FBBDF3AAB4FCE40A7869BA229F2C /* MUSOptionalDiffer.swift */; };
 		D1213A4B38604420077DD4A4C7C9D822 /* MUSArrayDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 13C114806F86DD15C897B1FF0D7264CD /* MUSArrayDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E262EF4F7CFA71C0E04DA67C7F48C452 /* MUSSameTypeDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F5F8BF0A597C52274F46EA63F10575 /* MUSSameTypeDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6AEF67AB6D8F9B4188F38822673E2C9 /* MUSURLDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 377D42FDAA3EC24E07971696E67DA77B /* MUSURLDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F064B03A45BD98F4F75DD938D32FDF28 /* MUSDictionaryDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E0450CE26F086F9818089D1795329 /* MUSDictionaryDiffer.swift */; };
+		E741FED5677C78EACB5688ECBEFB40E5 /* MUSURLDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09C040072404A77E15C1267406C88D /* MUSURLDiffer.swift */; };
+		E8911D0F2B0F87EB1345A3944FCB9082 /* MUSNumberDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961C19C7EA0CC1E2AC10C623C0A3262 /* MUSNumberDiffer.swift */; };
+		EAF4FA5824CA1A42580C9419439972F2 /* MUSDateDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF15192EDAB9EC492BCE3E39184F6A /* MUSDateDiffer.swift */; };
+		EB2B1EBBDA54C332E2141FA5AFDF1B5C /* MuscleAssert-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B01CA3CAB639EBB6C77E70ACB9DD781A /* MuscleAssert-Swift-dummy.m */; };
 		F9BFE57BBE7C58241F19511CB8C97C8B /* Pods-Benchmark-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1C415305557ADAB279AA1E688EA262 /* Pods-Benchmark-dummy.m */; };
+		FB47775CF545CFE4A904A22C4610C052 /* MUSStringDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE01715726AA2AFFB5F606F860AD0CD2 /* MUSStringDiffer.swift */; };
 		FDFA6A1F15957FDAEFF7149000DB0F24 /* MUSOptionalDiffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EEFB39DE2C1BBF6C535A144128D5BAF /* MUSOptionalDiffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -75,13 +76,12 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 645A6FE71C6A7D292AAB902C291AC29E;
+			remoteGlobalIDString = 7C61C96864A5391B73D9DC60E53FF5F4;
 			remoteInfo = "MuscleAssert-Swift";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		009D61F4C4A8898876877D03BFFD54CB /* MUSDateDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSDateDiffer.swift; sourceTree = "<group>"; };
 		02DC59D47CD5A2EA0325D38DEA89D6C9 /* libMuscleAssert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMuscleAssert.a; path = libMuscleAssert.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6BBB1333BB52FE644EA57631B7437A /* Pods-Benchmark-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Benchmark-resources.sh"; sourceTree = "<group>"; };
 		0F03E103A07678B2C926F0F2D3A2B5F8 /* Pods-Benchmark-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Benchmark-frameworks.sh"; sourceTree = "<group>"; };
@@ -90,16 +90,19 @@
 		1F5FABB1EE2D41EED1D22A0277CC3657 /* Pods-SwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
 		2162CB731C970BB887DBBBC7B2613150 /* MUSURLDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSURLDiffer.m; sourceTree = "<group>"; };
 		2323D2C835B7720E1863545E977EF767 /* MuscleAssert-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "MuscleAssert-Swift.modulemap"; path = "../MuscleAssert-Swift/MuscleAssert-Swift.modulemap"; sourceTree = "<group>"; };
+		291570D1B8CC79DCE6F80EB518790721 /* MUSStandardFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSStandardFormatter.swift; path = MuscleAssert/Swift/MUSStandardFormatter.swift; sourceTree = "<group>"; };
+		29CFC9CB40B0D4CD106ABA9206594BB3 /* MUSSameTypeDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSSameTypeDiffer.swift; sourceTree = "<group>"; };
 		2E1A45C6AEE5C6B324A83E377B5CE083 /* Pods-Test-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Test-acknowledgements.plist"; sourceTree = "<group>"; };
 		2EEFB39DE2C1BBF6C535A144128D5BAF /* MUSOptionalDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSOptionalDiffer.h; sourceTree = "<group>"; };
 		377D42FDAA3EC24E07971696E67DA77B /* MUSURLDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSURLDiffer.h; sourceTree = "<group>"; };
 		399409069A7F34B82E4BD32716B1F46F /* Pods-Benchmark-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Benchmark-acknowledgements.plist"; sourceTree = "<group>"; };
 		3A491C011517C1116E68077A9E86D7BF /* MUSDifference.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MUSDifference.m; path = MuscleAssert/ObjC/MUSDifference.m; sourceTree = "<group>"; };
 		3D80EB266DE8C76542297D8BA2F49DEA /* Pods-SwiftTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftTest.modulemap"; sourceTree = "<group>"; };
-		40E57C7A16A5E753EEAF2C1CDA601E3E /* MUSDifference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSDifference.swift; path = MuscleAssert/Swift/MUSDifference.swift; sourceTree = "<group>"; };
-		423E0450CE26F086F9818089D1795329 /* MUSDictionaryDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSDictionaryDiffer.swift; sourceTree = "<group>"; };
+		3EBAB681D31015799C23562BD1BF5B99 /* MUSDictionaryDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSDictionaryDiffer.swift; sourceTree = "<group>"; };
 		43E96CCD310DC67D7D692FE62A2DBC2D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B64C36A0DFB27490BCBDE399FF5935 /* MUSArrayDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSArrayDiffer.swift; sourceTree = "<group>"; };
 		47C3E28F4CC40896888953427453C79A /* Pods-SwiftTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftTest-dummy.m"; sourceTree = "<group>"; };
+		49518FF69DF768038B69CD3682E4BFDC /* MuscleAssert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MuscleAssert.swift; path = MuscleAssert/Swift/MuscleAssert.swift; sourceTree = "<group>"; };
 		49F7CDE94590F34DA434538726AF1D8A /* Pods-SwiftTest-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftTest-resources.sh"; sourceTree = "<group>"; };
 		518BF26ACEBCA67247FFDF6AA59DBE6B /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		53B8054ED91800BF4EE80D830E9A38E1 /* MuscleAssert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MuscleAssert-dummy.m"; sourceTree = "<group>"; };
@@ -107,58 +110,57 @@
 		58815CF6C4CE7BC4FA74B454BB187630 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../MuscleAssert-Swift/Info.plist"; sourceTree = "<group>"; };
 		59A8952D8CB856600EE342961197A2F0 /* MUSNumberDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSNumberDiffer.h; sourceTree = "<group>"; };
 		5A1DB7C963ABF13B5F63CE0378715119 /* MuscleAssert-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "MuscleAssert-Swift.xcconfig"; path = "../MuscleAssert-Swift/MuscleAssert-Swift.xcconfig"; sourceTree = "<group>"; };
-		5FCC2105006BC88FB15CEC66C818CAFC /* MUSStandardFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSStandardFormatter.swift; path = MuscleAssert/Swift/MUSStandardFormatter.swift; sourceTree = "<group>"; };
 		61FEAE81CAF290F720E12B7E2CAC39A2 /* MUSNumberDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSNumberDiffer.m; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66D9066F884F16DB42637E2E369FA721 /* Pods-SwiftTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftTest-frameworks.sh"; sourceTree = "<group>"; };
 		67D69262FB14BADF261556072FC706FA /* Pods-Test-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Test-dummy.m"; sourceTree = "<group>"; };
 		6BDD3B5FC0780EA6D5B23066C1285428 /* MUSDictionaryDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDictionaryDiffer.h; sourceTree = "<group>"; };
 		6C096332B278907E9D503BF9D0CB06CD /* Pods-SwiftTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftTest-umbrella.h"; sourceTree = "<group>"; };
+		6C6D34BF5579E17292D4359FDBDB42EE /* MUSGenericTypeDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSGenericTypeDiffer.swift; sourceTree = "<group>"; };
 		6F887E54DA464A20018979319108F918 /* Pods_SwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftTest.framework; path = "Pods-SwiftTest.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		728B56AC63402D3E25D97F1F83EC6DD8 /* MUSDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDiffer.h; sourceTree = "<group>"; };
-		72D52548710C2AABFC4CA3DD8A1A4173 /* MUSSameTypeDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSSameTypeDiffer.swift; sourceTree = "<group>"; };
 		76E6DFFBBF20448ECF5AFEF8E05A3D86 /* MuscleAssert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MuscleAssert.xcconfig; sourceTree = "<group>"; };
 		78F5F8BF0A597C52274F46EA63F10575 /* MUSSameTypeDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSSameTypeDiffer.h; sourceTree = "<group>"; };
+		7B09C040072404A77E15C1267406C88D /* MUSURLDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSURLDiffer.swift; sourceTree = "<group>"; };
 		7F4C1C9486DB6BDF93BBD3B126A33DCB /* MUSDifference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSDifference.h; path = MuscleAssert/ObjC/MUSDifference.h; sourceTree = "<group>"; };
 		841EB684F434503BD57AC2D9B20C831C /* MUSSameTypeDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSSameTypeDiffer.m; sourceTree = "<group>"; };
+		8961C19C7EA0CC1E2AC10C623C0A3262 /* MUSNumberDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSNumberDiffer.swift; sourceTree = "<group>"; };
 		89E278B4C875510A4BB403A6FB225961 /* Pods-Benchmark-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Benchmark-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98CB0AF85F7B4912FC9C5DAD50A25CC6 /* MUSFormatterProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSFormatterProtocol.h; path = MuscleAssert/ObjC/MUSFormatterProtocol.h; sourceTree = "<group>"; };
-		99B73C2A4AC838949123984A8DB885CA /* MUSArrayDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSArrayDiffer.swift; sourceTree = "<group>"; };
 		9D38612931194810442C475AC46D0408 /* MUSStandardFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MUSStandardFormatter.m; path = MuscleAssert/ObjC/MUSStandardFormatter.m; sourceTree = "<group>"; };
 		A031C7445D0FE5C2CCAAE84551CD0361 /* MUSDateDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDateDiffer.h; sourceTree = "<group>"; };
-		A2659E08A287BE7EAEEFC9F152A35CF9 /* MUSCustomDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSCustomDiffer.swift; path = MuscleAssert/Swift/MUSCustomDiffer.swift; sourceTree = "<group>"; };
-		A648FBBDF3AAB4FCE40A7869BA229F2C /* MUSOptionalDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSOptionalDiffer.swift; sourceTree = "<group>"; };
 		A7D9BD9413D68E7ED44FD465926C965B /* MUSDifferentTypeDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSDifferentTypeDiffer.h; sourceTree = "<group>"; };
-		A99B2DCC6469E73519D5DEA5D8676933 /* MUSNumberDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSNumberDiffer.swift; sourceTree = "<group>"; };
 		AB4ADF7A9CC9DD219EB6080702DEE8A6 /* MuscleAssert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MuscleAssert.m; path = MuscleAssert/ObjC/MuscleAssert.m; sourceTree = "<group>"; };
 		ABFAD9CF328B9129A3B618DEF57CA41A /* Pods-Test-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Test-resources.sh"; sourceTree = "<group>"; };
 		AC7626E77BE468FA23E73BD216FCE6DA /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
-		AFBF231FA6D97743D95CF3F3AF49A081 /* MuscleAssert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MuscleAssert.swift; path = MuscleAssert/Swift/MuscleAssert.swift; sourceTree = "<group>"; };
 		B01CA3CAB639EBB6C77E70ACB9DD781A /* MuscleAssert-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MuscleAssert-Swift-dummy.m"; path = "../MuscleAssert-Swift/MuscleAssert-Swift-dummy.m"; sourceTree = "<group>"; };
 		B8CC9BD59DD9B00C2655184271553F01 /* MuscleAssert-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MuscleAssert-Swift-umbrella.h"; path = "../MuscleAssert-Swift/MuscleAssert-Swift-umbrella.h"; sourceTree = "<group>"; };
+		BDFB64712EFF9E18965CA44AD3EA628C /* MUSFormatterProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSFormatterProtocol.swift; path = MuscleAssert/Swift/MUSFormatterProtocol.swift; sourceTree = "<group>"; };
 		BF1C415305557ADAB279AA1E688EA262 /* Pods-Benchmark-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Benchmark-dummy.m"; sourceTree = "<group>"; };
-		C035432496D4C4DA0505EC5540442FF3 /* MUSStringDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSStringDiffer.swift; sourceTree = "<group>"; };
 		C2AFE50A8C74236DA04CACAB2CBC1EB1 /* MUSOptionalDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSOptionalDiffer.m; sourceTree = "<group>"; };
+		C3BF15192EDAB9EC492BCE3E39184F6A /* MUSDateDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSDateDiffer.swift; sourceTree = "<group>"; };
 		C954F098A46F28010A6B3C33873031A1 /* Pods-Test-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Test-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CB4BB4FD30689B19D90B63BE8CDF8CD6 /* MUSURLDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSURLDiffer.swift; sourceTree = "<group>"; };
 		CC9D5F6641B147DB84D635042F96BB34 /* MUSStringDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSStringDiffer.m; sourceTree = "<group>"; };
 		CD41E8A1CCE94DE22977F58EA92D3F6D /* MUSDateDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDateDiffer.m; sourceTree = "<group>"; };
 		CD71D6AA9FCF6CFB5F93796EEA138394 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Test.a"; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1B811080F599CB356AAA73CEC21DAC2 /* MUSCustomDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSCustomDiffer.swift; path = MuscleAssert/Swift/MUSCustomDiffer.swift; sourceTree = "<group>"; };
 		D3982955C89844BFBEB41EA622CBDED0 /* Pods-Test-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Test-frameworks.sh"; sourceTree = "<group>"; };
 		D44B7C4F125DE2B96720B5CA51373A54 /* MuscleAssert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MuscleAssert-prefix.pch"; sourceTree = "<group>"; };
 		D60E5897062760061C35AB792593735B /* Pods-SwiftTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftTest-acknowledgements.plist"; sourceTree = "<group>"; };
 		D6517A9B0DA678C07082BCDC4494AFB4 /* MuscleAssert-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MuscleAssert-Swift-prefix.pch"; path = "../MuscleAssert-Swift/MuscleAssert-Swift-prefix.pch"; sourceTree = "<group>"; };
 		D92C32CA15D7FAB67B7DFA20F7FBC988 /* libPods-Benchmark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Benchmark.a"; path = "libPods-Benchmark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA71ADE59304BEB18036E207AC876C8F /* MuscleAssert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MuscleAssert.framework; path = "MuscleAssert-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7573024E47B7D556C8351259F6A13B /* MUSOptionalDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSOptionalDiffer.swift; sourceTree = "<group>"; };
+		DC79117C3D99A38873AD8CD57F5E9116 /* MUSDifference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSDifference.swift; path = MuscleAssert/Swift/MUSDifference.swift; sourceTree = "<group>"; };
 		DCBDFC4F6A6A98AAFD9138E3EC320C78 /* Pods-Benchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Benchmark.debug.xcconfig"; sourceTree = "<group>"; };
+		E3C25F4E4AC07B331F2FB79312D89AB0 /* MUSDifferentTypeDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSDifferentTypeDiffer.swift; sourceTree = "<group>"; };
 		E60672FD5566ED85A0671FDC4C7EC3C1 /* MUSStringDiffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MUSStringDiffer.h; sourceTree = "<group>"; };
 		E60AA3EF8707B6CA9D6EEF2BFA22719F /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		E9474CEEAE6C131E9BCDE147D5066584 /* MUSArrayDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSArrayDiffer.m; sourceTree = "<group>"; };
+		EE01715726AA2AFFB5F606F860AD0CD2 /* MUSStringDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSStringDiffer.swift; sourceTree = "<group>"; };
 		EE9E8D16524DDCF8700C2B33577C84CE /* MUSDictionaryDiffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MUSDictionaryDiffer.m; sourceTree = "<group>"; };
 		F1BEF21C70D193F9D26E1D6EB0F24FEE /* MuscleAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MuscleAssert.h; path = MuscleAssert/ObjC/MuscleAssert.h; sourceTree = "<group>"; };
-		F2AE81B9E03884967D2D9250BAEFE3FD /* MUSDifferentTypeDiffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MUSDifferentTypeDiffer.swift; sourceTree = "<group>"; };
-		F4022F0EFFB79332FBA582E8B53543B4 /* MUSFormatterProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MUSFormatterProtocol.swift; path = MuscleAssert/Swift/MUSFormatterProtocol.swift; sourceTree = "<group>"; };
 		F47742A3D2D0426592F97D9B5923D43E /* Pods-Benchmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Benchmark.release.xcconfig"; sourceTree = "<group>"; };
 		FA19F2D6ABE2576D11EEBA5DBC918334 /* Pods-SwiftTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftTest-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FBD95EB46716476E6199375192E49211 /* MUSStandardFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MUSStandardFormatter.h; path = MuscleAssert/ObjC/MUSStandardFormatter.h; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		06751BA3713902B2C88A1A03DB2883C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF467466666854860B1FDF171516E5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A66D181B4E1A704359CC40FBEBB3F10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,14 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A533E37F52AC2DE33ED53089425F560B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B71BEEB1E0DE199DC35A7651715CB2AB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93B98C50CA00E2D4C7A56E2FDF664F50 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +251,19 @@
 			);
 			name = "Pods-Benchmark";
 			path = "Target Support Files/Pods-Benchmark";
+			sourceTree = "<group>";
+		};
+		32CB5001356605F4D9FE565CB265CB3F /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				49518FF69DF768038B69CD3682E4BFDC /* MuscleAssert.swift */,
+				D1B811080F599CB356AAA73CEC21DAC2 /* MUSCustomDiffer.swift */,
+				DC79117C3D99A38873AD8CD57F5E9116 /* MUSDifference.swift */,
+				BDFB64712EFF9E18965CA44AD3EA628C /* MUSFormatterProtocol.swift */,
+				291570D1B8CC79DCE6F80EB518790721 /* MUSStandardFormatter.swift */,
+				B56B1DFEF97FB18DDC02B3DE55C0C2B2 /* Differ */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		3D4F6288C4DC00FF070203813A68F01C /* Targets Support Files */ = {
@@ -318,23 +333,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		8BB1184873A2DC7E539CAACD67F197FB /* Differ */ = {
-			isa = PBXGroup;
-			children = (
-				99B73C2A4AC838949123984A8DB885CA /* MUSArrayDiffer.swift */,
-				009D61F4C4A8898876877D03BFFD54CB /* MUSDateDiffer.swift */,
-				423E0450CE26F086F9818089D1795329 /* MUSDictionaryDiffer.swift */,
-				F2AE81B9E03884967D2D9250BAEFE3FD /* MUSDifferentTypeDiffer.swift */,
-				A99B2DCC6469E73519D5DEA5D8676933 /* MUSNumberDiffer.swift */,
-				A648FBBDF3AAB4FCE40A7869BA229F2C /* MUSOptionalDiffer.swift */,
-				72D52548710C2AABFC4CA3DD8A1A4173 /* MUSSameTypeDiffer.swift */,
-				C035432496D4C4DA0505EC5540442FF3 /* MUSStringDiffer.swift */,
-				CB4BB4FD30689B19D90B63BE8CDF8CD6 /* MUSURLDiffer.swift */,
-			);
-			name = Differ;
-			path = MuscleAssert/Swift/Differ;
-			sourceTree = "<group>";
-		};
 		AA128654FAF1D733C0006098F311EE11 /* Pods-SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,10 +356,28 @@
 			children = (
 				57D1C9D9AD42C772C31E391AE3C74795 /* ObjC */,
 				5712BC2F89919F2DAB53A183A204BB40 /* Support Files */,
-				F761425712897EFF06CA4A75AD74CF54 /* Swift */,
+				32CB5001356605F4D9FE565CB265CB3F /* Swift */,
 			);
 			name = MuscleAssert;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		B56B1DFEF97FB18DDC02B3DE55C0C2B2 /* Differ */ = {
+			isa = PBXGroup;
+			children = (
+				44B64C36A0DFB27490BCBDE399FF5935 /* MUSArrayDiffer.swift */,
+				C3BF15192EDAB9EC492BCE3E39184F6A /* MUSDateDiffer.swift */,
+				3EBAB681D31015799C23562BD1BF5B99 /* MUSDictionaryDiffer.swift */,
+				E3C25F4E4AC07B331F2FB79312D89AB0 /* MUSDifferentTypeDiffer.swift */,
+				6C6D34BF5579E17292D4359FDBDB42EE /* MUSGenericTypeDiffer.swift */,
+				8961C19C7EA0CC1E2AC10C623C0A3262 /* MUSNumberDiffer.swift */,
+				DC7573024E47B7D556C8351259F6A13B /* MUSOptionalDiffer.swift */,
+				29CFC9CB40B0D4CD106ABA9206594BB3 /* MUSSameTypeDiffer.swift */,
+				EE01715726AA2AFFB5F606F860AD0CD2 /* MUSStringDiffer.swift */,
+				7B09C040072404A77E15C1267406C88D /* MUSURLDiffer.swift */,
+			);
+			name = Differ;
+			path = MuscleAssert/Swift/Differ;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -403,19 +419,6 @@
 			path = "Target Support Files/Pods-Test";
 			sourceTree = "<group>";
 		};
-		F761425712897EFF06CA4A75AD74CF54 /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				AFBF231FA6D97743D95CF3F3AF49A081 /* MuscleAssert.swift */,
-				A2659E08A287BE7EAEEFC9F152A35CF9 /* MUSCustomDiffer.swift */,
-				40E57C7A16A5E753EEAF2C1CDA601E3E /* MUSDifference.swift */,
-				F4022F0EFFB79332FBA582E8B53543B4 /* MUSFormatterProtocol.swift */,
-				5FCC2105006BC88FB15CEC66C818CAFC /* MUSStandardFormatter.swift */,
-				8BB1184873A2DC7E539CAACD67F197FB /* Differ */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -449,11 +452,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A258F1A44E201131B76D5EBB5FF516E6 /* Headers */ = {
+		869C16A0EABD2DF33793559EBB56ED6F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF22823BBA9B32467F961BF55A3FF1A /* MuscleAssert-Swift-umbrella.h in Headers */,
+				53D766693C686247E3132F48F7523D61 /* MuscleAssert-Swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,13 +497,13 @@
 			productReference = CD71D6AA9FCF6CFB5F93796EEA138394 /* libPods-Test.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		645A6FE71C6A7D292AAB902C291AC29E /* MuscleAssert-Swift */ = {
+		7C61C96864A5391B73D9DC60E53FF5F4 /* MuscleAssert-Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DAB3851B29C0C1FD3B4AF74CBCE3CBB /* Build configuration list for PBXNativeTarget "MuscleAssert-Swift" */;
+			buildConfigurationList = B9A2247B8726441F6D9B987767190901 /* Build configuration list for PBXNativeTarget "MuscleAssert-Swift" */;
 			buildPhases = (
-				BBA496E39C916B2977227F48953EE666 /* Sources */,
-				B71BEEB1E0DE199DC35A7651715CB2AB /* Frameworks */,
-				A258F1A44E201131B76D5EBB5FF516E6 /* Headers */,
+				A318BEB4CC412D7C4EC4F49A4A17E7A7 /* Sources */,
+				06751BA3713902B2C88A1A03DB2883C3 /* Frameworks */,
+				869C16A0EABD2DF33793559EBB56ED6F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -567,7 +570,7 @@
 			projectRoot = "";
 			targets = (
 				13B232C602C683F9CE7219DE59FABCB9 /* MuscleAssert */,
-				645A6FE71C6A7D292AAB902C291AC29E /* MuscleAssert-Swift */,
+				7C61C96864A5391B73D9DC60E53FF5F4 /* MuscleAssert-Swift */,
 				90554CF11A1DC840A7E9F81D06774CD9 /* Pods-Benchmark */,
 				FA1536ED85A53CFF37F2E3FC458EB25B /* Pods-SwiftTest */,
 				59C74285580E48E21E8F6585FD2C68EC /* Pods-Test */,
@@ -600,25 +603,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BBA496E39C916B2977227F48953EE666 /* Sources */ = {
+		A318BEB4CC412D7C4EC4F49A4A17E7A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B6DA47073420A6689B7CF846F43757 /* MUSArrayDiffer.swift in Sources */,
-				87A3155E1C5B8A38D48BD9D8624B42C7 /* MuscleAssert-Swift-dummy.m in Sources */,
-				664B00E09EB533D1EC6BA96612AC8C72 /* MuscleAssert.swift in Sources */,
-				A9E52BF646969D72C578CA2049AE7F08 /* MUSCustomDiffer.swift in Sources */,
-				7C525AC568E9662967BEDB02EBF6A94F /* MUSDateDiffer.swift in Sources */,
-				F064B03A45BD98F4F75DD938D32FDF28 /* MUSDictionaryDiffer.swift in Sources */,
-				C8E640E8126B080BB55853FA2CF5B43A /* MUSDifference.swift in Sources */,
-				8CBA0781A2C73BDD1AABFF23B1C5276E /* MUSDifferentTypeDiffer.swift in Sources */,
-				B375905BE19DFC95EA5AC9655A716B78 /* MUSFormatterProtocol.swift in Sources */,
-				BE6AA27B0C205B378859B0BAD8BB084E /* MUSNumberDiffer.swift in Sources */,
-				D015B402E2B692B2DA375724E662027E /* MUSOptionalDiffer.swift in Sources */,
-				BB7542C00AD27AB5A7B6DE92A4587911 /* MUSSameTypeDiffer.swift in Sources */,
-				24FAAC9CD678A77D68001A096902F293 /* MUSStandardFormatter.swift in Sources */,
-				B600C376C05117CD30BC57B5E8099F0E /* MUSStringDiffer.swift in Sources */,
-				5EDBF066A9C2309AEBEB76B0E24F079B /* MUSURLDiffer.swift in Sources */,
+				5B9454DE1DB5D1BC2F91E554EAF225B2 /* MUSArrayDiffer.swift in Sources */,
+				EB2B1EBBDA54C332E2141FA5AFDF1B5C /* MuscleAssert-Swift-dummy.m in Sources */,
+				41420666702E8CAF03ED9094858893C1 /* MuscleAssert.swift in Sources */,
+				6BEB438592FDC4124B9A7A0E2ED587DD /* MUSCustomDiffer.swift in Sources */,
+				EAF4FA5824CA1A42580C9419439972F2 /* MUSDateDiffer.swift in Sources */,
+				27026E081C0FF22544862DE12F72C0CF /* MUSDictionaryDiffer.swift in Sources */,
+				3FAED3E60F81DA81927B1171D74B87E1 /* MUSDifference.swift in Sources */,
+				9E2683FFC567A4FEC85013F0EB6B20F3 /* MUSDifferentTypeDiffer.swift in Sources */,
+				C985F53EBCD448CB790C1E61B229BC68 /* MUSFormatterProtocol.swift in Sources */,
+				B567F8A19749BDB533DCBB22D31C3BCF /* MUSGenericTypeDiffer.swift in Sources */,
+				E8911D0F2B0F87EB1345A3944FCB9082 /* MUSNumberDiffer.swift in Sources */,
+				6F7EE0BA99F6C46F898B4C66CF5FA5E4 /* MUSOptionalDiffer.swift in Sources */,
+				51B9FAC841D4DBA794266F252DB18BED /* MUSSameTypeDiffer.swift in Sources */,
+				CE1F4A2EB7D0FF30C17D86A6B64A1DBB /* MUSStandardFormatter.swift in Sources */,
+				FB47775CF545CFE4A904A22C4610C052 /* MUSStringDiffer.swift in Sources */,
+				E741FED5677C78EACB5688ECBEFB40E5 /* MUSURLDiffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +659,7 @@
 		F1E878BD462CA0CBDB17285B491DCC3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MuscleAssert-Swift";
-			target = 645A6FE71C6A7D292AAB902C291AC29E /* MuscleAssert-Swift */;
+			target = 7C61C96864A5391B73D9DC60E53FF5F4 /* MuscleAssert-Swift */;
 			targetProxy = 8B2A69CE7CBAE8B662F1AD1A4FEA9451 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -813,37 +817,6 @@
 			};
 			name = Debug;
 		};
-		9DB1CD88F325F14F45CD21A0B91B5672 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A1DB7C963ABF13B5F63CE0378715119 /* MuscleAssert-Swift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MuscleAssert-Swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift.modulemap";
-				PRODUCT_NAME = MuscleAssert;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -925,38 +898,6 @@
 			};
 			name = Release;
 		};
-		CAB240F26694618277AAF7EDF4CE3D05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A1DB7C963ABF13B5F63CE0378715119 /* MuscleAssert-Swift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MuscleAssert-Swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift.modulemap";
-				PRODUCT_NAME = MuscleAssert;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		CE7D6A4DC379969004205F986E961DD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E60AA3EF8707B6CA9D6EEF2BFA22719F /* Pods-SwiftTest.release.xcconfig */;
@@ -1034,6 +975,69 @@
 			};
 			name = Release;
 		};
+		F218BA43D837371B78F47E0049A3DCA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1DB7C963ABF13B5F63CE0378715119 /* MuscleAssert-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MuscleAssert-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift.modulemap";
+				PRODUCT_NAME = MuscleAssert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB443453988C28C867078FB5A7250394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1DB7C963ABF13B5F63CE0378715119 /* MuscleAssert-Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MuscleAssert-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MuscleAssert-Swift/MuscleAssert-Swift.modulemap";
+				PRODUCT_NAME = MuscleAssert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1042,15 +1046,6 @@
 			buildConfigurations = (
 				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
 				6F9224530522DD3C735EC96CF142642E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4DAB3851B29C0C1FD3B4AF74CBCE3CBB /* Build configuration list for PBXNativeTarget "MuscleAssert-Swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DB1CD88F325F14F45CD21A0B91B5672 /* Debug */,
-				CAB240F26694618277AAF7EDF4CE3D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1069,6 +1064,15 @@
 			buildConfigurations = (
 				9C5B29FE3F7AAA0A2DC7A56562D13049 /* Debug */,
 				E195E00BB2F5C72EAAC509E08DBB2A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9A2247B8726441F6D9B987767190901 /* Build configuration list for PBXNativeTarget "MuscleAssert-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F218BA43D837371B78F47E0049A3DCA2 /* Debug */,
+				FB443453988C28C867078FB5A7250394 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -50,5 +50,4 @@ class MUSSameTypeDiffer: MUSCustomDiffer {
 //                #pragma clang diagnostic pop
 //                return results;
 //            }
-        }
 }

@@ -11,6 +11,10 @@ import XCTest
 class CustomDebugStringConvertibleTests: XCTestCase {
     let assert = MuscleAssert()
     
+    override func setUp() {
+        assert.add(custom: MUSGenericTypeDiffer<TestModel>())
+    }
+    
     func testSameTestModel() {
         let diff = assert.deepStricEqual(left: TestModel(string: "abc"), right: TestModel(string: "abc"))
         XCTAssertNil(diff);
@@ -25,11 +29,8 @@ class CustomDebugStringConvertibleTests: XCTestCase {
     
     func testLeftEmpty() {
         let diff = assert.deepStricEqual(left: TestModel(string: ""), right: TestModel(string: "abc", integer: 1))
-        XCTAssertEqual(diff!, "\npath: .string\n" +
-            "  left: \n" +
-            "  right: abc\n" +
-            "\npath: .integer\n" +
-            "  left: 0\n" +
-            "  right: 1\n")
+        XCTAssertEqual(diff!, "\npath: .TestModel\n" +
+            "  left: TestModel(string: , integer: 0)\n" +
+            "  right: TestModel(string: abc, integer: 1)\n")
     }
 }
