@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TestModel {
+class TestModel: NSObject {
     let string: String
     let integer: Int
     
@@ -15,17 +15,16 @@ class TestModel {
         self.string = string
         self.integer = integer
     }
-}
-
-extension TestModel: Equatable {
-    static func ==(lhs: TestModel, rhs: TestModel) -> Bool {
-        return lhs.string == rhs.string &&
-            lhs.integer == rhs.integer
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? TestModel else {
+            return false;
+        }
+        return self.string == object.string &&
+            self.integer == object.integer
     }
-}
-
-extension TestModel: CustomStringConvertible {
-    var description: String {
+    
+    override var description: String {
         return "TestModel(string: \(string), integer: \(integer))"
     }
 }

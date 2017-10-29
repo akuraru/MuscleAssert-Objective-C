@@ -23,6 +23,7 @@ class MuscleAssert: MUSDeepDiffProtocol {
             MUSArrayDiffer()
         ]
         lastDiffer = [
+            MUSSameAnyObjectDiff(),
             MUSSameTypeDiffer(),
             MUSDifferentTypeDiffer(),
         ]
